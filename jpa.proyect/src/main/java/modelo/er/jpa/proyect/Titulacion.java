@@ -15,21 +15,23 @@ import javax.persistence.*;
 public class Titulacion implements Serializable {
 
 	   
-	@Id @GeneratedValue
-	private Integer Código;
+	@Id @GeneratedValue 
+	private Integer Codigo;
+	@Column(nullable = false)
 	private String Nombre;
-	private Integer Créditos;
+	@Column(nullable = false)
+	private Integer Creditos;
 	private static final long serialVersionUID = 1L;
 
 	public Titulacion() {
 		super();
 	}   
-	public Integer getCódigo() {
-		return this.Código;
+	public Integer getCodigo() {
+		return this.Codigo;
 	}
 
-	public void setCódigo(Integer Código) {
-		this.Código = Código;
+	public void setCodigo(Integer Codigo) {
+		this.Codigo = Codigo;
 	}   
 	public String getNombre() {
 		return this.Nombre;
@@ -38,12 +40,12 @@ public class Titulacion implements Serializable {
 	public void setNombre(String Nombre) {
 		this.Nombre = Nombre;
 	}   
-	public Integer getCréditos() {
-		return this.Créditos;
+	public Integer getCreditos() {
+		return this.Creditos;
 	}
 
-	public void setCréditos(Integer Créditos) {
-		this.Créditos = Créditos;
+	public void setCreditos(Integer Creditos) {
+		this.Creditos = Creditos;
 	}
    
 }

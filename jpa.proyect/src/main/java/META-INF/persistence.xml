@@ -4,6 +4,8 @@
 		<class>modelo.er.jpa.proyect.Alumno</class>
 		<class>modelo.er.jpa.proyect.Asignatura</class>
 		<class>modelo.er.jpa.proyect.Optativa</class>
+		<class>modelo.er.jpa.proyect.Titulacion</class>
+		<class>modelo.er.jpa.proyect.Grupo</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>
 			<property name="javax.persistence.jdbc.user" value="siiuser"/>

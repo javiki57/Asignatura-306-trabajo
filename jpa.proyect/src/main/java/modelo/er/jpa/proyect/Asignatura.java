@@ -16,9 +16,13 @@ public class Asignatura implements Serializable {
 	   
 	@Id @GeneratedValue
 	private Integer Referencia;
+	@Column(nullable = false)
 	private Integer Codigo;
+	@Column(nullable = false)
 	private Integer Creditos;
+	@Column(nullable = false)
 	private boolean Ofertada;
+	@Column(nullable = false)
 	private String Nombre;
 	private Integer Curso;
 	private String Caracter;

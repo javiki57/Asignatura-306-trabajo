@@ -16,9 +16,11 @@ public class Alumno implements Serializable {
 	   
 	@Id @GeneratedValue
 	private Integer Id;
-	@Column(unique = true)
+	@Column(unique = true, nullable = false)
 	private String DNI;
+	@Column(nullable = false)
 	private String Nombre_Completo;
+	@Column(nullable = false)
 	private String Email_Institucional;
 	private String Email_Personal;
 	private Integer Telefono;
