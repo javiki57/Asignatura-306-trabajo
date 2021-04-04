@@ -31,7 +31,6 @@ public class Clase implements Serializable {
 	private Asignatura asignatura;
 
 	
-	
 	public Clase() {
 		super();
 	}   
