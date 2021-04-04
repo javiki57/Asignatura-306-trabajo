@@ -8,6 +8,8 @@
 		<class>modelo.er.jpa.proyect.Grupo</class>
 		<class>modelo.er.jpa.proyect.Expediente</class>
 		<class>modelo.er.jpa.proyect.Matricula</class>
+		<class>modelo.er.jpa.proyect.Clase</class>
+		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>
 			<property name="javax.persistence.jdbc.user" value="siiuser"/>

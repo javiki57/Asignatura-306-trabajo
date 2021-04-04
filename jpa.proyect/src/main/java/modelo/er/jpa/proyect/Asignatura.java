@@ -3,6 +3,8 @@ package modelo.er.jpa.proyect;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -31,6 +33,12 @@ public class Asignatura implements Serializable {
 	private String Idioma;
 	private String Departamento;
 	private static final long serialVersionUID = 1L;
+	
+	@OneToMany (targetEntity=Grupo_por_Asignatura.class, mappedBy="asignaturas")
+	private List<Grupo_por_Asignatura> asignatura;
+	
+	@OneToMany (targetEntity=Clase.class, mappedBy="asignatura")
+	private List<Clase> clase;
 
 	public Asignatura() {
 		super();

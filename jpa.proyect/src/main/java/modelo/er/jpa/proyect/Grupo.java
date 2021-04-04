@@ -6,6 +6,8 @@ import java.lang.Character;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -31,7 +33,14 @@ public class Grupo implements Serializable {
 	private String Asignar;
 	private Integer Plazas;
 	private static final long serialVersionUID = 1L;
+	
+	@OneToMany (targetEntity=Grupo_por_Asignatura.class, mappedBy="grupos")
+	
+	private List<Grupo_por_Asignatura> grupo;
 
+	
+	
+	
 	public Grupo() {
 		super();
 	}   

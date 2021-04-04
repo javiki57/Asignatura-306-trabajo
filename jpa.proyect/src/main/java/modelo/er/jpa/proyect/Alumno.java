@@ -3,15 +3,18 @@ package modelo.er.jpa.proyect;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
  * Entity implementation class for Entity: Alumno
+ * @param <T>
  *
  */
 @Entity
 
-public class Alumno implements Serializable {
+public class Alumno<T> implements Serializable {
 
 	   
 	@Id @GeneratedValue
@@ -30,6 +33,8 @@ public class Alumno implements Serializable {
 	private String Fecha_Nacimiento;
 	private static final long serialVersionUID = 1L;
 
+	
+	
 	public Alumno() {
 		super();
 	}   
