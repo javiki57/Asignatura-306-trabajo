@@ -33,6 +33,15 @@ public class Grupo implements Serializable {
 	private String Asignar;
 	private Integer Plazas;
 	private static final long serialVersionUID = 1L;
+
+	@ManyToOne
+	private Titulacion titulacion;
+
+	/* Preguntar al profesor
+	@OneToMany (targetEntity=Grupo,mappedBy"grupo")
+	@ManyToOne
+	private Grupo grupo;
+	*/
 	
 	@OneToMany (targetEntity=Grupo_por_Asignatura.class, mappedBy="grupos")
 	
