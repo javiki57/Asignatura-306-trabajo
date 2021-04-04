@@ -39,6 +39,9 @@ public class Asignatura implements Serializable {
 	
 	@OneToMany (targetEntity=Clase.class, mappedBy="asignatura")
 	private List<Clase> clase;
+	
+	@ManyToOne  
+	private Titulacion titulacion;
 
 	public Asignatura() {
 		super();

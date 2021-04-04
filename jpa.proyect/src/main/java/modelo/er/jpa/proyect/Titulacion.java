@@ -26,6 +26,9 @@ public class Titulacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@OneToMany (mappedBy="titulacion")
 	private List<Expediente> expediente;
+	
+	@OneToMany
+	private List<Asignatura> asignaturas;
 
 	public Titulacion() {
 		super();
