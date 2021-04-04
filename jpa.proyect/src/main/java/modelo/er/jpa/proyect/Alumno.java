@@ -1,24 +1,31 @@
 package modelo.er.jpa.proyect;
 
 import java.io.Serializable;
-import java.lang.Integer;
-import java.lang.String;
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Alumno
+ * @param <T>
  *
  */
 @Entity
 
-public class Alumno implements Serializable {
+public class Alumno<T> implements Serializable {
 
 	   
 	@Id @GeneratedValue
 	private Integer Id;
-	@Column(unique = true)
+	@Column(unique = true, nullable = false)
 	private String DNI;
+	@Column(nullable = false)
 	private String Nombre_Completo;
+	@Column(nullable = false)
 	private String Email_Institucional;
 	private String Email_Personal;
 	private Integer Telefono;
@@ -28,6 +35,10 @@ public class Alumno implements Serializable {
 	private String Fecha_Nacimiento;
 	private static final long serialVersionUID = 1L;
 
+	@OneToMany
+	private List<Expediente> expediente;
+	
+	
 	public Alumno() {
 		super();
 	}   

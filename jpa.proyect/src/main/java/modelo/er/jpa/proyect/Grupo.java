@@ -6,6 +6,8 @@ import java.lang.Character;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -19,17 +21,26 @@ public class Grupo implements Serializable {
 	   
 	@Id @GeneratedValue
 	private Long id;
-	@Column (unique = true)
+	@Column (unique = true, nullable = false)
 	private String Curso;
-	@Column (unique = true)
+	@Column (unique = true, nullable = false)
 	private Character Letra;
+	@Column(nullable = false)
 	private String Turno_Mañana_Tarde;
-	private Boolean Inglés;
+	@Column(nullable = false)
+	private Boolean Ingles;
 	private Boolean Visible;
 	private String Asignar;
 	private Integer Plazas;
 	private static final long serialVersionUID = 1L;
+	
+	@OneToMany (targetEntity=Grupo_por_Asignatura.class, mappedBy="grupos")
+	
+	private List<Grupo_por_Asignatura> grupo;
 
+	
+	
+	
 	public Grupo() {
 		super();
 	}   
@@ -61,12 +72,12 @@ public class Grupo implements Serializable {
 	public void setTurno_Mañana_Tarde(String Turno_Mañana_Tarde) {
 		this.Turno_Mañana_Tarde = Turno_Mañana_Tarde;
 	}   
-	public Boolean getInglés() {
-		return this.Inglés;
+	public Boolean getIngles() {
+		return this.Ingles;
 	}
 
-	public void setInglés(Boolean Inglés) {
-		this.Inglés = Inglés;
+	public void setIngles(Boolean Inglés) {
+		this.Ingles = Inglés;
 	}   
 	public Boolean getVisible() {
 		return this.Visible;

@@ -3,6 +3,8 @@ package modelo.er.jpa.proyect;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -16,9 +18,13 @@ public class Asignatura implements Serializable {
 	   
 	@Id @GeneratedValue
 	private Integer Referencia;
+	@Column(nullable = false)
 	private Integer Codigo;
+	@Column(nullable = false)
 	private Integer Creditos;
+	@Column(nullable = false)
 	private boolean Ofertada;
+	@Column(nullable = false)
 	private String Nombre;
 	private Integer Curso;
 	private String Caracter;
@@ -27,6 +33,15 @@ public class Asignatura implements Serializable {
 	private String Idioma;
 	private String Departamento;
 	private static final long serialVersionUID = 1L;
+	
+	@OneToMany (targetEntity=Grupo_por_Asignatura.class, mappedBy="asignaturas")
+	private List<Grupo_por_Asignatura> asignatura;
+	
+	@OneToMany (targetEntity=Clase.class, mappedBy="asignatura")
+	private List<Clase> clase;
+	
+	@ManyToOne  
+	private Titulacion titulacion;
 
 	public Asignatura() {
 		super();
