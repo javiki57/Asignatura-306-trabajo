@@ -25,6 +25,10 @@ public class Matricula implements Serializable {
 	private Boolean Nuevo_Ingreso;
 	@ElementCollection (fetch = FetchType.LAZY)
 	private List<Asignatura> Listado_Asignaturas;
+	@ManyToOne //no se como hacer para que esta relacion sea debil
+	private Expediente expediente;
+	//@OneToMany (mappedBy="matricula?")
+	//private List<Asignatura_Matricula> asignatura_matricula;
 	
 	
 	public Integer getCurso_Academico() {
