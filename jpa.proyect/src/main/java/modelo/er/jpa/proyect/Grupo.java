@@ -37,11 +37,12 @@ public class Grupo implements Serializable {
 	@ManyToOne
 	private Titulacion titulacion;
 
-	/* Preguntar al profesor
-	@OneToMany (targetEntity=Grupo,mappedBy"grupo")
+	
+	@OneToMany (mappedBy="grup0")
+	private List<Grupo> group;
 	@ManyToOne
-	private Grupo grupo;
-	*/
+	private Grupo grup0;
+	
 	
 	@OneToMany (targetEntity=Grupo_por_Asignatura.class, mappedBy="grupos")
 	private List<Grupo_por_Asignatura> grupo;
