@@ -44,10 +44,10 @@ public class Grupo implements Serializable {
 	*/
 	
 	@OneToMany (targetEntity=Grupo_por_Asignatura.class, mappedBy="grupos")
-	
 	private List<Grupo_por_Asignatura> grupo;
 
-	
+	@OneToMany(targetEntity=Clase.class, mappedBy="grupo")
+	private List<Clase> clases;
 	
 	
 	public Grupo() {

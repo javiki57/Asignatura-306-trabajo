@@ -13,8 +13,9 @@ import javax.persistence.*;
 
 @IdClass(ClasePK.class)
 public class Clase implements Serializable {
-
-	   
+	
+	
+	  
 	@Id @Column(nullable=false)
 	private String Dia;   
 	@Id @Column(nullable=false)
@@ -22,15 +23,16 @@ public class Clase implements Serializable {
 	private Double Hora_Fin;
 	private static final long serialVersionUID = 1L;
 	
-	@ManyToOne 
 	
+	@Id
+	@ManyToOne 
 	private Grupo grupo;
 	
+	
 	@ManyToOne
-	
 	private Asignatura asignatura;
-
 	
+
 	public Clase() {
 		super();
 	}   
