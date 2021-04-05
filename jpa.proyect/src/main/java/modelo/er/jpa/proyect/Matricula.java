@@ -11,8 +11,13 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@IdClass(Matricula.MatriculaID.class)
 public class Matricula implements Serializable {
+
+	public static class MatriculaID implements Serializable{
+		private Integer Curso_Academico;
+		private Integer expediente;
+	}
 	
 	@Id
 	private Integer Curso_Academico;
@@ -25,6 +30,12 @@ public class Matricula implements Serializable {
 	private Boolean Nuevo_Ingreso;
 	@ElementCollection (fetch = FetchType.LAZY)
 	private List<Asignatura> Listado_Asignaturas;
+	
+	@Id
+	@ManyToOne
+	private Expediente expediente;
+	//@OneToMany (mappedBy="matricula?")
+	//private List<Asignatura_Matricula> asignatura_matricula;
 	
 	
 	public Integer getCurso_Academico() {

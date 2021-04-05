@@ -9,9 +9,10 @@
 		<class>modelo.er.jpa.proyect.Expediente</class>
 		<class>modelo.er.jpa.proyect.Matricula</class>
 		<class>modelo.er.jpa.proyect.Clase</class>
+		<class>modelo.er.jpa.proyect.Grupo_por_Asignatura</class>
 		
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.17.0.2:3306/sii"/>
 			<property name="javax.persistence.jdbc.user" value="siiuser"/>
 			<property name="javax.persistence.jdbc.password" value="siipassword"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

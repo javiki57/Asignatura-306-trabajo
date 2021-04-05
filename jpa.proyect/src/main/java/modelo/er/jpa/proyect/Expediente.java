@@ -1,6 +1,8 @@
 package modelo.er.jpa.proyect;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -21,6 +23,16 @@ public class Expediente implements Serializable {
 	private Integer Creditos_Practicas_Externas;
 	private Integer Creditos_TFG;
 	private Integer Creditos_CF;
+	@ManyToOne
+	private Alumno alumno;
+	@ManyToOne
+	private Titulacion titulacion;
+	@OneToMany (mappedBy="expediente")
+	private List<Matricula> matricula;
+	//@OneToMany (mappedBy="expediente?")
+	//private List<Encuesta> encuesta;
+	
+	
 	
 	private static final long serialVersionUID = 1L;
 
