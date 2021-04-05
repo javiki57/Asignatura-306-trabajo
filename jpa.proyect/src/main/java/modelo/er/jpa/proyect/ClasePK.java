@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.lang.Double;
 import java.lang.String;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 /**
  * ID class for entity: Clase
  *
@@ -13,6 +16,7 @@ public class ClasePK  implements Serializable {
 	         
 	private String Dia;         
 	private Double Hora_Inicio;
+	private Long grupo;
 	private static final long serialVersionUID = 1L;
 
 	public ClasePK() {}
