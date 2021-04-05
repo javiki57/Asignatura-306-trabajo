@@ -2,6 +2,8 @@ package modelo.er.jpa.proyect;
 
 import java.io.Serializable;
 import java.lang.Integer;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -62,9 +64,8 @@ public class Grupo_por_Asignatura implements Serializable {
 	@ManyToOne
 	private Grupo grupos;
 	
-	//@ManyToOne
-	
-	//private Encuesta encuestas;
+	@ManyToMany (mappedBy = "grupo_por_asignatura")
+	private List<Encuesta> encuestas;
 
 	public Grupo_por_Asignatura() {
 		super();

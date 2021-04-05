@@ -50,6 +50,9 @@ public class Grupo implements Serializable {
 	@OneToMany(targetEntity=Clase.class, mappedBy="grupo")
 	private List<Clase> clases;
 	
+	@OneToMany(mappedBy="grupo")
+	private List<Asignatura_Matricula> asig_matr;
+	
 	
 	public Grupo() {
 		super();

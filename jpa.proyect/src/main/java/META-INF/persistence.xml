@@ -10,6 +10,7 @@
 		<class>modelo.er.jpa.proyect.Matricula</class>
 		<class>modelo.er.jpa.proyect.Clase</class>
 		<class>modelo.er.jpa.proyect.Grupo_por_Asignatura</class>
+		<class>modelo.er.jpa.proyect.Asignatura_Matricula</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.17.0.2:3306/sii"/>

@@ -29,8 +29,8 @@ public class Expediente implements Serializable {
 	private Titulacion titulacion;
 	@OneToMany (mappedBy="expediente")
 	private List<Matricula> matricula;
-	//@OneToMany (mappedBy="expediente?")
-	//private List<Encuesta> encuesta;
+	@OneToMany (mappedBy="expediente")
+	private List<Encuesta> encuesta;
 	
 	
 	

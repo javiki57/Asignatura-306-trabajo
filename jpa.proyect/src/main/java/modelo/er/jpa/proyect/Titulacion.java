@@ -30,10 +30,9 @@ public class Titulacion implements Serializable {
 	@OneToMany (mappedBy="titulacion")
 	private List<Grupo> grupo;
 
-	/* Comentado hasta la creacion de centro (Paula)
-	@ManyToMany (mappedBy = "titulacion")
+	
+	@ManyToMany (mappedBy="titulacion")
 	private List<Centro> centro;
-	*/
 	
 	@OneToMany
 	private List<Asignatura> asignaturas;

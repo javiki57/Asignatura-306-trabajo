@@ -34,8 +34,8 @@ public class Matricula implements Serializable {
 	@Id
 	@ManyToOne
 	private Expediente expediente;
-	//@OneToMany (mappedBy="matricula?")
-	//private List<Asignatura_Matricula> asignatura_matricula;
+	@OneToMany (mappedBy="matricula")
+	private List<Asignatura_Matricula> asignatura_matricula;
 	
 	
 	public Integer getCurso_Academico() {
