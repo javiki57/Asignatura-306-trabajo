@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 public class Encuesta implements Serializable{
 
-	@Id
+	@Id// @GeneratedValue
 	@Temporal (TemporalType.DATE)
 	private Date Fecha_de_Envio;
 	

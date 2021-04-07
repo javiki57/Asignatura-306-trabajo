@@ -32,6 +32,8 @@ public class Asignatura implements Serializable {
 	private Integer Unidad_Temporal;
 	private String Idioma;
 	private String Departamento;
+	@Embedded
+	private Optativa optativa;
 	private static final long serialVersionUID = 1L;
 	
 	@OneToMany (targetEntity=Grupo_por_Asignatura.class, mappedBy="asignaturas")
@@ -127,4 +129,14 @@ public class Asignatura implements Serializable {
 		this.Departamento = Departamento;
 	}
    
+	@Embeddable
+	public static class Optativa{
+		private Integer plazas;
+		private String mencion;
+		
+	}
+
+	
 }
+
+

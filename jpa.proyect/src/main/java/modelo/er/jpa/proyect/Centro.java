@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Centro implements Serializable{
 
-	@Id
+	@Id @GeneratedValue
 	private int Id;
 	@Column (unique = true, nullable = false)
 	private String Nombre;

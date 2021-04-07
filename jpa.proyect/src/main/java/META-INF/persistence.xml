@@ -3,14 +3,17 @@
 	<persistence-unit name="jpa.proyect" transaction-type="RESOURCE_LOCAL">
 		<class>modelo.er.jpa.proyect.Alumno</class>
 		<class>modelo.er.jpa.proyect.Asignatura</class>
-		<class>modelo.er.jpa.proyect.Optativa</class>
 		<class>modelo.er.jpa.proyect.Titulacion</class>
 		<class>modelo.er.jpa.proyect.Grupo</class>
 		<class>modelo.er.jpa.proyect.Expediente</class>
 		<class>modelo.er.jpa.proyect.Matricula</class>
 		<class>modelo.er.jpa.proyect.Clase</class>
 		<class>modelo.er.jpa.proyect.Grupo_por_Asignatura</class>
+		<class>modelo.er.jpa.proyect.Centro</class>
+		<class>modelo.er.jpa.proyect.Encuesta</class>
+		<class>modelo.er.jpa.proyect.Asignatura.Optativa</class>
 		<class>modelo.er.jpa.proyect.Asignatura_Matricula</class>
+		
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.17.0.2:3306/sii"/>
