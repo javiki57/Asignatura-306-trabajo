@@ -23,4 +23,12 @@
   
   
   </dependencies>
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>modelo.er</groupId>
+  			<artifactId>jpa.proyect</artifactId>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>

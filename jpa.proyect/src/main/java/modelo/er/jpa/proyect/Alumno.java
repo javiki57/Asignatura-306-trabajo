@@ -35,8 +35,7 @@ public class Alumno<T> implements Serializable {
 	private Integer Movil;
 	private String Direccion_Notificacion;
 	private String Codigo_Postal_Notificacion;
-	@Temporal (TemporalType.DATE)
-	private Date Fecha_Nacimiento;
+	private String Fecha_Nacimiento;
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany (mappedBy = "alumno")

@@ -15,6 +15,7 @@
 		<class>modelo.er.jpa.proyect.Asignatura_Matricula</class>
 		
 		
+		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.17.0.2:3306/sii"/>
 			<property name="javax.persistence.jdbc.user" value="siiuser"/>
