@@ -24,19 +24,20 @@ public class Titulacion implements Serializable {
 	@Column(nullable = false)
 	private Integer Creditos;
 	private static final long serialVersionUID = 1L;
+	
 	@OneToMany (mappedBy="titulacion")
 	private List<Expediente> expediente;
 
 	@OneToMany (mappedBy="titulacion")
 	private List<Grupo> grupo;
 
-	/* Comentado hasta la creacion de centro (Paula)
-	@ManyToMany (mappedBy = "titulacion")
+	
+	@ManyToMany (mappedBy="titulacion")
 	private List<Centro> centro;
-	*/
 	
 	@OneToMany
 	private List<Asignatura> asignaturas;
+	
 
 	public Titulacion() {
 		super();

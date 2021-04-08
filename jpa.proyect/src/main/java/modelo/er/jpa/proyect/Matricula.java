@@ -15,6 +15,35 @@ import javax.persistence.*;
 public class Matricula implements Serializable {
 
 	public static class MatriculaID implements Serializable{
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((Curso_Academico == null) ? 0 : Curso_Academico.hashCode());
+			result = prime * result + ((expediente == null) ? 0 : expediente.hashCode());
+			return result;
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			MatriculaID other = (MatriculaID) obj;
+			if (Curso_Academico == null) {
+				if (other.Curso_Academico != null)
+					return false;
+			} else if (!Curso_Academico.equals(other.Curso_Academico))
+				return false;
+			if (expediente == null) {
+				if (other.expediente != null)
+					return false;
+			} else if (!expediente.equals(other.expediente))
+				return false;
+			return true;
+		}
 		private Integer Curso_Academico;
 		private Integer expediente;
 	}
@@ -29,13 +58,14 @@ public class Matricula implements Serializable {
 	private Date Fecha_de_Matricula;
 	private Boolean Nuevo_Ingreso;
 	@ElementCollection (fetch = FetchType.LAZY)
+	
 	private List<Asignatura> Listado_Asignaturas;
 	
 	@Id
 	@ManyToOne
 	private Expediente expediente;
-	//@OneToMany (mappedBy="matricula?")
-	//private List<Asignatura_Matricula> asignatura_matricula;
+	@OneToMany (mappedBy="matricula")
+	private List<Asignatura_Matricula> asignatura_matricula;
 	
 	
 	public Integer getCurso_Academico() {
