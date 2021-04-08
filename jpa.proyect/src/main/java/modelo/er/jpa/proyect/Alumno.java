@@ -1,6 +1,7 @@
 package modelo.er.jpa.proyect;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -8,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Entity implementation class for Entity: Alumno
@@ -32,10 +35,11 @@ public class Alumno<T> implements Serializable {
 	private Integer Movil;
 	private String Direccion_Notificacion;
 	private String Codigo_Postal_Notificacion;
-	private String Fecha_Nacimiento;
+	@Temporal (TemporalType.DATE)
+	private Date Fecha_Nacimiento;
 	private static final long serialVersionUID = 1L;
 
-	@OneToMany
+	@OneToMany (mappedBy = "alumno")
 	private List<Expediente> expediente;
 	
 	

@@ -25,10 +25,10 @@ public class Titulacion implements Serializable {
 	private Integer Creditos;
 	private static final long serialVersionUID = 1L;
 	
-	@OneToMany //(mappedBy="titulacion")
+	@OneToMany (mappedBy="titulacion")
 	private List<Expediente> expediente;
 
-	@OneToMany //(mappedBy="titulacion")
+	@OneToMany (mappedBy="titulacion")
 	private List<Grupo> grupo;
 
 	

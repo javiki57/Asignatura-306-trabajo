@@ -57,14 +57,14 @@ public class Matricula implements Serializable {
 	@Column (nullable = false) @Temporal (TemporalType.DATE)
 	private Date Fecha_de_Matricula;
 	private Boolean Nuevo_Ingreso;
-	//@ElementCollection (fetch = FetchType.LAZY)
+	@ElementCollection (fetch = FetchType.LAZY)
 	
 	private List<Asignatura> Listado_Asignaturas;
 	
 	@Id
 	@ManyToOne
 	private Expediente expediente;
-	@OneToMany //(mappedBy="matricula")
+	@OneToMany (mappedBy="matricula")
 	private List<Asignatura_Matricula> asignatura_matricula;
 	
 	

@@ -38,7 +38,7 @@ public class Grupo implements Serializable {
 	private Titulacion titulacion;
 
 	
-	@OneToMany //(mappedBy="grup0")
+	@OneToMany (mappedBy="grup0")
 	private List<Grupo> group;
 	@ManyToOne
 	private Grupo grup0;

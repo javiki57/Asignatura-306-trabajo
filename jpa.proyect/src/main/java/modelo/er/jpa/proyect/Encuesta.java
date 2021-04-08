@@ -13,7 +13,7 @@ public class Encuesta implements Serializable{
 	@Temporal (TemporalType.DATE)
 	private Date Fecha_de_Envio;
 	
-	@ManyToMany
+	@ManyToMany 
 	private List<Grupo_por_Asignatura> grupo_por_asignatura;
 	
 	@ManyToOne

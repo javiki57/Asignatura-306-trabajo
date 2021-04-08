@@ -3,7 +3,6 @@ package modelo.er.jpa.proyect;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.ManyToOne;
@@ -17,8 +16,7 @@ import javax.persistence.ManyToOne;
 public class Asignatura_Matricula implements Serializable {
 
 	public static class Asignatura_Matricula_Id implements Serializable{
-		private Integer matricula;
-		private Integer asignatura;
+		
 
 		@Override
 		public int hashCode() {
@@ -50,6 +48,10 @@ public class Asignatura_Matricula implements Serializable {
 			return true;
 		} 
 		
+		private Matricula.MatriculaID matricula;
+		private Integer asignatura;
+
+		
 	}
 	
 	private static final long serialVersionUID = 1L;
@@ -58,11 +60,13 @@ public class Asignatura_Matricula implements Serializable {
 		super();
 	}
 
+
 	@ManyToOne
 	private Grupo grupo;
-	@Id 
+	@Id
 	@ManyToOne
 	private Matricula matricula;
+
 	@Id
 	@ManyToOne
 	private Asignatura asignatura;
