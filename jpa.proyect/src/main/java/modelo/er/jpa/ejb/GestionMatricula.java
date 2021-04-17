@@ -1,5 +1,7 @@
 package modelo.er.jpa.ejb;
 
+import java.util.List;
+
 import javax.ejb.Local;
 import modelo.er.jpa.proyect.*;
 
@@ -11,6 +13,6 @@ public interface GestionMatricula {
 	
 	public void eliminarAsignatura();
 	
-	public void mostrarMatriculas();
+	public List<Matricula> mostrarMatriculas();
 	
 }

@@ -36,6 +36,8 @@ public class Alumno<T> implements Serializable {
 	private String Direccion_Notificacion;
 	private String Codigo_Postal_Notificacion;
 	private String Fecha_Nacimiento;
+	@SuppressWarnings("rawtypes")
+	private List<Alumno> alumnos;
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany (mappedBy = "alumno")
@@ -114,6 +116,12 @@ public class Alumno<T> implements Serializable {
 
 	public void setFecha_Nacimiento(String Fecha_Nacimiento) {
 		this.Fecha_Nacimiento = Fecha_Nacimiento;
+	}
+	public List<Alumno> getAlumnos() {
+		return alumnos;
+	}
+	public void setAlumnos(List<Alumno> alumnos) {
+		this.alumnos = alumnos;
 	}
    
 }

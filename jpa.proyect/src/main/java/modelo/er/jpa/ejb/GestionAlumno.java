@@ -8,8 +8,8 @@ public interface GestionAlumno {
 	
 	public void eliminarAlumno(Alumno a);
 	
-	public void modificarAlumno();
+	public void actualizarAlumno(Alumno a);
 	
-	public void mostrarAlumno();
+	public void mostrarAlumno(Alumno a);
 	
 }
