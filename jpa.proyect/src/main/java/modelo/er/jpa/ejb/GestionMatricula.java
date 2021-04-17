@@ -9,10 +9,10 @@ import modelo.er.jpa.proyect.*;
 @Local
 public interface GestionMatricula {
 
-	public void aniadirAsignatura(Asignatura a);
+	public void aniadirAsignatura(Asignatura a, Matricula m);
 	
-	public void eliminarAsignatura();
+	public void eliminarAsignatura(Asignatura a, Matricula m);
 	
-	public List<Matricula> mostrarMatriculas();
+	public List<Matricula> mostrarMatriculas(Matricula m);
 	
 }

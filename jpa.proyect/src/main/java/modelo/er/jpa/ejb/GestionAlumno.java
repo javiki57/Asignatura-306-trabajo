@@ -10,6 +10,6 @@ public interface GestionAlumno {
 	
 	public void actualizarAlumno(Alumno a);
 	
-	public void mostrarAlumno(Alumno a);
+	public Alumno mostrarAlumno(Alumno a);
 	
 }

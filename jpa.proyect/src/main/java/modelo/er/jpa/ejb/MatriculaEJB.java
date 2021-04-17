@@ -15,19 +15,67 @@ public class MatriculaEJB implements GestionMatricula{
 	private EntityManager em;
 	
 	@Override
-	public void aniadirAsignatura(Asignatura a) {
+	public void aniadirAsignatura(Asignatura a, Matricula m) {
 		// TODO
+		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
+		
+		if(matri == null) {
+			//Añadir excepcion.
+		}
+		
+		Asignatura asi = em.find(Asignatura.class, a.getCódigo());
+		
+		if(asi == null) {
+			//Añadir excepcion
+		}
+		
+		List<Asignatura> lista = matri.getListado_Asignaturas();
+		
+		for (Asignatura asignatura : lista) {
+			
+			if(asignatura.equals(a)) {
+				//Crear excepcion
+			}
+		}
+		
+		lista.add(a);
+		matri.setListado_Asignaturas(lista);
+		em.persist(matri);
 		
 	}
 
 	@Override
-	public void eliminarAsignatura() {
+	public void eliminarAsignatura(Asignatura a, Matricula m) {
 		// TODO
+		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
+		
+		if(matri == null) {
+			//Añadir excepcion.
+		}
+		
+		Asignatura asi = em.find(Asignatura.class, a.getCódigo());
+		
+		if(asi == null) {
+			//Añadir excepcion
+		}
+		
+		List<Asignatura> lista = matri.getListado_Asignaturas();
+		lista.remove(a);
+		matri.setListado_Asignaturas(lista);
+		em.persist(matri);
 		
 	}
 
 	@Override
-	public List<Matricula> mostrarMatriculas() {
+	public List<Matricula> mostrarMatriculas(Matricula m) {
+		// TODO
+		
+		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
+		
+		if(matri == null) {
+			//Añadir excepcion.
+		}
+		
 		
 		
 		return null;		
