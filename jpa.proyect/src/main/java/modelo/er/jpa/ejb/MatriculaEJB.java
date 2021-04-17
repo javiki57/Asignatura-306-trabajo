@@ -5,8 +5,12 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import modelo.er.jpa.exceptions.AsignaturaExistenteException;
+import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
+import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
 import modelo.er.jpa.proyect.Asignatura;
 import modelo.er.jpa.proyect.Matricula;
+
 
 @Stateless
 public class MatriculaEJB implements GestionMatricula{
@@ -15,18 +19,18 @@ public class MatriculaEJB implements GestionMatricula{
 	private EntityManager em;
 	
 	@Override
-	public void aniadirAsignatura(Asignatura a, Matricula m) {
+	public void aniadirAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
 		// TODO
 		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
 		
 		if(matri == null) {
-			//Añadir excepcion.
+			throw new MatriculaNoEncontradaException();
 		}
 		
 		Asignatura asi = em.find(Asignatura.class, a.getCódigo());
 		
 		if(asi == null) {
-			//Añadir excepcion
+			throw new AsignaturaNoEncontradaException();
 		}
 		
 		List<Asignatura> lista = matri.getListado_Asignaturas();
@@ -34,7 +38,7 @@ public class MatriculaEJB implements GestionMatricula{
 		for (Asignatura asignatura : lista) {
 			
 			if(asignatura.equals(a)) {
-				//Crear excepcion
+				throw new AsignaturaExistenteException();
 			}
 		}
 		
@@ -45,18 +49,18 @@ public class MatriculaEJB implements GestionMatricula{
 	}
 
 	@Override
-	public void eliminarAsignatura(Asignatura a, Matricula m) {
+	public void eliminarAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException{
 		// TODO
 		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
 		
 		if(matri == null) {
-			//Añadir excepcion.
+			throw new MatriculaNoEncontradaException();
 		}
 		
 		Asignatura asi = em.find(Asignatura.class, a.getCódigo());
 		
 		if(asi == null) {
-			//Añadir excepcion
+			throw new AsignaturaNoEncontradaException();
 		}
 		
 		List<Asignatura> lista = matri.getListado_Asignaturas();
@@ -67,13 +71,13 @@ public class MatriculaEJB implements GestionMatricula{
 	}
 
 	@Override
-	public List<Matricula> mostrarMatriculas(Matricula m) {
-		// TODO
+	public List<Matricula> mostrarMatriculas(Matricula m) throws MatriculaNoEncontradaException {
+		// TODO Pedro
 		
 		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
 		
 		if(matri == null) {
-			//Añadir excepcion.
+			throw new MatriculaNoEncontradaException();
 		}
 		
 		

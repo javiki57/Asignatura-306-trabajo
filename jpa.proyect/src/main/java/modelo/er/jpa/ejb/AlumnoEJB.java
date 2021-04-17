@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import modelo.er.jpa.exceptions.AlumnoNoEncontradoException;
 import modelo.er.jpa.proyect.Alumno;
 
 @Stateless
@@ -15,12 +16,12 @@ public class AlumnoEJB implements GestionAlumno{
 	private EntityManager em;
 
 	@Override
-	public void eliminarAlumno(Alumno a) {
+	public void eliminarAlumno(Alumno a) throws AlumnoNoEncontradoException {
 		// TODO 
 		Alumno al = em.find(Alumno.class, a.getId());
 		
 		if(al == null) {
-			//hacer excepcion.
+			throw new AlumnoNoEncontradoException();
 		}
 		
 		List<Alumno> lista = al.getAlumnos();
@@ -30,12 +31,12 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 
 	@Override
-	public void actualizarAlumno(Alumno a) {
+	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException {
 		// TODO
 		Alumno al = em.find(Alumno.class, a.getId());
 		
 		if(al == null) {
-			//hacer excepcion.
+			throw new AlumnoNoEncontradoException();
 		}
 		
 		al.setEmail_Personal(a.getEmail_Personal());
@@ -48,9 +49,15 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 
 	@Override
-	public Alumno mostrarAlumno(Alumno a) {
+	public Alumno mostrarAlumno(Alumno a) throws AlumnoNoEncontradoException {
 		// TODO 
-		List<Alumno> lista = a.getAlumnos();
+		Alumno alum = em.find(Alumno.class, a.getId());
+		
+		if(alum == null) {
+			throw new AlumnoNoEncontradoException();
+		}
+		
+		List<Alumno> lista = alum.getAlumnos();
 		Alumno al = null;
 		
 		for (Alumno alumno : lista) {
