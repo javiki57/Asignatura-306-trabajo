@@ -112,5 +112,13 @@ public class Expediente implements Serializable {
 		Creditos_CF = creditos_CF;
 	}
 	
+	public Alumno getAlumno() {
+		return this.alumno;
+		
+	}
+	public List<Matricula> getMatriculas() {
+		return this.matricula;
+	}
+	
    
 }
