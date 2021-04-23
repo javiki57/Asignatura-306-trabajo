@@ -84,5 +84,11 @@ public class MatriculaEJB implements GestionMatricula{
 		
 		return null;		
 	}
+	
+	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
+		//DONE (Rob) SIN PROBAR
+		eliminarAsignatura(actual, m);
+		aniadirAsignatura(nueva, m);
+	}
 
 }

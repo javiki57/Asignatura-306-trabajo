@@ -19,4 +19,6 @@ public interface GestionMatricula {
 	
 	public List<Matricula> mostrarMatriculas(Matricula m) throws MatriculaNoEncontradaException;
 	
+	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException;
+	
 }

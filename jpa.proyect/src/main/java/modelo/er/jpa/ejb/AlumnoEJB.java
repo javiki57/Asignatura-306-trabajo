@@ -74,26 +74,32 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 	
 	public List<Alumno> mostrarAlumnosNuevos(Alumno a) throws AlumnoNoEncontradoException {
-		// DOING 
-		Alumno al = em.find(Alumno.class, a.getId());
+		// DONE (SIN PROBRAR) (Rob)
+		Alumno al = em.find(Alumno.class, a.getId());//buscamos el alumno
 		
 		if (al == null) {
 			throw new AlumnoNoEncontradoException();
 		}
 		
+		//Conseguimos la lista de alumnos existentes e inicializamos la lista de los nuevos alumnos
 		List<Alumno> alumnos = al.getAlumnos();
 		List<Alumno> nuevosAlumnos = new ArrayList<>();
+		
 		for(Alumno aux : alumnos) {
 			int i=0;
-			boolean encontrado = false;
+			boolean encontrado = false;//expediente activo encontrado o no 
+			
+			//recorremos la lista de expedientes asociados al alumno
 			while((i<aux.getExpediente().size()) && !encontrado) {
 				Expediente exp = (Expediente) aux.getExpediente().get(i);
-				if(exp.getActiva()) {
+				
+				if(exp.getActiva()) {//si el expediente esta activo
 					encontrado = true;
+					
 					//Otra forma de hacer esto seria hacer un bucle para buscar las matriculas hasta ver si la matricula 
 					//esta activa y es de nuevo ingreso
 					if((exp.getMatricula().size()==1) && exp.getMatricula().get(0).getNuevo_Ingreso()) {
-						nuevosAlumnos.add(aux);
+						nuevosAlumnos.add(aux); //añadimos el alumno con nueva matricula activa
 					}
 				}
 					
