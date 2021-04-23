@@ -24,6 +24,27 @@ public class GrupoEJB implements GestionGrupo {
 	//
 	//
 	//
+	
+	
+	/*Override
+	public void asingarGrupoAlumnoV2(Alumno a,Grupo g, Matricula m ) {
+		Alumno al = em.find(Alumno.class, a.getId());
+		
+		if (al == null) {
+			throw new AlumnoNoEncontradoException();
+			}
+		
+		
+		
+		List<Expediente> exp_alumno = al.getExpediente();// Los expedientes del alumno
+
+		
+		for (Expediente auxExp : exp_alumno) {
+			if (auxExp.getActiva() == true) {// Solo necesito mirar el expediente activo
+				
+		
+	
+			}*/
 	@Override
 	public void asignarGrupoAlumno(Alumno a) throws AlumnoNoEncontradoException, GrupoNoEncontradoException {
 		Alumno al = em.find(Alumno.class, a.getId());
@@ -59,8 +80,7 @@ public class GrupoEJB implements GestionGrupo {
 								while (g.getPlazas() == 0) {
 									i++;
 								}
-								asign_mat.get(i).setGrupo(g);
-
+								asign_mat.get(i).setGrupo(g);//Se le asigna el grupo disponible
 							}
 							break;// Salgo del bucle de asignaturas del alumno sabiendo que tiene una asignatura
 									// en ingles.

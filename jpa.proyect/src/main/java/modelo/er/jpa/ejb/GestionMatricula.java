@@ -19,14 +19,6 @@ public interface GestionMatricula {
 	
 	public List<Matricula> mostrarMatriculas(Matricula m) throws MatriculaNoEncontradaException;
 	
-	public void asignarGrupoNuevoIngreso();
-	
-	public void asignarGrupoAntiguo();
-	
-	public void darDeBajaMatricula();
-	
-	public List<Matricula> mostrarMatriculas();
-	
 	void darDeBajaMatricula(Matricula m) throws MatriculaNoEncontradaException;
 	
 	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException;

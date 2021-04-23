@@ -98,7 +98,7 @@ public class AlumnoEJB implements GestionAlumno{
 					
 					//Otra forma de hacer esto seria hacer un bucle para buscar las matriculas hasta ver si la matricula 
 					//esta activa y es de nuevo ingreso
-					if((exp.getMatricula().size()==1) && exp.getMatricula().get(0).getNuevo_Ingreso()) {
+					if((exp.getMatriculas().size()==1) && exp.getMatriculas().get(0).getNuevo_Ingreso()) {
 						nuevosAlumnos.add(aux); //añadimos el alumno con nueva matricula activa
 					}
 				}

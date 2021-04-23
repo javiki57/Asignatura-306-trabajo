@@ -1,5 +1,6 @@
 package es.uma.informatica.project;
 
+
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -15,8 +16,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import modelo.er.jpa.ejb.GestionAlumno;
+import modelo.er.jpa.ejb.GestionGrupo;
 import modelo.er.jpa.ejb.GestionMatricula;
+import modelo.er.jpa.proyect.Alumno;
 import modelo.er.jpa.proyect.Asignatura;
+import modelo.er.jpa.proyect.Grupo;
+import modelo.er.jpa.proyect.Matricula;
+import modelo.er.jpa.exceptions.AsignaturaExistenteException;
+import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
+import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
 
 public class JunitTests {
 	
@@ -31,7 +39,7 @@ public class JunitTests {
 	
 	private GestionAlumno gestionAlumno;
 	private GestionMatricula gestionMatricula;
-	
+	private GestionGrupo gestionGrupo;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -55,46 +63,75 @@ public class JunitTests {
 		BaseDeDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
-	/*
 	@Test
 	public void testEliminarAsignatura() {
 		try {
-			final String asignatura = "Calculo";
-			gestionMatricula.eliminarAsignatura(asignatura, m);
+			 Asignatura Calculo = new Asignatura();
 			
-			List<Asignatura> lista;
-			assertEquals(0, lista.size());
+			 Matricula matri = new Matricula();		
+			 
+			 
+			 List<Asignatura> listaAsignatura = matri.getListado_Asignaturas();
+			 listaAsignatura.add(Calculo);
+			 
+			 
+			gestionMatricula.eliminarAsignatura(Calculo, matri);
 			
 			
-		} catch() {
 			
+			assertEquals(0, listaAsignatura.size());	
+			
+		} catch( MatriculaNoEncontradaException e) {
+			fail("No deberia lanzarse esto");
+			
+		}
+		catch(AsignaturaNoEncontradaException e) {
+			fail("No deberia de saltar esto");
 		}
 	}
 
-	
 	@Test
 	public void testAniadirAsignatura() {
 		try {
-			final String asignatura = "Calculo";
-			
 			Asignatura asi = new Asignatura();
+	
+			Matricula matri = new Matricula();
+			
+			List<Asignatura> listaAsignatura = matri.getListado_Asignaturas();
+			
+			gestionMatricula.aniadirAsignatura(asi, matri);
 			
 			
-		} catch() {
+			assertEquals(1,listaAsignatura.size());
 			
+			
+			
+		} catch(AsignaturaNoEncontradaException e) {
+			fail("No deberia de salir tito");
+		}
+		catch(MatriculaNoEncontradaException e) {
+			fail("No deberia de salir esto");
+		}
+		catch(AsignaturaExistenteException e) {
+			fail("No deberia de salir esto");
 		}
 	}
-
+	
+	/*
 	@Test
 	public void testMostrarAlumno() {
 		try {
 			
+		
+			
+			
+			
 			
 		} catch() {
 			
 		}
 	}
-	
+	/*
 	@Test
 	public void testEliminarAlumno() {
 		try {
@@ -115,5 +152,47 @@ public class JunitTests {
 		}
 	}
 	*/
+	/*
+	@Test
+	public void testAsignarGrupoAlumno() {
+		try {
+			Alumno al1 = new Alumno();
+			
+			
+			gestionGrupo.asignarGrupoAlumno(al1);//Este metodo le asignara un grupo al alumno
+			
+			
+			Grupo grupo =al1.getExpediente().get(0).getMatriculas().get(0).getAsignatura_matricula().get(0).getGrupo();
+		
+			
+			
+			assertEquals(  );
+			
+			
+		}catch() {
+			
+			
+			
+		}
+	}*/
+	
+	
+	
+	@Test
+	public void testDarDeBajaMatricula() {
+		try{
+			
+			Matricula matricula = new Matricula();
+			matricula.setEstado(true);
+			
+			gestionMatricula.darDeBajaMatricula(matricula);
+			
+			assertEquals(false,matricula.getEstado());
+			
+		}catch(MatriculaNoEncontradaException e){
+			fail("No deberia de salir esto");
+			
+		}
+	}	
 
 }

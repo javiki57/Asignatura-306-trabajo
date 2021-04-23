@@ -111,11 +111,6 @@ public class Expediente implements Serializable {
 	public void setCreditos_CF(Integer creditos_CF) {
 		Creditos_CF = creditos_CF;
 	}
-
-	public List<Matricula> getMatricula() {
-		return matricula;
-	}
-	
 	
 	public Alumno getAlumno() {
 		return this.alumno;
