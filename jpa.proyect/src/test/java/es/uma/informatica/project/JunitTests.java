@@ -18,6 +18,7 @@ import org.junit.runner.RunWith;
 import modelo.er.jpa.ejb.GestionAlumno;
 import modelo.er.jpa.ejb.GestionGrupo;
 import modelo.er.jpa.ejb.GestionMatricula;
+import modelo.er.jpa.exceptions.AlumnoNoEncontradoException;
 import modelo.er.jpa.exceptions.AsignaturaExistenteException;
 import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
 import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
@@ -88,9 +89,6 @@ public class JunitTests {
 		} catch (AsignaturaNoEncontradaException e) {
 			fail("No deberia de saltar esto");
 		}
-		catch(AsignaturaNoEncontradaException e) {
-			fail("No deberia de saltar esto");
-		}
 	}
 
 	@Test
@@ -114,27 +112,38 @@ public class JunitTests {
 			fail("No deberia de salir esto");
 		}
 	}
-	/*
-	@Test
-	public void testEliminarAlumno() {
+	
+	@Test 
+	public void testMostrarAlumno() { 
 		try {
+			Alumno Vegeta = new Alumno();
+	
+			gestionAlumno.mostrarAlumno(Vegeta);
 			
-			
-		} catch() {
-			
-		}
+			assertNotEquals(gestionAlumno.mostrarAlumno(Vegeta),null);
+	  
+		} catch (AlumnoNoEncontradoException ee) {
+			fail("No deberia de salir tito");
+		} 
 	}
 	
 	@Test
-	public void testAniadirAlumno() {
+	public void testEliminarAlumno() {
 		try {
+			Alumno Trunks = new Alumno();
 			
+			List<Alumno> lista = null;
+			lista.add(Trunks);
+	
+			gestionAlumno.eliminarAlumno(Trunks);
 			
-		} catch() {
-			
-		}
+			assertEquals(0, lista.size());
+		} catch (AlumnoNoEncontradoException ee) {
+			fail("No deberia de salir tito");
+		} 
 	}
-	*/
+	
+	
 	/*
 	@Test
 	public void testAsignarGrupoAlumno() {
@@ -178,34 +187,7 @@ public class JunitTests {
 		}
 	}	
 
-	@Test 
-	public void testMostrarAlumno() { 
-		try {
-			Alumno Vegeta = new Alumno();
-			
-	 
-	  
-		} catch (AsignaturaNoEncontradaException e) {
-			fail("No deberia de salir tito");
-		} 
-	}
+	
 
-	@Test 
-	public void testEliminarAlumno() { try {
-	  
-	 
-	 } catch() {
-	  
-	  } }
-
-	@Test 
-	public void testAniadirAlumno() { 
-		try {
-	  
-	  
-	} catch() {
-	  
-	  } 
-	}
 
 }
