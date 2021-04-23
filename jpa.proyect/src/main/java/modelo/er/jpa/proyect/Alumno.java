@@ -121,5 +121,9 @@ public class Alumno implements Serializable {
 	public void setAlumnos(List<Alumno> alumnos) {
 		this.alumnos = alumnos;
 	}
+	public List<Expediente> getExpediente() {
+		return expediente;
+	}
+	
    
 }
