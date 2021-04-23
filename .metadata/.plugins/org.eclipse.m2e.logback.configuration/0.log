@@ -781,3 +781,25 @@ java.io.FileNotFoundException: no segments* file found in org.apache.lucene.stor
 2021-04-23 10:57:46,236 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/main/resources
 2021-04-23 10:57:46,237 [Worker-51: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2021-04-23 10:57:46,237 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/test/resources
+2021-04-23 11:00:02,982 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 11:00:02,993 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/main/resources
+2021-04-23 11:00:02,995 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 11:00:02,999 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/test/resources
+2021-04-23 11:02:49,742 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 11:02:49,742 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/main/resources
+2021-04-23 11:02:49,758 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 11:02:49,758 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/test/resources
+2021-04-23 14:49:06,287 [Worker-74: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 14:49:06,288 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/main/resources
+2021-04-23 14:49:06,289 [Worker-74: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 14:49:06,289 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/test/resources
+2021-04-23 14:51:32,155 [Worker-75: Launching JunitTests] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 14:51:32,156 [Worker-75: Launching JunitTests] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/main/resources
+2021-04-23 14:51:32,156 [Worker-75: Launching JunitTests] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 14:51:32,157 [Worker-75: Launching JunitTests] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/test/resources
+2021-04-23 14:52:38,602 [Worker-72: Launching Executing test in _home_alumno_Asignatura-306-trabajo_jpa.proyect] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/alumno/Asignatura-306-trabajo/jpa.proyect
+2021-04-23 14:52:38,606 [Worker-72: Launching Executing test in _home_alumno_Asignatura-306-trabajo_jpa.proyect] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2021-04-23 14:52:40,818 [Worker-75: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 14:52:40,819 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/main/resources
+2021-04-23 14:52:40,819 [Worker-75: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-04-23 14:52:40,820 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/alumno/Asignatura-306-trabajo/jpa.proyect/src/test/resources

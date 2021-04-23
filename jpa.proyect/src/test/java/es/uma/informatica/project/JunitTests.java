@@ -18,8 +18,12 @@ import org.junit.runner.RunWith;
 import modelo.er.jpa.ejb.GestionAlumno;
 import modelo.er.jpa.ejb.GestionGrupo;
 import modelo.er.jpa.ejb.GestionMatricula;
+import modelo.er.jpa.exceptions.AsignaturaExistenteException;
+import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
+import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
 import modelo.er.jpa.proyect.Alumno;
 import modelo.er.jpa.proyect.Asignatura;
+import modelo.er.jpa.proyect.Matricula;
 import modelo.er.jpa.proyect.Grupo;
 import modelo.er.jpa.proyect.Matricula;
 import modelo.er.jpa.exceptions.AsignaturaExistenteException;
@@ -27,16 +31,16 @@ import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
 import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
 
 public class JunitTests {
-	
+
 	private static final String ALUMNO_EJB = "java:global/classes/AlumnoEJB";
 	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
 	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "TrazabilidadTest";
 	private static final String MATRICULA_EJB = "java:global/classes/MatriculaEJB";
-	
+
 	public static EJBContainer ejbContainer;
 	public static Context ctx;
-	
+
 	private GestionAlumno gestionAlumno;
 	private GestionMatricula gestionMatricula;
 	private GestionGrupo gestionGrupo;
@@ -66,24 +70,23 @@ public class JunitTests {
 	@Test
 	public void testEliminarAsignatura() {
 		try {
-			 Asignatura Calculo = new Asignatura();
-			
-			 Matricula matri = new Matricula();		
-			 
-			 
-			 List<Asignatura> listaAsignatura = matri.getListado_Asignaturas();
-			 listaAsignatura.add(Calculo);
-			 
-			 
+
+			Asignatura Calculo = new Asignatura();
+
+			Matricula matri = new Matricula();
+
+			List<Asignatura> listaAsignatura = matri.getListado_Asignaturas();
+			listaAsignatura.add(Calculo);
+
 			gestionMatricula.eliminarAsignatura(Calculo, matri);
-			
-			
-			
-			assertEquals(0, listaAsignatura.size());	
-			
-		} catch( MatriculaNoEncontradaException e) {
+
+			assertEquals(0, listaAsignatura.size());
+
+		} catch (MatriculaNoEncontradaException e) {
 			fail("No deberia lanzarse esto");
-			
+
+		} catch (AsignaturaNoEncontradaException e) {
+			fail("No deberia de saltar esto");
 		}
 		catch(AsignaturaNoEncontradaException e) {
 			fail("No deberia de saltar esto");
@@ -94,41 +97,21 @@ public class JunitTests {
 	public void testAniadirAsignatura() {
 		try {
 			Asignatura asi = new Asignatura();
-	
+
 			Matricula matri = new Matricula();
-			
+
 			List<Asignatura> listaAsignatura = matri.getListado_Asignaturas();
-			
+
 			gestionMatricula.aniadirAsignatura(asi, matri);
-			
-			
-			assertEquals(1,listaAsignatura.size());
-			
-			
-			
-		} catch(AsignaturaNoEncontradaException e) {
+
+			assertEquals(1, listaAsignatura.size());
+
+		} catch (AsignaturaNoEncontradaException e) {
 			fail("No deberia de salir tito");
-		}
-		catch(MatriculaNoEncontradaException e) {
+		} catch (MatriculaNoEncontradaException e) {
 			fail("No deberia de salir esto");
-		}
-		catch(AsignaturaExistenteException e) {
+		} catch (AsignaturaExistenteException e) {
 			fail("No deberia de salir esto");
-		}
-	}
-	
-	/*
-	@Test
-	public void testMostrarAlumno() {
-		try {
-			
-		
-			
-			
-			
-			
-		} catch() {
-			
 		}
 	}
 	/*
