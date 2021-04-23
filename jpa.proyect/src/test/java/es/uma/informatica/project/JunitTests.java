@@ -16,23 +16,26 @@ import org.junit.runner.RunWith;
 
 import modelo.er.jpa.ejb.GestionAlumno;
 import modelo.er.jpa.ejb.GestionMatricula;
+import modelo.er.jpa.exceptions.AsignaturaExistenteException;
+import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
+import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
 import modelo.er.jpa.proyect.Asignatura;
+import modelo.er.jpa.proyect.Matricula;
 
 public class JunitTests {
-	
+
 	private static final String ALUMNO_EJB = "java:global/classes/AlumnoEJB";
 	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
 	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "TrazabilidadTest";
 	private static final String MATRICULA_EJB = "java:global/classes/MatriculaEJB";
-	
+
 	public static EJBContainer ejbContainer;
 	public static Context ctx;
-	
+
 	private GestionAlumno gestionAlumno;
 	private GestionMatricula gestionMatricula;
-	
-	
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		Properties properties = new Properties();
@@ -55,65 +58,71 @@ public class JunitTests {
 		BaseDeDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 
-	/*
 	@Test
 	public void testEliminarAsignatura() {
 		try {
-			final String asignatura = "Calculo";
-			gestionMatricula.eliminarAsignatura(asignatura, m);
-			
-			List<Asignatura> lista;
-			assertEquals(0, lista.size());
-			
-			
-		} catch() {
-			
+
+			Asignatura Calculo = new Asignatura();
+
+			Matricula matri = new Matricula();
+
+			List<Asignatura> listaAsignatura = matri.getListado_Asignaturas();
+			listaAsignatura.add(Calculo);
+
+			gestionMatricula.eliminarAsignatura(Calculo, matri);
+
+			assertEquals(0, listaAsignatura.size());
+
+		} catch (MatriculaNoEncontradaException e) {
+			fail("No deberia lanzarse esto");
+
+		} catch (AsignaturaNoEncontradaException e) {
+			fail("No deberia de saltar esto");
 		}
 	}
 
-	
 	@Test
 	public void testAniadirAsignatura() {
 		try {
-			final String asignatura = "Calculo";
-			
 			Asignatura asi = new Asignatura();
-			
-			
-		} catch() {
-			
-		}
-	}
 
-	@Test
-	public void testMostrarAlumno() {
-		try {
-			
-			
-		} catch() {
-			
+			Matricula matri = new Matricula();
+
+			List<Asignatura> listaAsignatura = matri.getListado_Asignaturas();
+
+			gestionMatricula.aniadirAsignatura(asi, matri);
+
+			assertEquals(1, listaAsignatura.size());
+
+		} catch (AsignaturaNoEncontradaException e) {
+			fail("No deberia de salir tito");
+		} catch (MatriculaNoEncontradaException e) {
+			fail("No deberia de salir esto");
+		} catch (AsignaturaExistenteException e) {
+			fail("No deberia de salir esto");
 		}
 	}
-	
-	@Test
-	public void testEliminarAlumno() {
-		try {
-			
-			
-		} catch() {
-			
-		}
-	}
-	
-	@Test
-	public void testAniadirAlumno() {
-		try {
-			
-			
-		} catch() {
-			
-		}
-	}
-	*/
+	/*
+	 * @Test public void testMostrarAlumno() { try {
+	 * 
+	 * 
+	 * } catch() {
+	 * 
+	 * } }
+	 * 
+	 * @Test public void testEliminarAlumno() { try {
+	 * 
+	 * 
+	 * } catch() {
+	 * 
+	 * } }
+	 * 
+	 * @Test public void testAniadirAlumno() { try {
+	 * 
+	 * 
+	 * } catch() {
+	 * 
+	 * } }
+	 */
 
 }
