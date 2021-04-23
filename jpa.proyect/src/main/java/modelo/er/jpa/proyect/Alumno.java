@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 
-public class Alumno<T> implements Serializable {
+public class Alumno implements Serializable {
 
 	   
 	@Id @GeneratedValue
@@ -123,5 +123,9 @@ public class Alumno<T> implements Serializable {
 	public void setAlumnos(List<Alumno> alumnos) {
 		this.alumnos = alumnos;
 	}
+	public List<Expediente> getExpediente() {
+		return expediente;
+	}
+	
    
 }
