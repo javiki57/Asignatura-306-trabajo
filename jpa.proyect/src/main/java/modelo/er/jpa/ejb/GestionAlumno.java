@@ -1,5 +1,7 @@
 package modelo.er.jpa.ejb;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import modelo.er.jpa.exceptions.AlumnoNoEncontradoException;
@@ -13,5 +15,6 @@ public interface GestionAlumno {
 	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException;
 	
 	public Alumno mostrarAlumno(Alumno a) throws AlumnoNoEncontradoException;
+	public List<Alumno> mostrarAlumnosNuevos(Alumno a) throws AlumnoNoEncontradoException;
 	
 }

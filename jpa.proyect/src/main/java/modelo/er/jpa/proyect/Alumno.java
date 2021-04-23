@@ -42,6 +42,12 @@ public class Alumno implements Serializable {
 	private List<Expediente> expediente;
 	
 	
+	public List<Expediente> getExpediente() {
+		return expediente;
+	}
+	public void setExpediente(List<Expediente> expediente) {
+		this.expediente = expediente;
+	}
 	public Alumno() {
 		super();
 	}   
@@ -121,5 +127,9 @@ public class Alumno implements Serializable {
 	public void setAlumnos(List<Alumno> alumnos) {
 		this.alumnos = alumnos;
 	}
+	public List<Expediente> getExpediente() {
+		return expediente;
+	}
+	
    
 }

@@ -51,7 +51,7 @@ public class Matricula implements Serializable {
 	@Id
 	private Integer Curso_Academico;
 	@Column (nullable = false)
-	private String Estado;
+	private Boolean Estado; 
 	private Integer Num_Archivo;
 	private String Turno_Preferente;
 	@Column (nullable = false) @Temporal (TemporalType.DATE)
@@ -68,6 +68,14 @@ public class Matricula implements Serializable {
 	private List<Asignatura_Matricula> asignatura_matricula;
 	
 	
+	public List<Asignatura_Matricula> getAsignatura_matricula() {
+		return asignatura_matricula;
+	}
+
+	public void setAsignatura_matricula(List<Asignatura_Matricula> asignatura_matricula) {
+		this.asignatura_matricula = asignatura_matricula;
+	}
+
 	public Integer getCurso_Academico() {
 		return Curso_Academico;
 	}
@@ -76,11 +84,11 @@ public class Matricula implements Serializable {
 		Curso_Academico = curso_Academico;
 	}
 
-	public String getEstado() {
+	public Boolean getEstado() {
 		return Estado;
 	}
 
-	public void setEstado(String estado) {
+	public void setEstado(Boolean estado) {
 		Estado = estado;
 	}
 
