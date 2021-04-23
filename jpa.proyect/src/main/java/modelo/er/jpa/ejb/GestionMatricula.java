@@ -26,4 +26,6 @@ public interface GestionMatricula {
 	void asignarGrupoNuevoIngreso(Expediente e, Alumno a, Matricula m);
 	void asignarGrupoNuevoIngreso(Expediente e, Alumno a, String turnoPref, Matricula m);
 	
+	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException;
+	
 }
