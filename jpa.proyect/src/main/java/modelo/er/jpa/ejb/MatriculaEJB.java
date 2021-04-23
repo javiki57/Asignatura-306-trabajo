@@ -83,8 +83,6 @@ public class MatriculaEJB implements GestionMatricula{
 			throw new MatriculaNoEncontradaException();
 		}
 		
-		
-		
 		return null;		
 	}
 	
@@ -95,62 +93,12 @@ public class MatriculaEJB implements GestionMatricula{
 	}
 
 	@Override
-	public void asignarGrupoNuevoIngreso(Expediente e, Alumno a,String turnoPref, Matricula m) {
-		
-		Expediente expe = em.find(Expediente.class, e.getNum_Expediente());
-		
+	public void darDeBajaMatricula(Matricula m) throws MatriculaNoEncontradaException {
 		Matricula mat = em.find(Matricula.class, m.getCurso_Academico());
-		
-		Alumno al = em.find(Alumno.class, a.getId());
-		
-		if(al==null) {
-			//hacer excepcion
+		if(mat==null) {
+			throw new MatriculaNoEncontradaException();
 		}
-		Grupo gr = em.find(Grupo.class, g.getId());
-		
-		if(gr==null) {
-			
-			//hacer excepcion
-		}
-		
-		List<Matricula> matriculas = expe.getMatriculas();
-		
-		if(!matriculas.contains(mat)){
-			//Excepcion si esta la matricula
-			
-		}
-		
-		List<Alumno> listaAlumnos= al.getAlumnos();
-		
-		listaAlumnos.add(a);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		m.setEstado("baja");
+		em.persist(m);	
 	}
-	@Override
-	public void asignarGrupoAntiguo() {
-		// TODO 
-		
-	}
-
-	@Override
-	public void darDeBajaMatricula() {
-		// TODO 
-		
-	}
-
 }

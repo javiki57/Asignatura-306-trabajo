@@ -13,6 +13,7 @@
 		<class>modelo.er.jpa.proyect.Encuesta</class>
 		<class>modelo.er.jpa.proyect.Asignatura.Optativa</class>
 		<class>modelo.er.jpa.proyect.Asignatura_Matricula</class>
+		<class>modelo.er.jpa.proyect.Optativa</class>
 		
 		
 		
