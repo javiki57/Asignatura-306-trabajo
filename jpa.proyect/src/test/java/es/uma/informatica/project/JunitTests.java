@@ -21,6 +21,8 @@ import modelo.er.jpa.ejb.GestionMatricula;
 import modelo.er.jpa.exceptions.AlumnoNoEncontradoException;
 import modelo.er.jpa.exceptions.AsignaturaExistenteException;
 import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
+import modelo.er.jpa.exceptions.GrupoNoEncontradoException;
+import modelo.er.jpa.exceptions.MatriculaException;
 import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
 import modelo.er.jpa.proyect.Alumno;
 import modelo.er.jpa.proyect.Asignatura;
@@ -142,9 +144,8 @@ public class JunitTests {
 			fail("No deberia de salir tito");
 		} 
 	}
+	*/
 	
-	
-	/*
 	@Test
 	public void testAsignarGrupoAlumno() {
 		try {
@@ -157,19 +158,13 @@ public class JunitTests {
 			Grupo grupo =al1.getExpediente().get(0).getMatriculas().get(0).getAsignatura_matricula().get(0).getGrupo();
 		
 			
+			assertNotEquals(grupo,null);
 			
-			assertEquals(  );
-			
-			
-		}catch() {
-			
-			
+		}catch(GrupoNoEncontradoException | AlumnoNoEncontradoException e) {
+			fail("No deberia de salir esto ");
 			
 		}
-	}*/
-	
-	
-	
+	}
 	@Test
 	public void testDarDeBajaMatricula() {
 		try{
