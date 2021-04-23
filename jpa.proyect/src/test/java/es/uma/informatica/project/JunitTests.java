@@ -107,7 +107,7 @@ public class JunitTests {
 			assertEquals(1, listaAsignatura.size());
 
 		} catch (AsignaturaNoEncontradaException e) {
-			fail("No deberia de salir tito");
+			fail("No deberia de salir esto");
 		} catch (MatriculaNoEncontradaException e) {
 			fail("No deberia de salir esto");
 		} catch (AsignaturaExistenteException e) {
@@ -177,5 +177,35 @@ public class JunitTests {
 			
 		}
 	}	
+
+	@Test 
+	public void testMostrarAlumno() { 
+		try {
+			Alumno Vegeta = new Alumno();
+			
+	 
+	  
+		} catch (AsignaturaNoEncontradaException e) {
+			fail("No deberia de salir tito");
+		} 
+	}
+
+	@Test 
+	public void testEliminarAlumno() { try {
+	  
+	 
+	 } catch() {
+	  
+	  } }
+
+	@Test 
+	public void testAniadirAlumno() { 
+		try {
+	  
+	  
+	} catch() {
+	  
+	  } 
+	}
 
 }
