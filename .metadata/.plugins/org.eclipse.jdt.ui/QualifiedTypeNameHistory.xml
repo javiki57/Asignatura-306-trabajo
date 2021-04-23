@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="modelo.er.jpa.proyect.Alumno"/>
+<fullyQualifiedTypeName name="modelo.er.jpa.ejb.GestionAlumno"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="modelo.er.jpa.ejb.GestionMatricula"/>
+<fullyQualifiedTypeName name="modelo.er.jpa.proyect.Asignatura"/>
+<fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="es.uma.informatica.project.JunitTests"/>
+<fullyQualifiedTypeName name="modelo.er.jpa.exceptions.MatriculaNoEncontradaException"/>
+<fullyQualifiedTypeName name="modelo.er.jpa.exceptions.AsignaturaNoEncontradaException"/>
+<fullyQualifiedTypeName name="modelo.er.jpa.proyect.Matricula"/>
+<fullyQualifiedTypeName name="modelo.er.jpa.exceptions.AsignaturaExistenteException"/>
+</qualifiedTypeNameHistroy>

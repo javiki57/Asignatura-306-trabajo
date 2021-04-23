@@ -8,7 +8,10 @@ import javax.persistence.PersistenceContext;
 import modelo.er.jpa.exceptions.AsignaturaExistenteException;
 import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
 import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
+import modelo.er.jpa.proyect.Alumno;
 import modelo.er.jpa.proyect.Asignatura;
+import modelo.er.jpa.proyect.Expediente;
+import modelo.er.jpa.proyect.Grupo;
 import modelo.er.jpa.proyect.Matricula;
 
 
@@ -80,9 +83,23 @@ public class MatriculaEJB implements GestionMatricula{
 			throw new MatriculaNoEncontradaException();
 		}
 		
-		
-		
 		return null;		
+	}
+	@Override
+	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
+		//DONE (Rob) SIN PROBAR
+		eliminarAsignatura(actual, m);
+		aniadirAsignatura(nueva, m);
+	}
+
+	@Override
+	public void darDeBajaMatricula(Matricula m) throws MatriculaNoEncontradaException {
+		Matricula mat = em.find(Matricula.class, m.getCurso_Academico());
+		if(mat==null) {
+			throw new MatriculaNoEncontradaException();
+		}
+		m.setEstado(false);
+		em.persist(m);	
 	}
 
 }

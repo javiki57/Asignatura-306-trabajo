@@ -14,12 +14,11 @@ import javax.persistence.TemporalType;
 
 /**
  * Entity implementation class for Entity: Alumno
- * @param <T>
  *
  */
 @Entity
 
-public class Alumno<T> implements Serializable {
+public class Alumno implements Serializable {
 
 	   
 	@Id @GeneratedValue
@@ -36,7 +35,6 @@ public class Alumno<T> implements Serializable {
 	private String Direccion_Notificacion;
 	private String Codigo_Postal_Notificacion;
 	private String Fecha_Nacimiento;
-	@SuppressWarnings("rawtypes")
 	private List<Alumno> alumnos;
 	private static final long serialVersionUID = 1L;
 
@@ -44,6 +42,12 @@ public class Alumno<T> implements Serializable {
 	private List<Expediente> expediente;
 	
 	
+	public List<Expediente> getExpediente() {
+		return expediente;
+	}
+	public void setExpediente(List<Expediente> expediente) {
+		this.expediente = expediente;
+	}
 	public Alumno() {
 		super();
 	}   

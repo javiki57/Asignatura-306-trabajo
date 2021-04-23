@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-
+import antlr.collections.List;
 import modelo.er.jpa.proyect.*;
 
 public class BaseDeDatos {
@@ -15,6 +15,21 @@ public class BaseDeDatos {
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
+		
+		Asignatura Calculo = new Asignatura();
+		//Calculo.setNombre("Calculo");
+		Asignatura PL = new Asignatura();
+		Asignatura Discretas = new Asignatura();
+		
+		for(Asignatura as : new Asignatura [] {Calculo,PL,Discretas}) {
+			em.persist(as);
+		}
+		
+		Matricula matricula = new Matricula();
+		
+		
+		
+		
 		
 		Alumno Vegeta = new Alumno();
 		Vegeta.setDNI("15784968D");
