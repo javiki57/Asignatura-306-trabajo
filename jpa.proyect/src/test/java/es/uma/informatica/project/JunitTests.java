@@ -22,7 +22,6 @@ import modelo.er.jpa.exceptions.AlumnoNoEncontradoException;
 import modelo.er.jpa.exceptions.AsignaturaExistenteException;
 import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
 import modelo.er.jpa.exceptions.GrupoNoEncontradoException;
-import modelo.er.jpa.exceptions.MatriculaException;
 import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
 import modelo.er.jpa.proyect.Alumno;
 import modelo.er.jpa.proyect.Asignatura;
@@ -119,7 +118,7 @@ public class JunitTests {
 	public void testMostrarAlumno() { 
 		try {
 			Alumno Vegeta = new Alumno();
-	
+			Vegeta.setDNI("15784964D");
 			gestionAlumno.mostrarAlumno(Vegeta);
 			
 			assertNotEquals(gestionAlumno.mostrarAlumno(Vegeta),null);
@@ -181,7 +180,22 @@ public class JunitTests {
 		}
 	}	
 
-	
+	public void testMostrarMatricula() {
+		
+		try {
+		
+			Matricula matriculaDeVegeta = new Matricula();
+		
+			gestionMatricula.mostrarMatriculas(matriculaDeVegeta);
+			
+			assertNotEquals(gestionMatricula.mostrarMatriculas(matriculaDeVegeta),null);
+			
+		
+		}catch(MatriculaNoEncontradaException e){
+			fail("Está very mal");
+		}
+		
+	}
 
 
 }
