@@ -144,7 +144,6 @@ public class JunitTests {
 			fail("No deberia de salir tito");
 		} 
 	}
-	*/
 	
 	@Test
 	public void testAsignarGrupoAlumno() {
