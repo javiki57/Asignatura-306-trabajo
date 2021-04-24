@@ -47,7 +47,7 @@ public class MatriculaEJB implements GestionMatricula{
 		
 		lista.add(a);
 		matri.setListado_Asignaturas(lista);
-		em.persist(matri);
+		em.merge(matri);
 		
 	}
 
@@ -69,7 +69,7 @@ public class MatriculaEJB implements GestionMatricula{
 		List<Asignatura> lista = matri.getListado_Asignaturas();
 		lista.remove(a);
 		matri.setListado_Asignaturas(lista);
-		em.persist(matri);
+		em.merge(matri);
 		
 	}
 
@@ -99,7 +99,7 @@ public class MatriculaEJB implements GestionMatricula{
 			throw new MatriculaNoEncontradaException();
 		}
 		m.setEstado(false);
-		em.persist(m);	
+		em.merge(m);	
 	}
 
 }

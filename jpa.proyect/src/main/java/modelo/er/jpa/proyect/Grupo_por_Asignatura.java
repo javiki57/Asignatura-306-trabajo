@@ -60,6 +60,13 @@ public class Grupo_por_Asignatura implements Serializable {
 	@ManyToOne
 	private Asignatura asignaturas;
 	
+	public Asignatura getAsignaturas() {
+		return asignaturas;
+	}
+	public void setAsignaturas(Asignatura asignaturas) {
+		this.asignaturas = asignaturas;
+	}
+
 	@Id
 	@ManyToOne
 	private Grupo grupos;

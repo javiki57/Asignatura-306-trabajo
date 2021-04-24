@@ -1,5 +1,6 @@
 package modelo.er.jpa.ejb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -7,12 +8,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import modelo.er.jpa.exceptions.AlumnoNoEncontradoException;
+import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
+import modelo.er.jpa.exceptions.GrupoExistenteException;
 import modelo.er.jpa.exceptions.GrupoNoEncontradoException;
 import modelo.er.jpa.proyect.Alumno;
 import modelo.er.jpa.proyect.Asignatura;
 import modelo.er.jpa.proyect.Asignatura_Matricula;
 import modelo.er.jpa.proyect.Expediente;
 import modelo.er.jpa.proyect.Grupo;
+import modelo.er.jpa.proyect.Grupo_por_Asignatura;
 import modelo.er.jpa.proyect.Matricula;
 
 @Stateless
@@ -73,7 +77,7 @@ public class GrupoEJB implements GestionGrupo {
 								}
 								asign_mat.get(i).setGrupo(g);
 
-							} else {// Si no tiene asignaturas en inlges
+							} else {// Si no tiene asignaturas en ingles
 								List<Asignatura_Matricula> asign_mat = aux_mat.getAsignatura_matricula();
 								int i = 0;
 								Grupo g = asign_mat.get(i).getGrupo();
@@ -133,5 +137,39 @@ public class GrupoEJB implements GestionGrupo {
 	 * 
 	 * }
 	 */
+
+	@Override
+	public void crearGrupo(Asignatura a, Grupo g) throws AsignaturaNoEncontradaException, GrupoExistenteException {
+		// TODO Auto-generated method stub
+		Asignatura as = em.find(Asignatura.class, a.getReferencia());
+		if(as==null) {
+			throw new AsignaturaNoEncontradaException();
+		}
+		
+		Grupo nuevoGrupo = em.find(Grupo.class, g.getId());
+		if(nuevoGrupo!=null) {
+			throw new GrupoExistenteException();
+		}
+		
+		Grupo_por_Asignatura gpa = new Grupo_por_Asignatura();
+		gpa.setAsignaturas(as);
+		List<Grupo_por_Asignatura> listaGrupoAsig = new ArrayList();
+		listaGrupoAsig.add(gpa);
+		nuevoGrupo.setGrupo(listaGrupoAsig);
+		em.persist(nuevoGrupo);
+		
+	}
+
+	@Override
+	public void borrarGrupo(Grupo g) throws GrupoNoEncontradoException {
+		// TODO Auto-generated method stub
+		Grupo gr = em.find(Grupo.class, g.getId());
+		if(gr==null) {
+			throw new GrupoNoEncontradoException();
+		}
+		
+		em.remove(gr);
+		
+	}
 
 }

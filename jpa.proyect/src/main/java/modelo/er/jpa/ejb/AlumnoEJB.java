@@ -20,7 +20,7 @@ public class AlumnoEJB implements GestionAlumno{
 
 	@Override
 	public void eliminarAlumno(Alumno a) throws AlumnoNoEncontradoException {
-		// DONE (SIN PROBAR)
+		// DONE 
 		Alumno al = em.find(Alumno.class, a.getId());
 		
 		if(al == null) {
@@ -30,12 +30,12 @@ public class AlumnoEJB implements GestionAlumno{
 		List<Alumno> lista = al.getAlumnos();
 		lista.remove(a.getId());
 		al.setAlumnos(lista);
-		em.persist(al);
+		em.merge(al);
 	}
 
 	@Override
 	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException {
-		// DONE (SIN PROBAR)
+		// DONE 
 		Alumno al = em.find(Alumno.class, a.getId());
 		
 		if(al == null) {
@@ -47,13 +47,13 @@ public class AlumnoEJB implements GestionAlumno{
 		al.setTelefono(a.getTelefono());
 		al.setMovil(a.getMovil());
 		al.setDireccion_Notificacion(a.getDireccion_Notificacion());
-		em.persist(al);
+		em.merge(al);
 		
 	}
 
 	@Override
 	public Alumno mostrarAlumno(Alumno a) throws AlumnoNoEncontradoException {
-		// DONE (SIN PROBAR) 
+		// DONE 
 		Alumno alum = em.find(Alumno.class, a.getId());
 		
 		if(alum == null) {
@@ -75,7 +75,7 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 	
 	public List<Alumno> mostrarAlumnosNuevos(Alumno a) throws AlumnoNoEncontradoException {
-		// DONE (SIN PROBRAR) (Rob)
+		// DONE (Rob)
 		Alumno al = em.find(Alumno.class, a.getId());//buscamos el alumno
 		
 		if (al == null) {
@@ -115,7 +115,6 @@ public class AlumnoEJB implements GestionAlumno{
 	@Override
 	public List<Alumno> buscarMatriculas(Alumno a) throws AlumnoNoEncontradoException {
 		// TODO Auto-generated method stub
-		//Sin probar
 		Alumno al = em.find(Alumno.class, a.getId());
 		if (al == null) {
 			throw new AlumnoNoEncontradoException();
@@ -126,14 +125,14 @@ public class AlumnoEJB implements GestionAlumno{
 		for(Alumno alumno: lista) {
 			List<Expediente> expedientes = alumno.getExpediente();
 			int i=0;
-			while(!expedientes.get(i).getActiva()) {
+			while(!expedientes.get(i).getActiva() && i<expedientes.size()) {
 				i++;
 			}
 			if(i<expedientes.size()) {
 				Expediente exp = expedientes.get(i);
 				List<Matricula> matriculas = exp.getMatriculas();
 				int j=0;
-				while(!matriculas.get(j).getEstado()) {
+				while(!matriculas.get(j).getEstado() && j<matriculas.size()) {
 					j++;
 				}
 				if(j<matriculas.size())	matriculados.add(alumno);

@@ -22,6 +22,7 @@ import modelo.er.jpa.ejb.GestionMatricula;
 import modelo.er.jpa.exceptions.AlumnoNoEncontradoException;
 import modelo.er.jpa.exceptions.AsignaturaExistenteException;
 import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
+import modelo.er.jpa.exceptions.GrupoExistenteException;
 import modelo.er.jpa.exceptions.GrupoNoEncontradoException;
 import modelo.er.jpa.exceptions.MatriculaNoEncontradaException;
 import modelo.er.jpa.proyect.Alumno;
@@ -29,6 +30,7 @@ import modelo.er.jpa.proyect.Asignatura;
 import modelo.er.jpa.proyect.Expediente;
 import modelo.er.jpa.proyect.Matricula;
 import modelo.er.jpa.proyect.Grupo;
+import modelo.er.jpa.proyect.Grupo_por_Asignatura;
 import modelo.er.jpa.proyect.Matricula;
 import modelo.er.jpa.exceptions.AsignaturaExistenteException;
 import modelo.er.jpa.exceptions.AsignaturaNoEncontradaException;
@@ -70,7 +72,8 @@ public class JunitTests {
 		gestionAlumno = (GestionAlumno) ctx.lookup(ALUMNO_EJB);
 		BaseDeDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
-
+	
+	@Requisitos({"RF3"})
 	@Test
 	public void testEliminarAsignatura() {
 		try {
@@ -93,7 +96,8 @@ public class JunitTests {
 			fail("No deberia de saltar esto");
 		}
 	}
-
+	
+	@Requisitos({"RF3"})
 	@Test
 	public void testAniadirAsignatura() {
 		try {
@@ -116,6 +120,7 @@ public class JunitTests {
 		}
 	}
 	
+	@Requisitos({"RF2"})
 	@Test 
 	public void testMostrarAlumno() { 
 		try {
@@ -130,6 +135,7 @@ public class JunitTests {
 		} 
 	}
 	
+	@Requisitos({"RF2"})
 	@Test
 	public void testEliminarAlumno() {
 		try {
@@ -146,6 +152,28 @@ public class JunitTests {
 		} 
 	}
 	
+	@Requisitos({"RF2"})
+	@Test
+	public void testModificarAlumno() {
+		try {
+			Alumno Trunks = new Alumno();
+			Alumno al = Trunks;
+			Trunks.setCodigo_Postal_Notificacion("cpNot");
+			Trunks.setDireccion_Notificacion("direccNot");
+			Trunks.setEmail_Personal("trinksEmail");
+			Trunks.setTelefono(111111111);
+			Trunks.setMovil(222222222);
+			
+			gestionAlumno.actualizarAlumno(Trunks);
+			
+			assertEquals(al,Trunks);			
+			
+		} catch (AlumnoNoEncontradoException ee) {
+			fail("No se ha modificado bien el alumno");
+		} 
+	}
+	
+	@Requisitos({"RF10,RF11,RF12,RF13"})
 	@Test
 	public void testAsignarGrupoAlumno() {
 		try {
@@ -165,6 +193,8 @@ public class JunitTests {
 			
 		}
 	}
+	
+	@Requisitos({"RF15"})
 	@Test
 	public void testDarDeBajaMatricula() {
 		try{
@@ -182,6 +212,8 @@ public class JunitTests {
 		}
 	}	
 
+	@Requisitos({"RF5"})
+	@Test
 	public void testMostrarMatricula() {
 		
 		try {
@@ -198,6 +230,7 @@ public class JunitTests {
 		}
 		
 	}
+	
 	@Requisitos({"RF14"})
 	@Test
 	public void testMostrarAlumnosNuevos() {
@@ -287,18 +320,65 @@ public class JunitTests {
 		}
 	}
 	
-	@Requisitos({RF-06})
+	@Requisitos({"RF6"})
 	@Test 
-	public List<Alumno> testBuscarMatricula(){
+	public void testBuscarMatricula(){
 		try {
-			Alumno alumno1 = new Alumno();
+			Alumno alumno = new Alumno();
+			Expediente exp = new Expediente();
+			exp.setActiva(true);
+			Matricula m = new Matricula();
+			m.setEstado(true);
 			
-			return gestionAlumno.buscarMatriculas(alumno1);
+			List<Matricula> listaM = new ArrayList();
+			listaM.add(m);
+			exp.setMatricula(listaM);
+			
+			List<Expediente> listaE = new ArrayList();
+			listaE.add(exp);
+			alumno.setExpediente(listaE);
+			
+			gestionAlumno.buscarMatriculas(alumno);
+			
+			assertNotEquals(gestionAlumno.buscarMatriculas(alumno),null);
 			
 		}catch(AlumnoNoEncontradoException e) {
-			throw new RuntimeException(e);
+			fail("Fallo al buscar los alumnos matriculados");
 		}
 	}
 
-
+	@Requisitos({"RF4"})
+	@Test
+	public void testCrearGrupo() {
+		try {
+			Asignatura Calculo = new Asignatura();
+			Grupo primeroA = new Grupo();
+			
+			List<Grupo_por_Asignatura> lista = primeroA.getGrupo();
+			
+			gestionGrupo.crearGrupo(Calculo, primeroA);
+			
+			assertNotEquals(lista.size(),0);
+			
+		}catch(AsignaturaNoEncontradaException | GrupoExistenteException e) {
+			fail("No se ha creado el grupo correctamente");
+		}
+	}
+	
+	@Requisitos({"RF4"})
+	@Test
+	public void testBorrarGrupo() {
+		try {
+			Grupo primeroA = new Grupo();
+			
+			List<Grupo> lista = new ArrayList();
+			lista.add(primeroA);
+			gestionGrupo.borrarGrupo(primeroA);
+			
+			assertEquals(lista,null);		
+			
+		}catch(GrupoNoEncontradoException e) {
+			fail("No se ha borrado el grupo correctamente");
+		}
+	}
 }

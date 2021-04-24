@@ -47,9 +47,29 @@ public class Grupo implements Serializable {
 	@OneToMany //(targetEntity=Grupo_por_Asignatura.class, mappedBy="grupos")
 	private List<Grupo_por_Asignatura> grupo;
 
+	public List<Grupo_por_Asignatura> getGrupo() {
+		return grupo;
+	}
+	public void setGrupo(List<Grupo_por_Asignatura> grupo) {
+		this.grupo = grupo;
+	}
+
 	@OneToMany//(targetEntity=Clase.class, mappedBy="grupo")
 	private List<Clase> clases;
 	
+	public List<Clase> getClases() {
+		return clases;
+	}
+	public void setClases(List<Clase> clases) {
+		this.clases = clases;
+	}
+	public List<Asignatura_Matricula> getAsig_matr() {
+		return asig_matr;
+	}
+	public void setAsig_matr(List<Asignatura_Matricula> asig_matr) {
+		this.asig_matr = asig_matr;
+	}
+
 	@OneToMany(mappedBy="grupo")
 	private List<Asignatura_Matricula> asig_matr;
 	
