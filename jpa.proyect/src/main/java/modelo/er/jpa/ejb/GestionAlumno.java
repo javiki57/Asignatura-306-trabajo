@@ -15,6 +15,9 @@ public interface GestionAlumno {
 	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException;
 	
 	public Alumno mostrarAlumno(Alumno a) throws AlumnoNoEncontradoException;
+	
 	public List<Alumno> mostrarAlumnosNuevos(Alumno a) throws AlumnoNoEncontradoException;
+	
+	public List<Alumno> buscarMatriculas(Alumno a) throws AlumnoNoEncontradoException;
 	
 }

@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import modelo.er.jpa.exceptions.AlumnoNoEncontradoException;
 import modelo.er.jpa.proyect.Alumno;
 import modelo.er.jpa.proyect.Expediente;
+import modelo.er.jpa.proyect.Matricula;
 
 @Stateless
 public class AlumnoEJB implements GestionAlumno{
@@ -110,6 +111,41 @@ public class AlumnoEJB implements GestionAlumno{
 		return nuevosAlumnos;
 		
 	}
+
+	@Override
+	public List<Alumno> buscarMatriculas(Alumno a) throws AlumnoNoEncontradoException {
+		// TODO Auto-generated method stub
+		//Sin probar
+		Alumno al = em.find(Alumno.class, a.getId());
+		if (al == null) {
+			throw new AlumnoNoEncontradoException();
+		}
+		
+		List<Alumno> lista = al.getAlumnos();
+		List<Alumno> matriculados = new ArrayList();
+		for(Alumno alumno: lista) {
+			List<Expediente> expedientes = alumno.getExpediente();
+			int i=0;
+			while(!expedientes.get(i).getActiva()) {
+				i++;
+			}
+			if(i<expedientes.size()) {
+				Expediente exp = expedientes.get(i);
+				List<Matricula> matriculas = exp.getMatriculas();
+				int j=0;
+				while(!matriculas.get(j).getEstado()) {
+					j++;
+				}
+				if(j<matriculas.size())	matriculados.add(alumno);
+			}
+		}
+		
+		
+		
+		return matriculados;
+	}
+	
+	
 	
 
 }

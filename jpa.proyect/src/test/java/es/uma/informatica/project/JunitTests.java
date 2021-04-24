@@ -196,6 +196,19 @@ public class JunitTests {
 		}
 		
 	}
+	
+	@Requisitos({RF-06})
+	@Test 
+	public List<Alumno> testBuscarMatricula(){
+		try {
+			Alumno alumno1 = new Alumno();
+			
+			return gestionAlumno.buscarMatriculas(alumno1);
+			
+		}catch(AlumnoNoEncontradoException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 
 }
