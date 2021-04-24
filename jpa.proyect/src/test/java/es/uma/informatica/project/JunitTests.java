@@ -381,4 +381,47 @@ public class JunitTests {
 			fail("No se ha borrado el grupo correctamente");
 		}
 	}
+	
+
+	@Requisitos({"RF4"})
+	@Test
+	public void testMostrarGrupo() {
+		
+		try {
+			Grupo primeroA = new Grupo();
+			
+			gestionGrupo.mostrarGrupo(primeroA);
+			assertNotEquals(gestionGrupo.mostrarGrupo(primeroA),null);
+		}catch(GrupoNoEncontradoException e) {
+			fail("No se ha mostrado correctamente");
+		}
+		
+	}
+	
+	@Requisitos({"RF4"})
+	@Test
+	public void testActualizarGrupo() {
+		
+		try {
+			Grupo primeroA = new Grupo();
+			primeroA.setId((long)1);
+			primeroA.setCurso("segundo");
+			primeroA.setLetra('A');
+			
+			Grupo primeroB = new Grupo();
+			primeroA.setId((long)1);
+			primeroA.setCurso("primero");
+			primeroA.setLetra('A');
+			
+			gestionGrupo.actualizarGrupo(primeroA);
+			
+			assertNotEquals(primeroA,primeroB);
+			
+			
+			
+		}catch(GrupoNoEncontradoException e) {
+			
+		}
+		
+	}
 }

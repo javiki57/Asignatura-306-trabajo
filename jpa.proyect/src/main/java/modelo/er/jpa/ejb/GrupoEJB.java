@@ -171,5 +171,53 @@ public class GrupoEJB implements GestionGrupo {
 		em.remove(gr);
 		
 	}
+	
+	public Grupo mostrarGrupo(Grupo g) throws GrupoNoEncontradoException {
+		
+		Grupo grupo = em.find(Grupo.class, g.getId());
+		
+		Grupo resultado = null;
+			
+		if(grupo == null) {
+			throw new GrupoNoEncontradoException();
+		}
+		
+		List<Grupo> grupos = grupo.getGrupos();
+		
+		for(Grupo gru : grupos) {
+			if(gru.equals(g)) {
+				resultado = gru;
+			}
+		}
+		
+		return resultado;
+	}
+
+	@Override
+	public void actualizarGrupo(Grupo g) throws GrupoNoEncontradoException {
+		// TODO Auto-generated method stub
+		
+		Grupo grupo = em.find(Grupo.class, g.getId());
+		
+		if(grupo == null) {
+			throw new GrupoNoEncontradoException();
+		}
+		
+		grupo.setAsig_matr(g.getAsig_matr());
+		grupo.setAsignar(g.getAsignar());
+		grupo.setClases(g.getClases());
+		grupo.setCurso(g.getCurso());
+		grupo.setGrupo(g.getGrupo());
+		grupo.setIngles(g.getIngles());
+		grupo.setLetra(g.getLetra());
+		grupo.setPlazas(g.getPlazas());
+		grupo.setTurno_Mañana_Tarde(g.getTurno_Mañana_Tarde());
+		grupo.setVisible(g.getVisible());
+		
+		
+		em.merge(grupo);
+	}
+	
+	
 
 }

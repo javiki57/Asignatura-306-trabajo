@@ -21,5 +21,9 @@ public interface GestionGrupo {
 	public void borrarGrupo(Grupo g) throws GrupoNoEncontradoException;
 	
 	//void asignarGrupoAntiguo(Alumno a)throws AlumnoNoEncontradoException, GrupoNoEncontradoException;
+	
+	public Grupo mostrarGrupo(Grupo g) throws GrupoNoEncontradoException;
+	
+	public void actualizarGrupo(Grupo g) throws GrupoNoEncontradoException;
 		
 }
