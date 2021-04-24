@@ -119,6 +119,10 @@ public class Expediente implements Serializable {
 	public List<Matricula> getMatriculas() {
 		return this.matricula;
 	}
+
+	public void setMatricula(List<Matricula> matricula) {
+		this.matricula = matricula;
+	}
 	
    
 }
