@@ -39,6 +39,12 @@ public class BaseDeDatos {
 		
 		Alumno Trunks = new Alumno();
 		Trunks.setDNI("98754826Y");
+		
+		Grupo primeroA = new Grupo();
+		
+		primeroA.setId((long) 1);
+		primeroA.setCurso("primero");
+		primeroA.setLetra('A');
 
 		for (Alumno al : new Alumno [] {Vegeta, Trunks, Goten}) {
 			em.persist(al);

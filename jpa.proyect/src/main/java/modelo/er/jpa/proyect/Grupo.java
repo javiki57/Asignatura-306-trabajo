@@ -133,5 +133,9 @@ public class Grupo implements Serializable {
 	public void setPlazas(Integer Plazas) {
 		this.Plazas = Plazas;
 	}
+	
+	public List<Grupo> getGrupos(){
+		return this.group;
+	}
    
 }
