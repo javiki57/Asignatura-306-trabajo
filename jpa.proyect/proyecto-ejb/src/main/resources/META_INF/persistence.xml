@@ -2,19 +2,19 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="MTest" transaction-type="JTA">
 	<jta-data-source>java:jboss/datasources/sii</jta-data-source>
-		<class>modelo.er.jpa.proyect.Alumno</class>
-		<class>modelo.er.jpa.proyect.Asignatura</class>
-		<class>modelo.er.jpa.proyect.Titulacion</class>
-		<class>modelo.er.jpa.proyect.Grupo</class>
-		<class>modelo.er.jpa.proyect.Expediente</class>
-		<class>modelo.er.jpa.proyect.Matricula</class>
-		<class>modelo.er.jpa.proyect.Clase</class>
-		<class>modelo.er.jpa.proyect.Grupo_por_Asignatura</class>
-		<class>modelo.er.jpa.proyect.Centro</class>
-		<class>modelo.er.jpa.proyect.Encuesta</class>
-		<class>modelo.er.jpa.proyect.Asignatura.Optativa</class>
-		<class>modelo.er.jpa.proyect.Asignatura_Matricula</class>
-		<class>modelo.er.jpa.proyect.Optativa</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Alumno</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Asignatura</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Titulacion</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Grupo</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Expediente</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Matricula</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Clase</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Grupo_por_Asignatura</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Centro</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Encuesta</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Asignatura.Optativa</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Asignatura_Matricula</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Optativa</class>
 		
 		 <shared-cache-mode>NONE</shared-cache-mode>
 		
