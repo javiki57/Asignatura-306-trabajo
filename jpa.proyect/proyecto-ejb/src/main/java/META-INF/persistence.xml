@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="jpa.proyect" transaction-type="RESOURCE_LOCAL">
+		<class>es.uma.informatica.sii.jpa.proyect.Alumno</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Asignatura</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Titulacion</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Grupo</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Expediente</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Matricula</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Clase</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Grupo_por_Asignatura</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Centro</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Encuesta</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Asignatura.Optativa</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Asignatura_Matricula</class>
+		<class>es.uma.informatica.sii.jpa.proyect.Optativa</class>
+		
+		
+		
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.17.0.2:3306/sii"/>
+			<property name="javax.persistence.jdbc.user" value="siiuser"/>
+			<property name="javax.persistence.jdbc.password" value="siipassword"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>
