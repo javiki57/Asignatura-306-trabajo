@@ -47,5 +47,8 @@
         <dependent-module archiveName="commonj.sdo-2.1.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="anotaciones-0.0.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/es/uma/informatica/sii/anotaciones/0.0.1/anotaciones-0.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
