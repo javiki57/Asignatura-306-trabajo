@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
 	<meta charset="UTF-8"/>
 	<title>Inicio encuesta grupos</title>
 	<link rel="stylesheet" href="secretaria.css" type="text/css"/>
-</head>
-<body>
-	<img href="COLOR_NEGATIVO_INFORMATICA.png"/>
+</h:head>
+<h:body>
+	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>Identificarse</h1></div>
 	<div class="cuerpo">
-		<div class="btn">
-			<input type="button" value="Alumno/a" action="#{inicio.conectarAlumno()}"/>
-		</div>
-		<br/>
-		<div class="btn">
-			<input type="button" value="Secretaría" action="#{inicio.conectarSecretaria()}"/>
-		</div>
+		<h:form>
+			<div class="btn">
+				<h:commandButton value="Alumno/a" action="#{inicio.conectarAlumno()}"/>
+			</div>
+			<br/>
+			<div class="btn">
+				<h:commandButton value="Secretaría" action="#{inicio.conectarSecretaria()}"/>
+			</div>
+		</h:form>
 	</div>
-</body>
+</h:body>
 </html>

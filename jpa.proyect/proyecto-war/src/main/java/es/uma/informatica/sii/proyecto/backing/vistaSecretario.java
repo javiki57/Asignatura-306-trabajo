@@ -8,14 +8,15 @@ import javax.inject.Named;
 public class vistaSecretario {
 	
 	public String verGrupos() {
-		return "Grupos.xhtml";
+		return "grupos.xhtml";
 	}
 	
 	public String verAlumnos() {
-		return "Alumnos.xhtml";
+		return "alumnos.xhtml";
 	}
 	
 	public String verMatriculas() {
-		return "Matriculas.xhtml";
+		return "matricula.xhtml";
 	}
+	
 }

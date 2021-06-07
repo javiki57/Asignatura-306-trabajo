@@ -1,5 +1,8 @@
 package es.uma.informatica.sii.proyecto.backing;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
 import es.uma.informatica.sii.jpa.ejb.MatriculaEJB;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaExistenteException;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaNoEncontradaException;
@@ -8,12 +11,11 @@ import es.uma.informatica.sii.jpa.proyect.Asignatura;
 import es.uma.informatica.sii.jpa.proyect.Expediente;
 import es.uma.informatica.sii.jpa.proyect.Matricula;
 
+@Named(value="matricula")
+@RequestScoped
 public class MatriculaBB {
 
 	private MatriculaEJB mat;
-	public String mostrarVistaMatricula() {
-		return "matricula.xhtml";
-	}
 	
 	public void mostrarMatriuclas(Integer curso) throws MatriculaNoEncontradaException {
 		mat.mostrarMatriculas(curso);
