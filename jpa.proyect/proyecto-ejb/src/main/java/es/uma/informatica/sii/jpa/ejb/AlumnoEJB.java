@@ -21,62 +21,39 @@ public class AlumnoEJB implements GestionAlumno{
 	@Override
 	public void eliminarAlumno(Alumno a) throws AlumnoNoEncontradoException {
 		// DONE 
-		Alumno al = em.find(Alumno.class, a.getId());
 		
-		if(al == null) {
-			throw new AlumnoNoEncontradoException();
-		}
-		
-		List<Alumno> lista = al.getAlumnos();
-		lista.remove(a.getId());
-		al.setAlumnos(lista);
-		em.merge(al);
+		em.merge(a);
+		em.remove(a);
 	}
 
 	@Override
 	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException {
 		// DONE 
-		Alumno al = em.find(Alumno.class, a.getId());
 		
-		if(al == null) {
+		if(a == null) {
 			throw new AlumnoNoEncontradoException();
 		}
-		
-		al.setEmail_Personal(a.getEmail_Personal());
-		al.setCodigo_Postal_Notificacion(a.getCodigo_Postal_Notificacion());
-		al.setTelefono(a.getTelefono());
-		al.setMovil(a.getMovil());
-		al.setDireccion_Notificacion(a.getDireccion_Notificacion());
-		em.merge(al);
+	
+		em.merge(a);
 		
 	}
 
 	@Override
-	public Alumno mostrarAlumno(Alumno a) throws AlumnoNoEncontradoException {
+	public Alumno mostrarAlumno(Integer pk) throws AlumnoNoEncontradoException {
 		// DONE 
-		Alumno alum = em.find(Alumno.class, a.getId());
+		Alumno alum = em.find(Alumno.class, pk);
 		
 		if(alum == null) {
 			throw new AlumnoNoEncontradoException();
 		}
 		
-		List<Alumno> lista = alum.getAlumnos();
-		Alumno al = null;
-		
-		for (Alumno alumno : lista) {
-			
-			if(alumno.getId() == a.getId()) {
-				al = alumno;
-			}
-		}
-		
-		return al;
+		return alum;
 		
 	}
 	
-	public List<Alumno> mostrarAlumnosNuevos(Alumno a) throws AlumnoNoEncontradoException {
+	public List<Alumno> mostrarAlumnosNuevos(Integer a) throws AlumnoNoEncontradoException {
 		// DONE (Rob)
-		Alumno al = em.find(Alumno.class, a.getId());//buscamos el alumno
+		Alumno al = em.find(Alumno.class, a);//buscamos el alumno
 		
 		if (al == null) {
 			throw new AlumnoNoEncontradoException();
