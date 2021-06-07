@@ -17,10 +17,10 @@ public interface GestionMatricula {
 	
 	public void eliminarAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException;
 	
-	public List<Matricula> mostrarMatriculas(Matricula m) throws MatriculaNoEncontradaException;
-	
 	void darDeBajaMatricula(Matricula m) throws MatriculaNoEncontradaException;
 	
 	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException;
+
+	List<Matricula> mostrarMatriculas(Integer curso) throws MatriculaNoEncontradaException;
 	
 }

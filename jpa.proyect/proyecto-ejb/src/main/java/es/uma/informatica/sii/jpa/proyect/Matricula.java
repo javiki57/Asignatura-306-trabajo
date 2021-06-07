@@ -58,7 +58,7 @@ public class Matricula implements Serializable {
 	private Date Fecha_de_Matricula;
 	private Boolean Nuevo_Ingreso;
 	@ElementCollection (fetch = FetchType.LAZY)
-	
+	private List<Matricula> lista_matriculas;
 	private List<Asignatura> Listado_Asignaturas;
 	
 	@Id
@@ -130,6 +130,17 @@ public class Matricula implements Serializable {
 
 	public void setListado_Asignaturas(List<Asignatura> listado_Asignaturas) {
 		Listado_Asignaturas = listado_Asignaturas;
+	}
+	
+	public List<Matricula> get_matriculas() {
+		return lista_matriculas;
+	}
+	
+	public Expediente getExpediente() {
+		return this.expediente;
+	}
+	public void setExpediente(Expediente exp) {
+		this.expediente = exp;
 	}
 
 	private static final long serialVersionUID = 1L;

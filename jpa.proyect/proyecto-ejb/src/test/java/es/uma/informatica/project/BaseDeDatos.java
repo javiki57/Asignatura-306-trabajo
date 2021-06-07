@@ -26,7 +26,9 @@ public class BaseDeDatos {
 		}
 		
 		Matricula matricula = new Matricula();
-		
+		Expediente expVegeta = null;
+		expVegeta.setNum_Expediente(420);
+		matricula.setExpediente(expVegeta);
 		
 		
 		

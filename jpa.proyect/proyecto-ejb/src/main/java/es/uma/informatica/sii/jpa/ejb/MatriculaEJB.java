@@ -5,6 +5,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.apache.commons.math3.util.MultidimensionalCounter.Iterator;
+
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaExistenteException;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaNoEncontradaException;
 import es.uma.informatica.sii.jpa.exceptions.MatriculaNoEncontradaException;
@@ -72,18 +74,18 @@ public class MatriculaEJB implements GestionMatricula{
 		em.merge(matri);
 		
 	}
+	
 
 	@Override
-	public List<Matricula> mostrarMatriculas(Matricula m) throws MatriculaNoEncontradaException {
+	public List<Matricula> mostrarMatriculas(Integer curso) throws MatriculaNoEncontradaException {
 		// TODO Pedro
 		
-		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
-		
+		Matricula matri = em.find(Matricula.class, curso);
 		if(matri == null) {
 			throw new MatriculaNoEncontradaException();
 		}
 		
-		return null;		
+		return matri.get_matriculas();		
 	}
 	@Override
 	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
@@ -100,6 +102,22 @@ public class MatriculaEJB implements GestionMatricula{
 		}
 		m.setEstado(false);
 		em.merge(m);	
+	}
+	
+	public Matricula buscarMatricula(Integer curso, Expediente exp) throws MatriculaNoEncontradaException {
+		Matricula mat = em.find(Matricula.class, curso), aux = null;
+		List<Matricula> lista_matriculas = mat.get_matriculas();
+		java.util.Iterator<Matricula> i = lista_matriculas.iterator();
+		boolean esta = false;
+		while((i.hasNext()) && (!esta)) {
+			aux = i.next();
+			if(aux.getExpediente().equals(exp))
+				esta = true;
+		}
+		if(!esta)
+			throw new MatriculaNoEncontradaException();
+		
+		return aux;
 	}
 
 }
