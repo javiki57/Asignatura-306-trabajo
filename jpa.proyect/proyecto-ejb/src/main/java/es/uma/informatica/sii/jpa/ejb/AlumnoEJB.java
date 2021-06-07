@@ -21,16 +21,9 @@ public class AlumnoEJB implements GestionAlumno{
 	@Override
 	public void eliminarAlumno(Alumno a) throws AlumnoNoEncontradoException {
 		// DONE 
-		Alumno al = em.find(Alumno.class, a.getId());
 		
-		if(al == null) {
-			throw new AlumnoNoEncontradoException();
-		}
-		
-		List<Alumno> lista = al.getAlumnos();
-		lista.remove(a.getId());
-		al.setAlumnos(lista);
-		em.merge(al);
+		em.merge(a);
+		em.remove(a);
 	}
 
 	@Override
