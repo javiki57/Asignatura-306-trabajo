@@ -15,19 +15,25 @@
 		<h:form>
 			<h:commandButton value="ENCUESTA" action="#{vAlumno.hacerEncuesta()}"/>
 			<br/>
-			<h:panelGrid columns="2" border ="3">
-      			<h:outputText value="Grupo actual:"/>
-      			<h:inputText value="ej. 1A" />
-      			<h:outputText value="Grupo nuevo:"/>
-      			<h:inputText value="ej. 1D"/>
-      			<h:outputText value="Titulación:"/>
-      			<h:selectOneMenu>
-      				<f:selectItem itemLabel="II"/>
-      				<f:selectItem itemLabel="IS"/>
-      				<f:selectItem itemLabel="IC"/>
-      				<f:selectItem itemLabel="II+M"/>
-      			</h:selectOneMenu>
-			</h:panelGrid>
+			<div>
+				<h:outputText value="Solicitud de cambio de grupo:">
+				<h:panelGrid columns="2" border ="3">
+      				<h:outputText value="Grupo actual:"/>
+      				<h:inputText value="#{vAlumno.grupoActual}" />
+      				<h:outputText value="Grupo nuevo:"/>
+      				<h:inputText value="#{vAlumno.grupoNuevo}"/>
+      				<h:outputText value="Titulación:"/>
+      				<h:selectOneMenu value="#{vAlumno.titulacion}">
+      					<f:selectItem itemLabel="II"/>
+      					<f:selectItem itemLabel="IS"/>
+      					<f:selectItem itemLabel="IC"/>
+      					<f:selectItem itemLabel="II+M"/>
+      				</h:selectOneMenu>
+      				<h:outputText value="Numero expediente:"/>
+      				<h:inputText value="#{vAlumno.expediente}"/>
+				</h:panelGrid>
+			</div>
+			<h:commandButton value="Enviar" action="#{vAlumno.cambioGrupo()}"/>
 		</h:form>
 	</div>
 </h:body>
