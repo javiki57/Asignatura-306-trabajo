@@ -18,6 +18,54 @@ public class MatriculaBB {
 
 	@Inject
 	private MatriculaEJB mat;
+	public Integer getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Integer curso) {
+		this.curso = curso;
+	}
+
+	public Expediente getExp() {
+		return exp;
+	}
+
+	public void setExp(Expediente exp) {
+		this.exp = exp;
+	}
+
+	public Asignatura getA() {
+		return a;
+	}
+
+	public void setA(Asignatura a) {
+		this.a = a;
+	}
+
+	public Asignatura getA1() {
+		return a1;
+	}
+
+	public void setA1(Asignatura a1) {
+		this.a1 = a1;
+	}
+
+	public Asignatura getA2() {
+		return a2;
+	}
+
+	public void setA2(Asignatura a2) {
+		this.a2 = a2;
+	}
+
+	public Matricula getM() {
+		return m;
+	}
+
+	public void setM(Matricula m) {
+		this.m = m;
+	}
+
 	private Integer curso;
 	private Expediente exp;
 	private Asignatura a, a1, a2;
