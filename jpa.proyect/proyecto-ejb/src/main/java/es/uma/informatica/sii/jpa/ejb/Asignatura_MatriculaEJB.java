@@ -1,5 +1,6 @@
 package es.uma.informatica.sii.jpa.ejb;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -9,6 +10,7 @@ import es.uma.informatica.sii.jpa.proyect.Grupo;
 import es.uma.informatica.sii.jpa.proyect.Matricula;
 import es.uma.informatica.sii.jpa.proyect.Titulacion;
 
+@Stateless
 public class Asignatura_MatriculaEJB implements GestionAsignatura_Matricula{
 	
 	@PersistenceContext(name="Project")
