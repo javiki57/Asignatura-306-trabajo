@@ -6106,3 +6106,9 @@ java.lang.OutOfMemoryError: Requested array size exceeds VM limit
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-08 18:38:13.625
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-08 18:42:24.785
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-06-08 18:42:24.786
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!

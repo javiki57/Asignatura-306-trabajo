@@ -50,8 +50,8 @@ public class GrupoEJB implements GestionGrupo {
 	
 			}*/
 	@Override
-	public void asignarGrupoAlumno(Alumno a) throws AlumnoNoEncontradoException, GrupoNoEncontradoException {
-		Alumno al = em.find(Alumno.class, a.getId());
+	public void asignarGrupoAlumno(Alumno al) throws AlumnoNoEncontradoException, GrupoNoEncontradoException {
+		
 		if (al == null) {
 			throw new AlumnoNoEncontradoException();
 		}
@@ -172,15 +172,13 @@ public class GrupoEJB implements GestionGrupo {
 	
 	public Grupo mostrarGrupo(Grupo g) throws GrupoNoEncontradoException {
 		
-		Grupo grupo = em.find(Grupo.class, g.getId());
-		
 		Grupo resultado = null;
 			
-		if(grupo == null) {
+		if(g == null) {
 			throw new GrupoNoEncontradoException();
 		}
 		
-		List<Grupo> grupos = grupo.getGrupos();
+		List<Grupo> grupos = g.getGrupos();
 		
 		for(Grupo gru : grupos) {
 			if(gru.equals(g)) {
@@ -194,7 +192,6 @@ public class GrupoEJB implements GestionGrupo {
 	@Override
 	public void actualizarGrupo(Grupo g) throws GrupoNoEncontradoException {
 		// TODO Auto-generated method stub
-		
 		
 		
 		if(g == null) {
