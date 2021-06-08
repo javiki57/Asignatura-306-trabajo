@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:h="http://xmlns.jcp.org/jsf/html">
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta charset="UTF-8"/>
 	<title>Alumnos</title>
@@ -10,6 +11,40 @@
 	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>ALUMNOS</h1></div>
-	
+	<h:form>
+    	<h:panelGrid columns="2">
+
+			<h:outputText value="DNI:"/>
+			<h:inputText value="#{alumno.a.DNI}"/>
+
+			<h:outputText value="Nombre completo:"/>
+			<h:inputText value="#{alumno.a.Nombre_Completo}"/>
+
+			<h:outputText value="Email institucional:"/>
+			<h:inputText value="#{alumno.a.Email_Institucional}"/>
+
+			<h:outputText value="Email personal:"/>
+			<h:inputText value="#{alumno.a.Email_Personal}"/>
+
+			<h:outputText value="Telefono:"/>
+			<h:inputText value="#{alumno.a.Telefono}"/>
+
+			<h:outputText value="Movil:"/>
+			<h:inputText value="#{alumno.a.Movil}"/>
+
+			<h:outputText value="Direccion notificacion"/>
+			<h:inputText value="#{alumno.a.Direccion_Notificacion}"/>
+
+			<h:outputText value="Codigo postal notificacion:"/>
+			<h:inputText value="#{alumno.a.Codigo_Postal_Notificacion}"/>
+
+			<h:outputText value="Fecha nacimiento:"/>
+			<h:inputText value="#{alumno.a.Fecha_Nacimiento}"/>
+               
+		</h:panelGrid>
+		<h:commandButton value="Modificar" action="#{alumno.actualizarAlumno()}"/>
+		<h:commandButton value="Eliminar" action="#{alumno.borrarAlumno()}"/>
+		<h:commandButton value="Buscar" action="#{alumno.mostrarAlumno()}"/>
+	</h:form>	
 </h:body>
 </html>

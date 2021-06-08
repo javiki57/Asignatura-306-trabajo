@@ -15,8 +15,7 @@
 		<h:form>
 			<h:commandButton value="ENCUESTA" action="#{vAlumno.hacerEncuesta()}"/>
 			<br/>
-			<div>
-				<h:outputText value="Solicitud de cambio de grupo:">
+				<h:label>Solicitud de cambio de grupo:</h:label>
 				<h:panelGrid columns="2" border ="3">
       				<h:outputText value="Grupo actual:"/>
       				<h:inputText value="#{vAlumno.grupoActual}" />
@@ -32,7 +31,6 @@
       				<h:outputText value="Numero expediente:"/>
       				<h:inputText value="#{vAlumno.expediente}"/>
 				</h:panelGrid>
-			</div>
 			<h:commandButton value="Enviar" action="#{vAlumno.cambioGrupo()}"/>
 		</h:form>
 	</div>

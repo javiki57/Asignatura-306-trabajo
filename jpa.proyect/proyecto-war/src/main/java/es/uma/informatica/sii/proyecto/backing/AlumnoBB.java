@@ -20,20 +20,27 @@ public class AlumnoBB {
 	
 	@Inject
 	private AlumnoEJB alEJB;
-	private List<Alumno> alumnos;
 	private Alumno a;
 	
+	public Alumno getA() {
+		return a;
+	}
+	public void setA(Alumno a) {
+		this.a = a;
+	}
+	
+	
 	//Entiendo que mostrar y buscar es lo mismo.
-	public String mostrarAlumno(Alumno a) throws AlumnoNoEncontradoException {
+	public String mostrarAlumno() throws AlumnoNoEncontradoException {
 		Alumno alumno = alEJB.mostrarAlumno(a.getId());	 
 		return alumno.getNombre_Completo()+alumno.getDNI()+alumno.getEmail_Institucional();
 	
 	}
-	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException {
+	public void actualizarAlumno() throws AlumnoNoEncontradoException {
 		alEJB.actualizarAlumno(a);
 	
 	}
-	public void borrarAlumno(Alumno a) throws AlumnoNoEncontradoException {		
+	public void borrarAlumno() throws AlumnoNoEncontradoException {		
 		alEJB.eliminarAlumno(a);	
 		
 	}

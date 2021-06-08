@@ -21,7 +21,6 @@ public class MatriculaBB {
 	private Integer curso;
 	private Expediente exp;
 	private Asignatura a, a1, a2;
-	private Matricula m;
 	
 	public void mostrarMatriuclas() throws MatriculaNoEncontradaException {
 		mat.mostrarMatriculas(curso);
@@ -32,16 +31,16 @@ public class MatriculaBB {
 	}
 	
 	public void anyadirAsignatura() throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
-		mat.aniadirAsignatura(a, m);
+		mat.aniadirAsignatura(a, mat.buscarMatricula(curso, exp));
 	}
 	
 	public void eliminarAsignatura() throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException {
-		mat.eliminarAsignatura(a, m);
+		mat.eliminarAsignatura(a, mat.buscarMatricula(curso, exp));
 	}
 	
 	public void intercambiarAsignaturas() throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
 		/*mat.eliminarAsignatura(a2, m);
 		mat.aniadirAsignatura(a1, m);*/
-		mat.intercambiarAsignaturas(a1, a2, m);
+		mat.intercambiarAsignaturas(a1, a2, mat.buscarMatricula(curso, exp));
 	}
 }
