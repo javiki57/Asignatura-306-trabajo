@@ -20,6 +20,5 @@ public interface GestionAlumno {
 	
 	public List<Alumno> buscarMatriculas(Alumno a) throws AlumnoNoEncontradoException;
 
-	void actualizarAlumno(Alumno a1, Alumno a2) throws AlumnoNoEncontradoException;
 	
 }

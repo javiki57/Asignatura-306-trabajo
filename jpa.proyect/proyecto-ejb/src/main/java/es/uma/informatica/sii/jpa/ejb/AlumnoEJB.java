@@ -27,7 +27,7 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 
 	@Override
-	public void actualizarAlumno(Alumno a1, Alumno a2) throws AlumnoNoEncontradoException {
+	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException {
 		// DONE 
 	
 		em.merge(a);
@@ -112,6 +112,8 @@ public class AlumnoEJB implements GestionAlumno{
 		
 		return matriculados;
 	}
+
+
 	
 	
 	
