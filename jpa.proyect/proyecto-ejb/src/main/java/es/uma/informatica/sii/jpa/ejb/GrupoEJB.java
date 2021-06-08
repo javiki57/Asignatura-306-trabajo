@@ -50,8 +50,8 @@ public class GrupoEJB implements GestionGrupo {
 	
 			}*/
 	@Override
-	public void asignarGrupoAlumno(Alumno a) throws AlumnoNoEncontradoException, GrupoNoEncontradoException {
-		Alumno al = em.find(Alumno.class, a.getId());
+	public void asignarGrupoAlumno(Alumno al) throws AlumnoNoEncontradoException, GrupoNoEncontradoException {
+		
 		if (al == null) {
 			throw new AlumnoNoEncontradoException();
 		}
@@ -141,48 +141,44 @@ public class GrupoEJB implements GestionGrupo {
 	@Override
 	public void crearGrupo(Asignatura a, Grupo g) throws AsignaturaNoEncontradaException, GrupoExistenteException {
 		// TODO Auto-generated method stub
-		Asignatura as = em.find(Asignatura.class, a.getReferencia());
-		if(as==null) {
+		if(a==null) {
 			throw new AsignaturaNoEncontradaException();
 		}
 		
-		Grupo nuevoGrupo = em.find(Grupo.class, g.getId());
-		if(nuevoGrupo!=null) {
+		if(g!=null) {
 			throw new GrupoExistenteException();
 		}
 		
 		Grupo_por_Asignatura gpa = new Grupo_por_Asignatura();
-		gpa.setAsignaturas(as);
+		gpa.setAsignaturas(a);
 		List<Grupo_por_Asignatura> listaGrupoAsig = new ArrayList();
 		listaGrupoAsig.add(gpa);
-		nuevoGrupo.setGrupo(listaGrupoAsig);
-		em.persist(nuevoGrupo);
+		g.setGrupo(listaGrupoAsig);
+		em.persist(g);
 		
 	}
 
 	@Override
 	public void borrarGrupo(Grupo g) throws GrupoNoEncontradoException {
 		// TODO Auto-generated method stub
-		Grupo gr = em.find(Grupo.class, g.getId());
-		if(gr==null) {
+		
+		if(g==null) {
 			throw new GrupoNoEncontradoException();
 		}
 		
-		em.remove(gr);
+		em.remove(g);
 		
 	}
 	
 	public Grupo mostrarGrupo(Grupo g) throws GrupoNoEncontradoException {
 		
-		Grupo grupo = em.find(Grupo.class, g.getId());
-		
 		Grupo resultado = null;
 			
-		if(grupo == null) {
+		if(g == null) {
 			throw new GrupoNoEncontradoException();
 		}
 		
-		List<Grupo> grupos = grupo.getGrupos();
+		List<Grupo> grupos = g.getGrupos();
 		
 		for(Grupo gru : grupos) {
 			if(gru.equals(g)) {
@@ -197,25 +193,24 @@ public class GrupoEJB implements GestionGrupo {
 	public void actualizarGrupo(Grupo g) throws GrupoNoEncontradoException {
 		// TODO Auto-generated method stub
 		
-		Grupo grupo = em.find(Grupo.class, g.getId());
 		
-		if(grupo == null) {
+		if(g == null) {
 			throw new GrupoNoEncontradoException();
 		}
 		
-		grupo.setAsig_matr(g.getAsig_matr());
-		grupo.setAsignar(g.getAsignar());
-		grupo.setClases(g.getClases());
-		grupo.setCurso(g.getCurso());
-		grupo.setGrupo(g.getGrupo());
-		grupo.setIngles(g.getIngles());
-		grupo.setLetra(g.getLetra());
-		grupo.setPlazas(g.getPlazas());
-		grupo.setTurno_Mañana_Tarde(g.getTurno_Mañana_Tarde());
-		grupo.setVisible(g.getVisible());
+		g.setAsig_matr(g.getAsig_matr());
+		g.setAsignar(g.getAsignar());
+		g.setClases(g.getClases());
+		g.setCurso(g.getCurso());
+		g.setGrupo(g.getGrupo());
+		g.setIngles(g.getIngles());
+		g.setLetra(g.getLetra());
+		g.setPlazas(g.getPlazas());
+		g.setTurno_Mañana_Tarde(g.getTurno_Mañana_Tarde());
+		g.setVisible(g.getVisible());
 		
 		
-		em.merge(grupo);
+		em.merge(g);
 	}
 	
 	
