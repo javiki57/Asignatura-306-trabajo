@@ -1,6 +1,7 @@
 package es.uma.informatica.sii.proyecto.backing;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import es.uma.informatica.sii.jpa.ejb.MatriculaEJB;
@@ -15,6 +16,7 @@ import es.uma.informatica.sii.jpa.proyect.Matricula;
 @RequestScoped
 public class MatriculaBB {
 
+	@Inject
 	private MatriculaEJB mat;
 	private Integer curso;
 	private Expediente exp;

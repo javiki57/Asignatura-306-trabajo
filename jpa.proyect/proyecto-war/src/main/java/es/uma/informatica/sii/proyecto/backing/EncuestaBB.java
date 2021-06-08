@@ -8,7 +8,7 @@ import es.uma.informatica.sii.jpa.proyect.Grupo;
 @Named(value="encuesta")
 @RequestScoped
 public class EncuestaBB {
-	//EncuestaEJB encEJB = new EncuestaEJB();
+	//EncuestaEJB encEJB;
 	
 	private Grupo primero, segundo, tercero, cuarto;
 	
