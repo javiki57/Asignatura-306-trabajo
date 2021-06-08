@@ -24,9 +24,9 @@ public class MatriculaEJB implements GestionMatricula{
 	private EntityManager em;
 	
 	@Override
-	public void aniadirAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
+	public void aniadirAsignatura(Asignatura a, Matricula m) throws AsignaturaExistenteException {
 		// TODO
-		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
+		/*Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
 		
 		if(matri == null) {
 			throw new MatriculaNoEncontradaException();
@@ -36,9 +36,9 @@ public class MatriculaEJB implements GestionMatricula{
 		
 		if(asi == null) {
 			throw new AsignaturaNoEncontradaException();
-		}
+		}*/
 		
-		List<Asignatura> lista = matri.getListado_Asignaturas();
+		List<Asignatura> lista = m.getListado_Asignaturas();
 		
 		for (Asignatura asignatura : lista) {
 			
@@ -48,15 +48,15 @@ public class MatriculaEJB implements GestionMatricula{
 		}
 		
 		lista.add(a);
-		matri.setListado_Asignaturas(lista);
-		em.merge(matri);
+		m.setListado_Asignaturas(lista);
+		em.merge(m);
 		
 	}
 
 	@Override
-	public void eliminarAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException{
+	public void eliminarAsignatura(Asignatura a, Matricula m) {
 		// TODO
-		Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
+		/*Matricula matri = em.find(Matricula.class, m.getCurso_Academico());
 		
 		if(matri == null) {
 			throw new MatriculaNoEncontradaException();
@@ -66,12 +66,12 @@ public class MatriculaEJB implements GestionMatricula{
 		
 		if(asi == null) {
 			throw new AsignaturaNoEncontradaException();
-		}
+		}*/
 		
-		List<Asignatura> lista = matri.getListado_Asignaturas();
+		List<Asignatura> lista = m.getListado_Asignaturas();
 		lista.remove(a);
-		matri.setListado_Asignaturas(lista);
-		em.merge(matri);
+		m.setListado_Asignaturas(lista);
+		em.merge(m);
 		
 	}
 	
@@ -88,30 +88,43 @@ public class MatriculaEJB implements GestionMatricula{
 		return matri.get_matriculas();		
 	}
 	@Override
-	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
-		//DONE (Rob) SIN PROBAR
+	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaExistenteException {
+		//DONE (Rob) 
 		eliminarAsignatura(actual, m);
 		aniadirAsignatura(nueva, m);
 	}
 
 	@Override
-	public void darDeBajaMatricula(Matricula m) throws MatriculaNoEncontradaException {
-		Matricula mat = em.find(Matricula.class, m.getCurso_Academico());
+	public void darDeBajaMatricula(Matricula m) {
+		/*Matricula mat = em.find(Matricula.class, m.getCurso_Academico());
 		if(mat==null) {
 			throw new MatriculaNoEncontradaException();
-		}
+		}*/
 		m.setEstado(false);
 		em.merge(m);	
 	}
 	
 	public Matricula buscarMatricula(Integer curso, Expediente exp) throws MatriculaNoEncontradaException {
-		Matricula mat = em.find(Matricula.class, curso), aux = null;
+		/*Matricula mat = em.find(Matricula.class, curso), aux = null;
 		List<Matricula> lista_matriculas = mat.get_matriculas();
 		java.util.Iterator<Matricula> i = lista_matriculas.iterator();
 		boolean esta = false;
 		while((i.hasNext()) && (!esta)) {
 			aux = i.next();
 			if(aux.getExpediente().equals(exp))
+				esta = true;
+		}
+		if(!esta)
+			throw new MatriculaNoEncontradaException();
+		
+		return aux;*/
+		Matricula aux = null;
+		List<Matricula> lista_matriculas = exp.getMatriculas();
+		java.util.Iterator<Matricula> i = lista_matriculas.iterator();
+		boolean esta = false;
+		while((i.hasNext()) && (!esta)) {
+			aux = i.next();
+			if(aux.getCurso_Academico().equals(curso))
 				esta = true;
 		}
 		if(!esta)

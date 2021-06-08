@@ -29,10 +29,6 @@ public class AlumnoEJB implements GestionAlumno{
 	@Override
 	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException {
 		// DONE 
-		
-		if(a == null) {
-			throw new AlumnoNoEncontradoException();
-		}
 	
 		em.merge(a);
 		
@@ -52,6 +48,8 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 	
 	public List<Alumno> mostrarAlumnosNuevos(Integer a) throws AlumnoNoEncontradoException {
+		//Query q = em.createQuery("select a from Alumno a where a.expediente")
+			//	("SELECT j FROM Joven j WHERE j.idJoven <> -1");
 		// DONE (Rob)
 		Alumno al = em.find(Alumno.class, a);//buscamos el alumno
 		
