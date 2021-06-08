@@ -23,6 +23,31 @@ public class Titulacion implements Serializable {
 	private String Nombre;
 	@Column(nullable = false)
 	private Integer Creditos;
+	public List<Expediente> getExpediente() {
+		return expediente;
+	}
+	public void setExpediente(List<Expediente> expediente) {
+		this.expediente = expediente;
+	}
+	public List<Grupo> getGrupo() {
+		return grupo;
+	}
+	public void setGrupo(List<Grupo> grupo) {
+		this.grupo = grupo;
+	}
+	public List<Centro> getCentro() {
+		return centro;
+	}
+	public void setCentro(List<Centro> centro) {
+		this.centro = centro;
+	}
+	public List<Asignatura> getAsignaturas() {
+		return asignaturas;
+	}
+	public void setAsignaturas(List<Asignatura> asignaturas) {
+		this.asignaturas = asignaturas;
+	}
+
 	private static final long serialVersionUID = 1L;
 	
 	@OneToMany (mappedBy="titulacion")

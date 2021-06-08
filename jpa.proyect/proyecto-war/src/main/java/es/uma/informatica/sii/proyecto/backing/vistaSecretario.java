@@ -19,7 +19,7 @@ public class vistaSecretario {
 		return "matricula.xhtml";
 	}
 	
-	public String verTitulaiones() {
+	public String verTitulaciones() {
 		return "titulaciones.xhtml";
 	}
 	

@@ -1,11 +1,13 @@
 package es.uma.informatica.sii.jpa.ejb;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.sii.jpa.exceptions.EncuestaExistenteException;
 import es.uma.informatica.sii.jpa.proyect.Encuesta;
 
+@Stateless
 public class EncuestaEJB implements GestionEncuesta{
 	
 	@PersistenceContext(name="Project")

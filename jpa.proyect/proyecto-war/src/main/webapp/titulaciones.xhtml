@@ -10,8 +10,18 @@
 	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>TITULACIONES</h1></div>
-	<div class="cuerpo">
-		
-	</div>
+	<h:form>
+	    <h:panelGrid columns="2">
+
+			<h:outputText value="Nombre:"/>
+			<h:inputText value="#{titulacion.t.Nombre}"/>
+	
+			<h:outputText value="Creditos:"/>
+			<h:inputText value="#{titulacion.t.Creditos}"/>
+              
+		</h:panelGrid>
+		<h:commandButton value="Crear" action="#{titulacion.crearTitulacion()}"/>
+		<h:commandButton value="Actualizar" action="#{titulacion.actualizarTitulacion()}"/>
+	</h:form>
 </h:body>
 </html>
