@@ -13,13 +13,13 @@ import es.uma.informatica.sii.jpa.proyect.*;
 @Local
 public interface GestionMatricula {
 
-	public void aniadirAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException;
+	public void aniadirAsignatura(Asignatura a, Matricula m) throws AsignaturaExistenteException;
 	
-	public void eliminarAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException;
+	public void eliminarAsignatura(Asignatura a, Matricula m) ;
 	
-	void darDeBajaMatricula(Matricula m) throws MatriculaNoEncontradaException;
+	void darDeBajaMatricula(Matricula m) ;
 	
-	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException;
+	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaExistenteException;
 
 	List<Matricula> mostrarMatriculas(Integer curso) throws MatriculaNoEncontradaException;
 	

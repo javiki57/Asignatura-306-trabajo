@@ -16,25 +16,30 @@ import es.uma.informatica.sii.jpa.proyect.Matricula;
 public class MatriculaBB {
 
 	private MatriculaEJB mat;
+	private Integer curso;
+	private Expediente exp;
+	private Asignatura a, a1, a2;
+	private Matricula m;
 	
-	public void mostrarMatriuclas(Integer curso) throws MatriculaNoEncontradaException {
+	public void mostrarMatriuclas() throws MatriculaNoEncontradaException {
 		mat.mostrarMatriculas(curso);
 	}
 	
-	public void buscarMatricula(Integer curso, Expediente exp) throws MatriculaNoEncontradaException {
+	public void buscarMatricula() throws MatriculaNoEncontradaException {
 		mat.buscarMatricula(curso, exp);
 	}
 	
-	public void anyadirAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
+	public void anyadirAsignatura() throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
 		mat.aniadirAsignatura(a, m);
 	}
 	
-	public void eliminarAsignatura(Asignatura a, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException {
+	public void eliminarAsignatura() throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException {
 		mat.eliminarAsignatura(a, m);
 	}
 	
-	public void intercambiarAsignaturas(Asignatura a1, Asignatura a2, Matricula m) throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
-		mat.eliminarAsignatura(a2, m);
-		mat.aniadirAsignatura(a1, m);
+	public void intercambiarAsignaturas() throws AsignaturaNoEncontradaException, MatriculaNoEncontradaException, AsignaturaExistenteException {
+		/*mat.eliminarAsignatura(a2, m);
+		mat.aniadirAsignatura(a1, m);*/
+		mat.intercambiarAsignaturas(a1, a2, m);
 	}
 }
