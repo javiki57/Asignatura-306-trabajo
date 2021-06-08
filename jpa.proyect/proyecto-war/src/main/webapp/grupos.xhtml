@@ -10,5 +10,46 @@
 	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>GRUPOS</h1></div>
+	<h:form>
+		<h:outputLabel>Para crear un nuevo grupo para una asignatura introduce su curso y letra:</h:outputLabel>
+    	<h:panelGrid columns="2">
+			<h:outputText value="Asignatura:"/>
+			<h:inputText value="#{grupo.a}"/>
+			
+			<h:outputText value="Curso:"/>
+			<h:inputText value="#{grupo.g.Curso}"/>
+			
+			<h:outputText value="Letra:"/>
+			<h:inputText value="#{grupo.g.Letra}"/>
+		</h:panelGrid>
+    	<br/>
+    	<h:commandButton value="Crear" action="#{grupo.nuevoGrupo()}"/>
+    	<hr class="lineacolor"/>
+    	<h:outputLabel>Actualiza un grupo existente:</h:outputLabel>
+    	<h:panelGrid columns="2">
+			<h:outputText value="Curso:"/>
+			<h:inputText value="#{grupo.g.Curso}"/>
+			
+			<h:outputText value="Letra:"/>
+			<h:inputText value="#{grupo.g.Letra}"/>
+			
+			<h:outputText value="Turno:"/>
+			<h:inputText value="#{grupo.g.Turno_Mañana_Tarde}"/>
+			
+			<h:outputText value="Ingles:"/>
+			<h:inputText value="#{grupo.g.Ingles}"/>
+			
+			<h:outputText value="Visible:"/>
+			<h:inputText value="#{grupo.g.Visible}"/>
+			
+			<h:outputText value="Asignar:"/>
+			<h:inputText value="#{grupo.g.Asignar}"/>
+			
+			<h:outputText value="Plazas:"/>
+			<h:inputText value="#{grupo.g.Plazas}"/>
+		</h:panelGrid>
+    	<br/>
+    	<h:commandButton value="Actualizar" action="#{grupo.actualizarGrupoBB()}"/>
+	</h:form>
 </h:body>
 </html>

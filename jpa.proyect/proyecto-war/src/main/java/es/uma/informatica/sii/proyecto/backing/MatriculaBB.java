@@ -18,6 +18,10 @@ public class MatriculaBB {
 
 	@Inject
 	private MatriculaEJB mat;
+	private Integer curso;
+	private Expediente exp;
+	private Asignatura a, a1, a2;
+	
 	public Integer getCurso() {
 		return curso;
 	}
@@ -57,18 +61,6 @@ public class MatriculaBB {
 	public void setA2(Asignatura a2) {
 		this.a2 = a2;
 	}
-
-	public Matricula getM() {
-		return m;
-	}
-
-	public void setM(Matricula m) {
-		this.m = m;
-	}
-
-	private Integer curso;
-	private Expediente exp;
-	private Asignatura a, a1, a2;
 	
 	public void mostrarMatriuclas() throws MatriculaNoEncontradaException {
 		mat.mostrarMatriculas(curso);

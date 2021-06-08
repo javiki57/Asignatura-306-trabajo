@@ -19,4 +19,8 @@ public class vistaSecretario {
 		return "matricula.xhtml";
 	}
 	
+	public String verTitulaiones() {
+		return "titulaciones.xhtml";
+	}
+	
 }

@@ -11,28 +11,30 @@
 	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>Encuesta Asignación de Grupos</h1></div>
-	<div class="cuerpo">
-		<h:form>
-			<h:commandButton value="ENCUESTA" action="#{vAlumno.hacerEncuesta()}"/>
+	<h:form>
+		<h:commandButton value="ENCUESTA" action="#{vAlumno.hacerEncuesta()}"/>
+		<br/>
+		<br/>
+			<h:outputLabel>Solicitud de cambio de grupo:</h:outputLabel>
 			<br/>
-				<h:label>Solicitud de cambio de grupo:</h:label>
-				<h:panelGrid columns="2" border ="3">
-      				<h:outputText value="Grupo actual:"/>
-      				<h:inputText value="#{vAlumno.grupoActual}" />
-      				<h:outputText value="Grupo nuevo:"/>
-      				<h:inputText value="#{vAlumno.grupoNuevo}"/>
-      				<h:outputText value="Titulación:"/>
-      				<h:selectOneMenu value="#{vAlumno.titulacion}">
-      					<f:selectItem itemLabel="II"/>
-      					<f:selectItem itemLabel="IS"/>
-      					<f:selectItem itemLabel="IC"/>
-      					<f:selectItem itemLabel="II+M"/>
-      				</h:selectOneMenu>
-      				<h:outputText value="Numero expediente:"/>
-      				<h:inputText value="#{vAlumno.expediente}"/>
-				</h:panelGrid>
-			<h:commandButton value="Enviar" action="#{vAlumno.cambioGrupo()}"/>
-		</h:form>
-	</div>
+			<h:panelGrid columns="2">
+			<h:outputText value="DNI del Alumno:"/>
+     			<h:inputText value="#{vAlumno.a.DNI}" />
+     			<h:outputText value="Grupo actual:"/>
+     			<h:inputText value="#{vAlumno.grupoActual}" />
+     			<h:outputText value="Grupo nuevo:"/>
+     			<h:inputText value="#{vAlumno.grupoNuevo}"/>
+     			<h:outputText value="Titulación:"/>
+     			<h:selectOneMenu value="#{vAlumno.titulacion}">
+     			<f:selectItem itemLabel="II"/>
+     			<f:selectItem itemLabel="IS"/>
+     				<f:selectItem itemLabel="IC"/>
+     				<f:selectItem itemLabel="II+M"/>
+     			</h:selectOneMenu>
+     			<h:outputText value="Numero expediente:"/>
+     			<h:inputText value="#{vAlumno.expediente}"/>
+			</h:panelGrid>
+		<h:commandButton value="Enviar" action="#{vAlumno.cambioGrupo()}"/>
+	</h:form>
 </h:body>
 </html>

@@ -11,7 +11,7 @@
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>MATRICULAS</h1></div>
 	<h:form>
-		<h:label>Para mostrar una matricula inserta su curso academico:</h:label>
+		<h:outputLabel>Para mostrar una matricula inserta su curso academico:</h:outputLabel>
     	<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
 			<h:inputText value="#{matricula.curso}"/>
@@ -19,7 +19,7 @@
     	<br/>
     	<h:commandButton value="Mostrar" action="#{matricula.mostrarMatricula()}"/>
     	<hr class="lineacolor"/>
-    	<h:label>Para buscar una matricula inserta su curso academico y el expediente al que pertenece:</h:label>
+    	<h:outputLabel>Para buscar una matricula inserta su curso academico y el expediente al que pertenece:</h:outputLabel>
     	<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
 			<h:inputText value="#{matricula.curso}"/>
@@ -30,7 +30,7 @@
     	<br/>
     	<h:commandButton value="Buscar" action="#{matricula.buscarMatricula()}"/>
     	<hr class="lineacolor"/>
-    	<h:label>¿Quieres añadir una asignatura a una matricula?</h:label>
+    	<h:outputLabel>¿Quieres añadir una asignatura a una matricula?</h:outputLabel>
     	<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
 			<h:inputText value="#{matricula.curso}"/>
@@ -44,7 +44,7 @@
 		<br/>
 		<h:commandButton value="Añadir asignatura" action="#{matricula.anyadirAsignatura()}"/>
 		<hr class="lineacolor"/>
-		<h:label>¿Quieres eliminar una asignatura de una matricula?</h:label>
+		<h:outputLabel>¿Quieres eliminar una asignatura de una matricula?</h:outputLabel>
 		<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
 			<h:inputText value="#{matricula.curso}"/>
@@ -58,7 +58,7 @@
 		<br/>
 		<h:commandButton value="Eliminar asignatura" action="#{matricula.anyadirAsignatura()}"/>
 		<hr class="lineacolor"/>
-		<h:label>¿Quieres cambiar unas asignaturas de una matricula?</h:label>
+		<h:outputLabel>¿Quieres cambiar unas asignaturas de una matricula?</h:outputLabel>
 		<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
 			<h:inputText value="#{matricula.curso}"/>
