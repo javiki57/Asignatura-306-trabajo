@@ -27,7 +27,7 @@ public class AlumnoEJB implements GestionAlumno{
 	}
 
 	@Override
-	public void actualizarAlumno(Alumno a) throws AlumnoNoEncontradoException {
+	public void actualizarAlumno(Alumno a1, Alumno a2) throws AlumnoNoEncontradoException {
 		// DONE 
 		
 		if(a == null) {
@@ -79,16 +79,12 @@ public class AlumnoEJB implements GestionAlumno{
 					if((exp.getMatriculas().size()==1) && exp.getMatriculas().get(0).getNuevo_Ingreso()) {
 						nuevosAlumnos.add(aux); //añadimos el alumno con nueva matricula activa
 					}
-				}
-					
+				}			
 				i=i+1;
 			}
 		}
-		
-		return nuevosAlumnos;
-		
+		return nuevosAlumnos;	
 	}
-
 	@Override
 	public List<Alumno> buscarMatriculas(Alumno a) throws AlumnoNoEncontradoException {
 		// TODO Auto-generated method stub
@@ -115,8 +111,6 @@ public class AlumnoEJB implements GestionAlumno{
 				if(j<matriculas.size())	matriculados.add(alumno);
 			}
 		}
-		
-		
 		
 		return matriculados;
 	}
