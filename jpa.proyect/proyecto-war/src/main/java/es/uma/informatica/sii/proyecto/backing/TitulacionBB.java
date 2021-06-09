@@ -1,6 +1,7 @@
 package es.uma.informatica.sii.proyecto.backing;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -8,6 +9,7 @@ import javax.inject.Named;
 
 import es.uma.informatica.sii.jpa.ejb.GestionTitulacion;
 import es.uma.informatica.sii.jpa.ejb.TitulacionEJB;
+import es.uma.informatica.sii.jpa.proyect.Centro;
 import es.uma.informatica.sii.jpa.proyect.Titulacion;
 
 @Named(value="titulacion")
@@ -18,6 +20,7 @@ public class TitulacionBB implements Serializable{
 	@Inject
 	private GestionTitulacion titulacionejb;
 	private Titulacion t;
+	private List<Titulacion> titulaciones;
 	
 	public TitulacionBB() {
 		
@@ -30,6 +33,10 @@ public class TitulacionBB implements Serializable{
 	
 	public void actualizarTitulacion() {
 		titulacionejb.actualizarTitulacion(t);
+	}
+	
+	public List<Titulacion> getTitulaciones(){
+		return titulacionejb.mostrarTitulaciones("ETSII");
 	}
 
 	public Titulacion getT() {

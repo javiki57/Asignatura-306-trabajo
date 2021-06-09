@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:h="http://xmlns.jcp.org/jsf/html">
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta charset="UTF-8"/>
 	<title>Titulaciones</title>
@@ -10,18 +11,31 @@
 	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>TITULACIONES</h1></div>
-	<h:form>
-	    <h:panelGrid columns="2">
-
-			<h:outputText value="Nombre:"/>
-			<h:inputText value="#{titulacion.t.Nombre}"/>
-	
-			<h:outputText value="Creditos:"/>
-			<h:inputText value="#{titulacion.t.Creditos}"/>
-              
-		</h:panelGrid>
-		<h:commandButton value="Crear" action="#{titulacion.crearTitulacion()}"/>
-		<h:commandButton value="Actualizar" action="#{titulacion.actualizarTitulacion()}"/>
+	<h:form id="titulaciones">
+	    <h:dataTable value="#{titulacion.titulaciones}" var="t">
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+				<h:outputText value="#{t.Codigo}"/>
+			</h:column>
+                        
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+				<h:outputText value="#{t.Nombre}"/>
+			</h:column>
+                        
+			<h:column>
+				<f:facet name="header">Créditos</f:facet>
+				<h:outputText value="#{t.Creditos}"/>
+			</h:column>
+                        
+			<h:column>
+				<h:commandButton value="Crear" action="#{titulacion.crearTitulacion()}"/>
+			</h:column>
+                        
+			<h:column>
+				<h:commandButton value="Actualizar" action="#{titulacion.actualizarTitulacion()}"/>
+			</h:column>
+		</h:dataTable>
 	</h:form>
 </h:body>
 </html>
