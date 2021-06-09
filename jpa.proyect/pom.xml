@@ -11,6 +11,7 @@
   	  <module>proyecto-ejb</module>
   	  <module>proyecto-war</module>
   	  <module>proyecto-ear</module>
+  	  <module>trazabilidad-tests</module>
   </modules>
   
   
