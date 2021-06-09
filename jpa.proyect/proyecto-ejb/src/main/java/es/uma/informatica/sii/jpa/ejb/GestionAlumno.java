@@ -20,5 +20,5 @@ public interface GestionAlumno {
 	
 	public List<Alumno> buscarMatriculas(Alumno a) throws AlumnoNoEncontradoException;
 
-	
+	public List<Alumno> mostrarTodosLosAlumnos();
 }

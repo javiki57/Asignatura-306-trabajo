@@ -113,7 +113,13 @@ public class AlumnoEJB implements GestionAlumno{
 		return matriculados;
 	}
 
+	@Override
+	public List<Alumno> mostrarTodosLosAlumnos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
+	
 	
 	
 	

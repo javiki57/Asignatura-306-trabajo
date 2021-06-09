@@ -12,39 +12,56 @@
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>ALUMNOS</h1></div>
 	<h:form>
-    	<h:panelGrid columns="2">
-
-			<h:outputText value="DNI:"/>
-			<h:inputText value="#{alumno.a.DNI}"/>
-
-			<h:outputText value="Nombre completo:"/>
-			<h:inputText value="#{alumno.a.Nombre_Completo}"/>
-
-			<h:outputText value="Email institucional:"/>
-			<h:inputText value="#{alumno.a.Email_Institucional}"/>
-
-			<h:outputText value="Email personal:"/>
-			<h:inputText value="#{alumno.a.Email_Personal}"/>
-
-			<h:outputText value="Telefono:"/>
-			<h:inputText value="#{alumno.a.Telefono}"/>
-
-			<h:outputText value="Movil:"/>
-			<h:inputText value="#{alumno.a.Movil}"/>
-
-			<h:outputText value="Direccion notificacion"/>
-			<h:inputText value="#{alumno.a.Direccion_Notificacion}"/>
-
-			<h:outputText value="Codigo postal notificacion:"/>
-			<h:inputText value="#{alumno.a.Codigo_Postal_Notificacion}"/>
-
-			<h:outputText value="Fecha nacimiento:"/>
-			<h:inputText value="#{alumno.a.Fecha_Nacimiento}"/>
-               
-		</h:panelGrid>
-		<h:commandButton value="Modificar" action="#{alumno.actualizarAlumno()}"/>
-		<h:commandButton value="Eliminar" action="#{alumno.borrarAlumno()}"/>
-		<h:commandButton value="Buscar" action="#{alumno.mostrarAlumno()}"/>
-	</h:form>	
+		<h:commandButton value="Gestionar Alumno" action="#{alumnoBB.gestionar()}"/>
+	</h:form>
+	<br/>
+	<h:form id="alumnos">
+	    <h:dataTable value="#{alumnoBB.alumnos}" var="al">
+			<h:column>
+				<f:facet name="header">DNI</f:facet>
+				<h:outputText value="#{al.dni}"/>
+			</h:column>
+                        
+			<h:column>
+				<f:facet name="header">Nombre Completo</f:facet>
+				<h:outputText value="#{al.nombre_completo}"/>
+			</h:column>
+                        
+			<h:column>
+				<f:facet name="header">Email institucional</f:facet>
+				<h:outputText value="#{al.email_institucional}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Email personal</f:facet>
+				<h:outputText value="#{al.email_personal}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Telefono</f:facet>
+				<h:outputText value="#{al.telefono}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Movil</f:facet>
+				<h:outputText value="#{al.movil}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Dirección notificación</f:facet>
+				<h:outputText value="#{al.direccion_notificacion}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Código postal notificación</f:facet>
+				<h:outputText value="#{al.codigo_postal_notificacion}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Fecha de nacimiento</f:facet>
+				<h:outputText value="#{al.fecha_nacimiento}"/>
+			</h:column>
+		</h:dataTable>
+	</h:form>
 </h:body>
 </html>
