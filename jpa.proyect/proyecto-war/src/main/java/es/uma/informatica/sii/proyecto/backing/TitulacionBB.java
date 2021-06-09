@@ -27,15 +27,12 @@ public class TitulacionBB implements Serializable{
 		titulacionejb.crearTitulacion(t);
 		return "vistaSecretario.xhtml";
 	}
-	
 	public void actualizarTitulacion() {
 		titulacionejb.actualizarTitulacion(t);
 	}
-
 	public Titulacion getT() {
 		return t;
 	}
-
 	public void setT(Titulacion t) {
 		this.t = t;
 	}

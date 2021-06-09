@@ -28,27 +28,21 @@ public class MatriculaBB implements Serializable{
 	public Integer getCurso() {
 		return curso;
 	}
-
 	public void setCurso(Integer curso) {
 		this.curso = curso;
 	}
-
 	public Expediente getExp() {
 		return exp;
 	}
-
 	public void setExp(Expediente exp) {
 		this.exp = exp;
 	}
-
 	public Asignatura getA() {
 		return a;
 	}
-
 	public void setA(Asignatura a) {
 		this.a = a;
 	}
-
 	public Asignatura getA1() {
 		return a1;
 	}
