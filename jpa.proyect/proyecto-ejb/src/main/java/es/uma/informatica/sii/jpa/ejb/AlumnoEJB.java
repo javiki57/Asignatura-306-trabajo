@@ -6,11 +6,13 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import es.uma.informatica.sii.jpa.exceptions.AlumnoNoEncontradoException;
 import es.uma.informatica.sii.jpa.proyect.Alumno;
 import es.uma.informatica.sii.jpa.proyect.Expediente;
 import es.uma.informatica.sii.jpa.proyect.Matricula;
+import es.uma.informatica.sii.jpa.proyect.Titulacion;
 
 @Stateless
 public class AlumnoEJB implements GestionAlumno{
@@ -116,7 +118,9 @@ public class AlumnoEJB implements GestionAlumno{
 	@Override
 	public List<Alumno> mostrarTodosLosAlumnos() {
 		// TODO Auto-generated method stub
-		return null;
+		Query query = em.createQuery("SELECT a FROM Alumno a");
+		return (List<Alumno>) query.getResultList();
+		
 	}
 
 	
