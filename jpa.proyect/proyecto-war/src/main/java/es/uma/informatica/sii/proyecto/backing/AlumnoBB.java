@@ -15,13 +15,18 @@ import es.uma.informatica.sii.jpa.proyect.Alumno;
 //Parametros tal cual , despues los cambiamos.
 
 
-@Named(value="alumno")
+@Named(value="alumnoBB")
 @RequestScoped
 public class AlumnoBB {
 	
 	@Inject
 	private GestionAlumno alEJB;
 	private Alumno a;
+	private List<Alumno> alumnos;
+	
+	public AlumnoBB(){
+		
+	}
 	
 	public Alumno getA() {
 		return a;
@@ -30,7 +35,17 @@ public class AlumnoBB {
 		this.a = a;
 	}
 	
+	public List<Alumno> getAlumnos() {
+		return alEJB.mostrarTodosLosAlumnos();
+	}
+
+	public void setAlumnos(List<Alumno> alumnos) {
+		this.alumnos = alumnos;
+	}
 	
+	public String gestionar() {
+		return "gestionarAlumnos.xhtml";
+	}
 	//Entiendo que mostrar y buscar es lo mismo.
 	public String mostrarAlumno() throws AlumnoNoEncontradoException {
 		Alumno alumno = alEJB.mostrarAlumno(a.getId());	 

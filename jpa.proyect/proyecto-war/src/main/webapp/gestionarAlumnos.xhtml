@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="UTF-8"/>
+	<title>Gestión Alumnos</title>
+	<link rel="stylesheet" href="secretaria.css" type="text/css"/>
+</h:head>
+<h:body>
+	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
+	<hr class="lineacolor"/>
+	<div class="titulo"><h1>ALUMNOS</h1></div>
+	<h:form>
+    	<h:panelGrid columns="2">
+
+			<h:outputText value="DNI:"/>
+			<h:inputText value="#{alumnoBB.a.dni}"/>
+
+			<h:outputText value="Nombre completo:"/>
+			<h:inputText value="#{alumnoBB.a.nombre_completo}"/>
+
+			<h:outputText value="Email institucional:"/>
+			<h:inputText value="#{alumnoBB.a.email_institucional}"/>
+
+			<h:outputText value="Email personal:"/>
+			<h:inputText value="#{alumnoBB.a.email_personal}"/>
+
+			<h:outputText value="Telefono:"/>
+			<h:inputText value="#{alumnoBB.a.telefono}"/>
+
+			<h:outputText value="Movil:"/>
+			<h:inputText value="#{alumnoBB.a.movil}"/>
+
+			<h:outputText value="Direccion notificacion"/>
+			<h:inputText value="#{alumnoBB.a.direccion_notificacion}"/>
+
+			<h:outputText value="Codigo postal notificacion:"/>
+			<h:inputText value="#{alumnoBB.a.codigo_postal_notificacion}"/>
+
+			<h:outputText value="Fecha nacimiento:"/>
+			<h:inputText value="#{alumnoBB.a.fecha_nacimiento}"/>
+               
+		</h:panelGrid>
+		<h:commandButton value="Modificar" action="#{alumnoBB.actualizarAlumno()}"/>
+		<h:commandButton value="Eliminar" action="#{alumnoBB.borrarAlumno()}"/>
+		<h:commandButton value="Mostrar" action="#{alumnoBB.mostrarAlumno()}"/>
+	</h:form>	
+</h:body>
+</html>
