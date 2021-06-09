@@ -15,26 +15,25 @@
 	    <h:dataTable value="#{titulacion.titulaciones}" var="t">
 			<h:column>
 				<f:facet name="header">Código</f:facet>
-				<h:outputText value="#{t.Codigo}"/>
+				#{t.Codigo}
 			</h:column>
                         
 			<h:column>
 				<f:facet name="header">Nombre</f:facet>
-				<h:outputText value="#{t.Nombre}"/>
+				#{t.Nombre}
 			</h:column>
                         
 			<h:column>
 				<f:facet name="header">Créditos</f:facet>
-				<h:outputText value="#{t.Creditos}"/>
+				#{t.Creditos}
 			</h:column>
                         
-			<h:column>
-				<h:commandButton value="Crear" action="#{titulacion.crearTitulacion()}"/>
-			</h:column>
-                        
-			<h:column>
-				<h:commandButton value="Actualizar" action="#{titulacion.actualizarTitulacion()}"/>
-			</h:column>
+			<f:facet name="footer">
+                <h:form>
+                    <h:commandButton value="Crear" action="#{titulacion.crearTitulacion()}"/>
+                    <h:commandButton value="Actualizar" action="#{titulacion.actualizarTitulacion()}"/>
+                </h:form>
+            </f:facet>
 		</h:dataTable>
 	</h:form>
 </h:body>

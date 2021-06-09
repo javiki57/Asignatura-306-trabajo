@@ -26,6 +26,10 @@ public class TitulacionBB implements Serializable{
 		
 	}
 	
+	public void setTitulaciones(List<Titulacion> titulaciones) {
+		this.titulaciones = titulaciones;
+	}
+
 	public String crearTitulacion() {
 		titulacionejb.crearTitulacion(t);
 		return "vistaSecretario.xhtml";
@@ -36,7 +40,7 @@ public class TitulacionBB implements Serializable{
 	}
 	
 	public List<Titulacion> getTitulaciones(){
-		return titulacionejb.mostrarTitulaciones("ETSII");
+		return titulacionejb.mostrarTitulaciones(/*"ETSII"*/);
 	}
 
 	public Titulacion getT() {

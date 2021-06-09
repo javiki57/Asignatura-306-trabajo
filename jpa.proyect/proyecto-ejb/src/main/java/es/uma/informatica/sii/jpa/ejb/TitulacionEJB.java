@@ -35,8 +35,9 @@ public class TitulacionEJB implements GestionTitulacion{
 		return tit;
 	}
 	
-	public List<Titulacion> mostrarTitulaciones(String nombreCentro){
-		return (List<Titulacion>) em.createQuery("SELECT TITULACION FROM CENTRO WHERE nombre = nombreCentro");
+	public List<Titulacion> mostrarTitulaciones(/*String nombreCentro*/){
+		/*return (List<Titulacion>) em.createQuery("SELECT titulacion FROM CENTRO WHERE Nombre = nombreCentro").setParameter("nombreCentro", nombreCentro).getResultList();*/
+		return (List<Titulacion>) em.createQuery("SELECT * FROM TITULACION");
 		
 	}
 	

@@ -12,6 +12,6 @@ import es.uma.informatica.sii.jpa.proyect.Titulacion;
 public interface GestionTitulacion {
 	public void crearTitulacion(Titulacion t);
 	public void actualizarTitulacion(Titulacion t) ;
-	public List<Titulacion> mostrarTitulaciones(String n);
+	public List<Titulacion> mostrarTitulaciones(/*String n*/);
 	
 }
