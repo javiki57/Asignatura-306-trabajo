@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="UTF-8"/>
+	<title>Titulaciones</title>
+	<link rel="stylesheet" href="secretaria.css" type="text/css"/>
+</h:head>
+<h:body>
+	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
+	<hr class="lineacolor"/>
+	<div class="titulo"><h1>TITULACIONES</h1></div>
+	<h:form id="titulaciones">
+	    <h:dataTable value="#{TitulacionBB.titulaciones}" var="t">
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+				<h:outputText value="#{t.codigo}"/>
+			</h:column>
+                        
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+				<h:outputText value="#{t.nombre}"/>
+			</h:column>
+                        
+			<h:column>
+				<f:facet name="header">Créditos</f:facet>
+				<h:outputText value="#{t.creditos}"/>
+			</h:column>
+                        
+			<f:facet name="footer">
+                <h:form>
+                    <h:commandButton value="Crear" action="#{TitulacionBB.crearTitulacion()}"/>
+                    <h:commandButton value="Actualizar" action="#{TitulacionBB.actualizarTitulacion()}"/>
+                </h:form>
+            </f:facet>
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>

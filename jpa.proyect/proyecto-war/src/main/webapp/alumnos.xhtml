@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="UTF-8"/>
+	<title>Alumnos</title>
+	<link rel="stylesheet" href="secretaria.css" type="text/css"/>
+</h:head>
+<h:body>
+	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
+	<hr class="lineacolor"/>
+	<div class="titulo"><h1>ALUMNOS</h1></div>
+	<h:form>
+		<h:commandButton value="Gestionar Alumno" action="#{alumnoBB.gestionar()}"/>
+	</h:form>
+	<br/>
+	<h:form id="alumnos">
+	    <h:dataTable value="#{alumnoBB.alumnos}" var="al">
+			<h:column>
+				<f:facet name="header">DNI</f:facet>
+				<h:outputText value="#{al.dni}"/>
+			</h:column>
+                        
+			<h:column>
+				<f:facet name="header">Nombre Completo</f:facet>
+				<h:outputText value="#{al.nombre_completo}"/>
+			</h:column>
+                        
+			<h:column>
+				<f:facet name="header">Email institucional</f:facet>
+				<h:outputText value="#{al.email_institucional}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Email personal</f:facet>
+				<h:outputText value="#{al.email_personal}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Telefono</f:facet>
+				<h:outputText value="#{al.telefono}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Movil</f:facet>
+				<h:outputText value="#{al.movil}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Dirección notificación</f:facet>
+				<h:outputText value="#{al.direccion_notificacion}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Código postal notificación</f:facet>
+				<h:outputText value="#{al.codigo_postal_notificacion}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Fecha de nacimiento</f:facet>
+				<h:outputText value="#{al.fecha_nacimiento}"/>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>

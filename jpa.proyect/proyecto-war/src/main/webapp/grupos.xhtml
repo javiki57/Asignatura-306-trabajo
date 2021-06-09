@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<meta charset="UTF-8"/>
+	<title>Grupos</title>
+	<link rel="stylesheet" href="secretaria.css" type="text/css"/>
+</h:head>
+<h:body>
+	<h:graphicImage height="96" width="600" value="COLOR_FONDOBLANCO_INFORMATICA.png" />
+	<hr class="lineacolor"/>
+	<div class="titulo"><h1>GRUPOS</h1></div>
+	<h:form>
+		<h:outputLabel>Para crear un nuevo grupo para una asignatura introduce su curso y letra:</h:outputLabel>
+    	<h:panelGrid columns="2">
+			<h:outputText value="Asignatura:"/>
+			<h:inputText value="#{GrupoBB.a}"/>
+			
+			<h:outputText value="Curso:"/>
+			<h:inputText value="#{GrupoBB.g.curso}"/>
+			
+			<h:outputText value="Letra:"/>
+			<h:inputText value="#{GrupoBB.g.letra}"/>
+		</h:panelGrid>
+    	<br/>
+    	<h:commandButton value="Crear" action="#{GrupoBB.nuevoGrupo()}"/>
+    	<hr class="lineacolor"/>
+    	<h:outputLabel>Actualiza un grupo existente:</h:outputLabel>
+    	<h:panelGrid columns="2">
+			<h:outputText value="Curso:"/>
+			<h:inputText value="#{GrupoBB.g.curso}"/>
+			
+			<h:outputText value="Letra:"/>
+			<h:inputText value="#{GrupoBB.g.letra}"/>
+			
+			<h:outputText value="Turno:"/>
+			<h:inputText value="#{GrupoBB.g.turno_Mañana_Tarde}"/>
+			
+			<h:outputText value="Ingles:"/>
+			<h:inputText value="#{GrupoBB.g.ingles}"/>
+			
+			<h:outputText value="Visible:"/>
+			<h:inputText value="#{GrupoBB.g.visible}"/>
+			
+			<h:outputText value="Asignar:"/>
+			<h:inputText value="#{GrupoBB.g.asignar}"/>
+			
+			<h:outputText value="Plazas:"/>
+			<h:inputText value="#{GrupoBB.g.plazas}"/>
+		</h:panelGrid>
+    	<br/>
+    	<h:commandButton value="Actualizar" action="#{GrupoBB.actualizarGrupoBB()}"/>
+	</h:form>
+</h:body>
+</html>
