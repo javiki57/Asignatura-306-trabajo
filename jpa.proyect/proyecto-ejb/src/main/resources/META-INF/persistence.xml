@@ -19,10 +19,8 @@
 		 <shared-cache-mode>NONE</shared-cache-mode>
 		
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.17.0.2:3306/sii"/>
-			<property name="javax.persistence.jdbc.user" value="siiuser"/>
-			<property name="javax.persistence.jdbc.password" value="siipassword"/>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.schema-generation.database.action" value="create"/>
 		</properties>
+		
 	</persistence-unit>
 </persistence>

@@ -59,7 +59,8 @@ public class Matricula implements Serializable {
 	private Boolean Nuevo_Ingreso;
 	@ElementCollection (fetch = FetchType.LAZY)
 	private List<Matricula> lista_matriculas;
-	private List<Asignatura> Listado_Asignaturas;
+	
+	//private List<Asignatura> Listado_Asignaturas;
 	
 	@Id
 	@ManyToOne
@@ -124,13 +125,13 @@ public class Matricula implements Serializable {
 		Nuevo_Ingreso = nuevo_Ingreso;
 	}
 
-	public List<Asignatura> getListado_Asignaturas() {
+	/*public List<Asignatura> getListado_Asignaturas() {
 		return Listado_Asignaturas;
 	}
 
 	public void setListado_Asignaturas(List<Asignatura> listado_Asignaturas) {
 		Listado_Asignaturas = listado_Asignaturas;
-	}
+	}*/
 	
 	public List<Matricula> get_matriculas() {
 		return lista_matriculas;

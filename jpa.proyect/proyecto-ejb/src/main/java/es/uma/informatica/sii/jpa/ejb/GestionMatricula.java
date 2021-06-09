@@ -22,5 +22,7 @@ public interface GestionMatricula {
 	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaExistenteException;
 
 	List<Matricula> mostrarMatriculas(Integer curso) throws MatriculaNoEncontradaException;
+
+	public Matricula buscarMatricula(Integer curso, Expediente exp) throws MatriculaNoEncontradaException;
 	
 }

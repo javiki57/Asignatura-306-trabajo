@@ -63,9 +63,9 @@ public class GrupoEJB implements GestionGrupo {
 
 				for (Matricula aux_mat : matriculas) {// Recorro las matriculas del expediente
 					if (aux_mat.getEstado()) {
-						List<Asignatura> lista_Asignaturas = aux_mat.getListado_Asignaturas();
+						//List<Asignatura> lista_Asignaturas = aux_mat.getListado_Asignaturas();
 
-						for (Asignatura aux_asignatura : lista_Asignaturas) {
+						/*for (Asignatura aux_asignatura : lista_Asignaturas) {
 							if (aux_asignatura.getIdioma() == "Ingles") {// Si el alumno tiene alguna asignatura en
 																			// ingles se le asignara a un grupo que sea
 																			// de ingles
@@ -88,7 +88,7 @@ public class GrupoEJB implements GestionGrupo {
 							}
 							break;// Salgo del bucle de asignaturas del alumno sabiendo que tiene una asignatura
 									// en ingles.
-						}
+						}*/
 
 					}
 					break;// salgo de la busqueda de la matricula de nuevo ingreso y de matricula

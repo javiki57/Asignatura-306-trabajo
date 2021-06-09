@@ -58,10 +58,10 @@ public class AlumnoEJB implements GestionAlumno{
 		}
 		
 		//Conseguimos la lista de alumnos existentes e inicializamos la lista de los nuevos alumnos
-		List<Alumno> alumnos = al.getAlumnos();
+		//List<Alumno> alumnos = al.getAlumnos();
 		List<Alumno> nuevosAlumnos = new ArrayList<>();
 		
-		for(Alumno aux : alumnos) {
+		/*for(Alumno aux : alumnos) {
 			int i=0;
 			boolean encontrado = false;//expediente activo encontrado o no 
 			
@@ -80,7 +80,7 @@ public class AlumnoEJB implements GestionAlumno{
 				}			
 				i=i+1;
 			}
-		}
+		}*/
 		return nuevosAlumnos;	
 	}
 	@Override
@@ -91,9 +91,9 @@ public class AlumnoEJB implements GestionAlumno{
 			throw new AlumnoNoEncontradoException();
 		}
 		
-		List<Alumno> lista = al.getAlumnos();
+	//	List<Alumno> lista = al.getAlumnos();
 		List<Alumno> matriculados = new ArrayList();
-		for(Alumno alumno: lista) {
+	/*	for(Alumno alumno: lista) {
 			List<Expediente> expedientes = alumno.getExpediente();
 			int i=0;
 			while(!expedientes.get(i).getActiva() && i<expedientes.size()) {
@@ -108,7 +108,7 @@ public class AlumnoEJB implements GestionAlumno{
 				}
 				if(j<matriculas.size())	matriculados.add(alumno);
 			}
-		}
+		}*/
 		
 		return matriculados;
 	}

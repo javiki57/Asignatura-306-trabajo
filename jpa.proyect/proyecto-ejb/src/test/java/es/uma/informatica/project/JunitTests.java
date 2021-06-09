@@ -69,7 +69,7 @@ public class JunitTests {
 		BaseDeDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
-	@Requisitos({"RF3"})
+	/*@Requisitos({"RF3"})
 	@Test
 	public void testEliminarAsignatura() {
 		try {
@@ -89,9 +89,9 @@ public class JunitTests {
 			fail("No deberia lanzarse esto");
 
 		} 
-	}
+	}*/
 	
-	@Requisitos({"RF3"})
+	/*@Requisitos({"RF3"})
 	@Test
 	public void testAniadirAsignatura() {
 		try {
@@ -109,7 +109,7 @@ public class JunitTests {
 			fail("No deberia de salir esto");
 		}
 	}
-	
+	*/
 	/*@Requisitos({"RF2"})
 	@Test 
 	public void testMostrarAlumno() { 
@@ -283,7 +283,7 @@ public class JunitTests {
 		}
 	}*/
 	
-	@Requisitos({"RF3"})
+	/*@Requisitos({"RF3"})
 	@Test
 	public void testIntercambiarAsignaturas() {
 		try {
@@ -304,7 +304,7 @@ public class JunitTests {
 		}catch (AsignaturaExistenteException e) {
 			fail("Asignatura existente");
 		}
-	}
+	}*/
 	
 	@Requisitos({"RF6"})
 	@Test 

@@ -1,6 +1,7 @@
 package es.uma.informatica.sii.proyecto.backing;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -8,11 +9,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import es.uma.informatica.sii.jpa.ejb.GestionTitulacion;
-import es.uma.informatica.sii.jpa.ejb.TitulacionEJB;
-import es.uma.informatica.sii.jpa.proyect.Centro;
 import es.uma.informatica.sii.jpa.proyect.Titulacion;
 
-@Named(value="titulacion")
+
+@Named(value="TitulacionBB")
 @RequestScoped
 public class TitulacionBB implements Serializable{
 	
@@ -40,7 +40,14 @@ public class TitulacionBB implements Serializable{
 	}
 	
 	public List<Titulacion> getTitulaciones(){
-		return titulacionejb.mostrarTitulaciones(/*"ETSII"*/);
+		this.titulaciones = titulacionejb.mostrarTitulaciones(/*"ETSII"*/);
+		List<Titulacion> tlista = new ArrayList <>();
+		Titulacion titu = new Titulacion();
+		titu.setCodigo(1);
+		titu.setCreditos(240);
+		titu.setNombre("Informatica");
+		tlista.add(titu);
+		return tlista;
 	}
 
 	public Titulacion getT() {

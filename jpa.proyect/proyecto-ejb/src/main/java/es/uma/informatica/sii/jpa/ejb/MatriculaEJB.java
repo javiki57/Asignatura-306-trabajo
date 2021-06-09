@@ -38,9 +38,9 @@ public class MatriculaEJB implements GestionMatricula{
 			throw new AsignaturaNoEncontradaException();
 		}*/
 		
-		List<Asignatura> lista = m.getListado_Asignaturas();
+		//List<Asignatura> lista = m.getListado_Asignaturas();
 		
-		for (Asignatura asignatura : lista) {
+		/*for (Asignatura asignatura : lista) {
 			
 			if(asignatura.equals(a)) {
 				throw new AsignaturaExistenteException();
@@ -48,7 +48,7 @@ public class MatriculaEJB implements GestionMatricula{
 		}
 		
 		lista.add(a);
-		m.setListado_Asignaturas(lista);
+		m.setListado_Asignaturas(lista);*/
 		em.merge(m);
 		
 	}
@@ -68,9 +68,9 @@ public class MatriculaEJB implements GestionMatricula{
 			throw new AsignaturaNoEncontradaException();
 		}*/
 		
-		List<Asignatura> lista = m.getListado_Asignaturas();
+		/*List<Asignatura> lista = m.getListado_Asignaturas();
 		lista.remove(a);
-		m.setListado_Asignaturas(lista);
+		m.setListado_Asignaturas(lista);*/
 		em.merge(m);
 		
 	}

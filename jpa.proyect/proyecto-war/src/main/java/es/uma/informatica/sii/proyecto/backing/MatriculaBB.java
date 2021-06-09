@@ -4,6 +4,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import es.uma.informatica.sii.jpa.ejb.GestionMatricula;
 import es.uma.informatica.sii.jpa.ejb.MatriculaEJB;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaExistenteException;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaNoEncontradaException;
@@ -17,7 +18,7 @@ import es.uma.informatica.sii.jpa.proyect.Matricula;
 public class MatriculaBB {
 
 	@Inject
-	private MatriculaEJB mat;
+	private GestionMatricula mat;
 	private Integer curso;
 	private Expediente exp;
 	private Asignatura a, a1, a2;

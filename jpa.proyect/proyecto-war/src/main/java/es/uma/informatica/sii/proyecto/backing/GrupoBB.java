@@ -4,6 +4,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import es.uma.informatica.sii.jpa.ejb.GestionGrupo;
 import es.uma.informatica.sii.jpa.ejb.GrupoEJB;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaNoEncontradaException;
 import es.uma.informatica.sii.jpa.exceptions.GrupoExistenteException;
@@ -15,7 +16,7 @@ import es.uma.informatica.sii.jpa.proyect.Grupo;
 @RequestScoped
 public class GrupoBB {
 	@Inject
-	private GrupoEJB grupoejb;
+	private GestionGrupo grupoejb;
 	private Grupo g;
 	private Asignatura a;
 

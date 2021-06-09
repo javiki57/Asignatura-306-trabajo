@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import es.uma.informatica.sii.jpa.exceptions.TitulacionNoEncontradaException;
 import es.uma.informatica.sii.jpa.proyect.Centro;
@@ -37,7 +38,8 @@ public class TitulacionEJB implements GestionTitulacion{
 	
 	public List<Titulacion> mostrarTitulaciones(/*String nombreCentro*/){
 		/*return (List<Titulacion>) em.createQuery("SELECT titulacion FROM CENTRO WHERE Nombre = nombreCentro").setParameter("nombreCentro", nombreCentro).getResultList();*/
-		return (List<Titulacion>) em.createQuery("SELECT * FROM TITULACION");
+		Query query = em.createQuery("SELECT t FROM Titulacion t");
+		return (List<Titulacion>) query.getResultList();
 		
 	}
 	

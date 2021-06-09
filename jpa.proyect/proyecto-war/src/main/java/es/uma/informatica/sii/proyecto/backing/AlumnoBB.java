@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import es.uma.informatica.sii.jpa.ejb.AlumnoEJB;
+import es.uma.informatica.sii.jpa.ejb.GestionAlumno;
 import es.uma.informatica.sii.jpa.exceptions.AlumnoNoEncontradoException;
 import es.uma.informatica.sii.jpa.proyect.Alumno;
 
@@ -19,7 +20,7 @@ import es.uma.informatica.sii.jpa.proyect.Alumno;
 public class AlumnoBB {
 	
 	@Inject
-	private AlumnoEJB alEJB;
+	private GestionAlumno alEJB;
 	private Alumno a;
 	
 	public Alumno getA() {

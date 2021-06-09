@@ -12,26 +12,26 @@
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>TITULACIONES</h1></div>
 	<h:form id="titulaciones">
-	    <h:dataTable value="#{titulacion.titulaciones}" var="t">
+	    <h:dataTable value="#{TitulacionBB.titulaciones}" var="t">
 			<h:column>
 				<f:facet name="header">Código</f:facet>
-				#{t.Codigo}
+				<h:outputText value="#{t.codigo}"/>
 			</h:column>
                         
 			<h:column>
 				<f:facet name="header">Nombre</f:facet>
-				#{t.Nombre}
+				<h:outputText value="#{t.nombre}"/>
 			</h:column>
                         
 			<h:column>
 				<f:facet name="header">Créditos</f:facet>
-				#{t.Creditos}
+				<h:outputText value="#{t.creditos}"/>
 			</h:column>
                         
 			<f:facet name="footer">
                 <h:form>
-                    <h:commandButton value="Crear" action="#{titulacion.crearTitulacion()}"/>
-                    <h:commandButton value="Actualizar" action="#{titulacion.actualizarTitulacion()}"/>
+                    <h:commandButton value="Crear" action="#{TitulacionBB.crearTitulacion()}"/>
+                    <h:commandButton value="Actualizar" action="#{TitulacionBB.actualizarTitulacion()}"/>
                 </h:form>
             </f:facet>
 		</h:dataTable>
