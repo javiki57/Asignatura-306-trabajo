@@ -18,15 +18,12 @@ public class TitulacionBB {
 	public void crearTitulacion() {
 		titulacionejb.crearTitulacion(t);
 	}
-	
 	public void actualizarTitulacion() {
 		titulacionejb.actualizarTitulacion(t);
 	}
-
 	public Titulacion getT() {
 		return t;
 	}
-
 	public void setT(Titulacion t) {
 		this.t = t;
 	}
