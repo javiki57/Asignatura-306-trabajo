@@ -11,69 +11,63 @@
 	<hr class="lineacolor"/>
 	<div class="titulo"><h1>MATRICULAS</h1></div>
 	<h:form>
-		<h:outputLabel>Para mostrar una matricula inserta su curso academico:</h:outputLabel>
-    	<h:panelGrid columns="2">
-			<h:outputText value="Curso academico:"/>
-			<h:inputText value="#{matricula.curso}"/>
-		</h:panelGrid>
-    	<br/>
-    	<h:commandButton value="Mostrar" action="#{MatriculaBB.listaMatriculas()}"/>
+    	<h:commandButton value="Mostrar listado de matriculas" action="#{MatriculaBB.conectarMatriculas()}"/>
     	<hr class="lineacolor"/>
     	<h:outputLabel>Para buscar una matricula inserta su curso academico y el expediente al que pertenece:</h:outputLabel>
     	<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
-			<h:inputText value="#{matricula.curso}"/>
+			<h:inputText value="#{MatriculaBB.curso}"/>
 			
 			<h:outputText value="Expediente:"/>
-			<h:inputText value="#{matricula.exp}"/>
+			<h:inputText value="#{MatriculaBB.exp}"/>
 		</h:panelGrid>
     	<br/>
     	
-    	<h:commandButton value="Buscar" action="#{matricula.buscarMatricula()}"/>
+    	<h:commandButton value="Buscar" action="#{MatriculaBB.buscarMatricula()}"/>
     	<hr class="lineacolor"/>
     	<h:outputLabel>¿Quieres añadir una asignatura a una matricula?</h:outputLabel>
     	<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
-			<h:inputText value="#{matricula.curso}"/>
+			<h:inputText value="#{MatriculaBB.curso}"/>
 			
 			<h:outputText value="Expediente:"/>
-			<h:inputText value="#{matricula.exp}"/>
+			<h:inputText value="#{MatriculaBB.exp}"/>
 			
 			<h:outputText value="Asignatura:"/>
-			<h:inputText value="#{matricula.a}"/>
+			<h:inputText value="#{MatriculaBB.a}"/>
 		</h:panelGrid>
 		<br/>
-		<h:commandButton value="Añadir asignatura" action="#{matricula.anyadirAsignatura()}"/>
+		<h:commandButton value="Añadir asignatura" action="#{MatriculaBB.anyadirAsignatura()}"/>
 		<hr class="lineacolor"/>
 		<h:outputLabel>¿Quieres eliminar una asignatura de una matricula?</h:outputLabel>
 		<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
-			<h:inputText value="#{matricula.curso}"/>
+			<h:inputText value="#{MatriculaBB.curso}"/>
 			
 			<h:outputText value="Expediente:"/>
-			<h:inputText value="#{matricula.exp}"/>
+			<h:inputText value="#{MatriculaBB.exp}"/>
 			
 			<h:outputText value="Asignatura:"/>
-			<h:inputText value="#{matricula.a}"/>
+			<h:inputText value="#{MatriculaBB.a}"/>
 		</h:panelGrid>
 		<br/>
-		<h:commandButton value="Eliminar asignatura" action="#{matricula.anyadirAsignatura()}"/>
+		<h:commandButton value="Eliminar asignatura" action="#{MatriculaBB.anyadirAsignatura()}"/>
 		<hr class="lineacolor"/>
 		<h:outputLabel>¿Quieres cambiar unas asignaturas de una matricula?</h:outputLabel>
 		<h:panelGrid columns="2">
 			<h:outputText value="Curso academico:"/>
-			<h:inputText value="#{matricula.curso}"/>
+			<h:inputText value="#{MatriculaBB.curso}"/>
 			
 			<h:outputText value="Expediente:"/>
-			<h:inputText value="#{matricula.exp}"/>
+			<h:inputText value="#{MatriculaBB.exp}"/>
 			
 			<h:outputText value="Asignatura antigua:"/>
-			<h:inputText value="#{matricula.a1}"/>
+			<h:inputText value="#{MatriculaBB.a1}"/>
 			
 			<h:outputText value="Asignatura nueva:"/>
-			<h:inputText value="#{matricula.a2}"/>
+			<h:inputText value="#{MatriculaBB.a2}"/>
 		</h:panelGrid>
-		<h:commandButton value="Intercambiar asignatura" action="#{matricula.intercambiarAsignaturas()}"/>
+		<h:commandButton value="Intercambiar asignatura" action="#{MatriculaBB.intercambiarAsignaturas()}"/>
 	</h:form>
 </h:body>
 </html>

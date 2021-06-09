@@ -14,39 +14,39 @@
 		<h:outputLabel>Para crear un nuevo grupo para una asignatura introduce su curso y letra:</h:outputLabel>
     	<h:panelGrid columns="2">
 			<h:outputText value="Asignatura:"/>
-			<h:inputText value="#{grupo.a}"/>
+			<h:inputText value="#{GrupoBB.a}"/>
 			
 			<h:outputText value="Curso:"/>
-			<h:inputText value="#{grupo.g.curso}"/>
+			<h:inputText value="#{GrupoBB.g.curso}"/>
 			
 			<h:outputText value="Letra:"/>
-			<h:inputText value="#{grupo.g.letra}"/>
+			<h:inputText value="#{GrupoBB.g.letra}"/>
 		</h:panelGrid>
     	<br/>
-    	<h:commandButton value="Crear" action=#{GrupoBB.nuevoGrupo()}"/><!--#{grupo.nuevoGrupo()}"/>  -->"
+    	<h:commandButton value="Crear" action="#{GrupoBB.nuevoGrupo()}"/>
     	<hr class="lineacolor"/>
     	<h:outputLabel>Actualiza un grupo existente:</h:outputLabel>
     	<h:panelGrid columns="2">
 			<h:outputText value="Curso:"/>
-			<h:inputText value="#{grupo.g.curso}"/>
+			<h:inputText value="#{GrupoBB.g.curso}"/>
 			
 			<h:outputText value="Letra:"/>
-			<h:inputText value="#{grupo.g.letra}"/>
+			<h:inputText value="#{GrupoBB.g.letra}"/>
 			
 			<h:outputText value="Turno:"/>
-			<h:inputText value="#{grupo.g.turno_Mañana_Tarde}"/>
+			<h:inputText value="#{GrupoBB.g.turno_Mañana_Tarde}"/>
 			
 			<h:outputText value="Ingles:"/>
-			<h:inputText value="#{grupo.g.ingles}"/>
+			<h:inputText value="#{GrupoBB.g.ingles}"/>
 			
 			<h:outputText value="Visible:"/>
-			<h:inputText value="#{grupo.g.visible}"/>
+			<h:inputText value="#{GrupoBB.g.visible}"/>
 			
 			<h:outputText value="Asignar:"/>
-			<h:inputText value="#{grupo.g.asignar}"/>
+			<h:inputText value="#{GrupoBB.g.asignar}"/>
 			
 			<h:outputText value="Plazas:"/>
-			<h:inputText value="#{grupo.g.plazas}"/>
+			<h:inputText value="#{GrupoBB.g.plazas}"/>
 		</h:panelGrid>
     	<br/>
     	<h:commandButton value="Actualizar" action="#{GrupoBB.actualizarGrupoBB()}"/>
