@@ -39,8 +39,8 @@ public class TitulacionBB implements Serializable{
 		titulacionejb.actualizarTitulacion(t);
 	}
 	
-	public List<Titulacion> getTitulaciones(){
-		this.titulaciones = titulacionejb.mostrarTitulaciones(/*"ETSII"*/);
+	/*public List<Titulacion> getTitulaciones(){
+		this.titulaciones = titulacionejb.mostrarTitulaciones();
 		List<Titulacion> tlista = new ArrayList <>();
 		Titulacion titu = new Titulacion();
 		titu.setCodigo(1);
@@ -48,10 +48,15 @@ public class TitulacionBB implements Serializable{
 		titu.setNombre("Informatica");
 		tlista.add(titu);
 		return tlista;
-	}
+	}*/
+	
 
 	public Titulacion getT() {
 		return t;
+	}
+
+	public List<Titulacion> getTitulaciones() {
+		return titulaciones;
 	}
 
 	public void setT(Titulacion t) {
