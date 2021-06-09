@@ -13,7 +13,7 @@ import es.uma.informatica.sii.jpa.proyect.Asignatura;
 import es.uma.informatica.sii.jpa.proyect.Expediente;
 import es.uma.informatica.sii.jpa.proyect.Matricula;
 
-@Named(value="matricula")
+@Named(value="matriculaBB")
 @RequestScoped
 public class MatriculaBB {
 
@@ -83,5 +83,8 @@ public class MatriculaBB {
 		/*mat.eliminarAsignatura(a2, m);
 		mat.aniadirAsignatura(a1, m);*/
 		mat.intercambiarAsignaturas(a1, a2, mat.buscarMatricula(curso, exp));
+	}
+	public String conectarMatriculas() {
+		return "listaMatriculas.xhtml";
 	}
 }

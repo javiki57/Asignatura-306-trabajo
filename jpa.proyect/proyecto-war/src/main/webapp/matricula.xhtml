@@ -17,7 +17,7 @@
 			<h:inputText value="#{matricula.curso}"/>
 		</h:panelGrid>
     	<br/>
-    	<h:commandButton value="Mostrar" action="#{matricula.mostrarMatriculas()}"/>
+    	<h:commandButton value="Mostrar" action="#{MatriculaBB.listaMatriculas()}"/>
     	<hr class="lineacolor"/>
     	<h:outputLabel>Para buscar una matricula inserta su curso academico y el expediente al que pertenece:</h:outputLabel>
     	<h:panelGrid columns="2">
@@ -28,6 +28,7 @@
 			<h:inputText value="#{matricula.exp}"/>
 		</h:panelGrid>
     	<br/>
+    	
     	<h:commandButton value="Buscar" action="#{matricula.buscarMatricula()}"/>
     	<hr class="lineacolor"/>
     	<h:outputLabel>¿Quieres añadir una asignatura a una matricula?</h:outputLabel>
