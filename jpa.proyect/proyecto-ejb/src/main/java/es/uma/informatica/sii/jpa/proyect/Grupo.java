@@ -81,9 +81,7 @@ public class Grupo implements Serializable {
 		return this.id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}   
+ 
 	public String getCurso() {
 		return this.Curso;
 	}
@@ -137,5 +135,24 @@ public class Grupo implements Serializable {
 	public List<Grupo> getGrupos(){
 		return this.group;
 	}
+	public Titulacion getTitulacion() {
+		return titulacion;
+	}
+	public void setTitulacion(Titulacion titulacion) {
+		this.titulacion = titulacion;
+	}
+	public List<Grupo> getGroup() {
+		return group;
+	}
+	public void setGroup(List<Grupo> group) {
+		this.group = group;
+	}
+	public Grupo getGrup0() {
+		return grup0;
+	}
+	public void setGrup0(Grupo grup0) {
+		this.grup0 = grup0;
+	}
+	
    
 }

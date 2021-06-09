@@ -148,5 +148,14 @@ public class Matricula implements Serializable {
 	public Matricula() {
 		super();
 	}
+
+	public List<Matricula> getLista_matriculas() {
+		return lista_matriculas;
+	}
+
+	public void setLista_matriculas(List<Matricula> lista_matriculas) {
+		this.lista_matriculas = lista_matriculas;
+	}
+	
    
 }

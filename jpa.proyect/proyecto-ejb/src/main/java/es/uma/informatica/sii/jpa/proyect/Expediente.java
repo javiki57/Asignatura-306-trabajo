@@ -34,6 +34,30 @@ public class Expediente implements Serializable {
 	
 	
 	
+	public Titulacion getTitulacion() {
+		return titulacion;
+	}
+
+	public void setTitulacion(Titulacion titulacion) {
+		this.titulacion = titulacion;
+	}
+
+	public List<Encuesta> getEncuesta() {
+		return encuesta;
+	}
+
+	public void setEncuesta(List<Encuesta> encuesta) {
+		this.encuesta = encuesta;
+	}
+
+	public List<Matricula> getMatricula() {
+		return matricula;
+	}
+
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	public Expediente() {

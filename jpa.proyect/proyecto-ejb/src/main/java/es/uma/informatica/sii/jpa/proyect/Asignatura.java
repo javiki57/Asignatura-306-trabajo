@@ -58,19 +58,19 @@ public class Asignatura implements Serializable {
 	public void setReferencia(Integer Referencia) {
 		this.Referencia = Referencia;
 	}   
-	public Integer getCódigo() {
+	public Integer getCodigo() {
 		return this.Codigo;
 	}
 
-	public void setCódigo(Integer Código) {
-		this.Codigo = Código;
+	public void setCodigo(Integer Codigo) {
+		this.Codigo = Codigo;
 	}   
-	public Integer getCréditos() {
+	public Integer getCreditos() {
 		return this.Creditos;
 	}
 
-	public void setCréditos(Integer Créditos) {
-		this.Creditos = Créditos;
+	public void setCreditos(Integer Creditos) {
+		this.Creditos = Creditos;
 	}   
 	public boolean getOfertada() {
 		return this.Ofertada;
@@ -79,6 +79,36 @@ public class Asignatura implements Serializable {
 	public void setOfertada(boolean Ofertada) {
 		this.Ofertada = Ofertada;
 	}   
+	public Optativa getOptativa() {
+		return optativa;
+	}
+	public void setOptativa(Optativa optativa) {
+		this.optativa = optativa;
+	}
+	public List<Grupo_por_Asignatura> getAsignatura() {
+		return asignatura;
+	}
+	public void setAsignatura(List<Grupo_por_Asignatura> asignatura) {
+		this.asignatura = asignatura;
+	}
+	public List<Clase> getClase() {
+		return clase;
+	}
+	public void setClase(List<Clase> clase) {
+		this.clase = clase;
+	}
+	public Titulacion getTitulacion() {
+		return titulacion;
+	}
+	public void setTitulacion(Titulacion titulacion) {
+		this.titulacion = titulacion;
+	}
+	public List<Asignatura_Matricula> getAsig_matr() {
+		return asig_matr;
+	}
+	public void setAsig_matr(List<Asignatura_Matricula> asig_matr) {
+		this.asig_matr = asig_matr;
+	}
 	public String getNombre() {
 		return this.Nombre;
 	}
@@ -100,12 +130,12 @@ public class Asignatura implements Serializable {
 	public void setCaracter(String Caracter) {
 		this.Caracter = Caracter;
 	}   
-	public Integer getDuración() {
+	public Integer getDuracion() {
 		return this.Duracion;
 	}
 
-	public void setDuración(Integer Duración) {
-		this.Duracion = Duración;
+	public void setDuracion(Integer Duracion) {
+		this.Duracion = Duracion;
 	}   
 	public Integer getUnidad_Temporal() {
 		return this.Unidad_Temporal;

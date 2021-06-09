@@ -44,7 +44,7 @@ public class BaseDeDatos {
 		
 		Grupo primeroA = new Grupo();
 		
-		primeroA.setId((long) 1);
+		//primeroA.setId((long) 1);
 		primeroA.setCurso("primero");
 		primeroA.setLetra('A');
 

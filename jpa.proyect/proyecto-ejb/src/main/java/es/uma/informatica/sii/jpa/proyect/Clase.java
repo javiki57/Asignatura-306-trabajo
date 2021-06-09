@@ -29,6 +29,19 @@ public class Clase implements Serializable {
 	private Grupo grupo;
 	
 	
+	public Grupo getGrupo() {
+		return grupo;
+	}
+	public void setGrupo(Grupo grupo) {
+		this.grupo = grupo;
+	}
+	public Asignatura getAsignatura() {
+		return asignatura;
+	}
+	public void setAsignatura(Asignatura asignatura) {
+		this.asignatura = asignatura;
+	}
+
 	@ManyToOne
 	private Asignatura asignatura;
 	
@@ -57,5 +70,7 @@ public class Clase implements Serializable {
 	public void setHora_Fin(Double Hora_Fin) {
 		this.Hora_Fin = Hora_Fin;
 	}
+	
+	
    
 }

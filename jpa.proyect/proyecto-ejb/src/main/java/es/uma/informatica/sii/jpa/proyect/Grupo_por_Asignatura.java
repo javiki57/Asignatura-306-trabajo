@@ -77,17 +77,29 @@ public class Grupo_por_Asignatura implements Serializable {
 	public Grupo_por_Asignatura() {
 		super();
 	}   
-	public Integer getCurso_Academica() {
+	public Integer getCurso_Academico() {
 		return this.Curso_Academico;
 	}
 
-	public void setCurso_Academica(Integer Curso_Academica) {
+	public void setCurso_Academico(Integer Curso_Academica) {
 		this.Curso_Academico = Curso_Academica;
 	}   
 	public Integer getOferta() {
 		return this.Oferta;
 	}
 
+	public Grupo getGrupos() {
+		return grupos;
+	}
+	public void setGrupos(Grupo grupos) {
+		this.grupos = grupos;
+	}
+	public List<Encuesta> getEncuestas() {
+		return encuestas;
+	}
+	public void setEncuestas(List<Encuesta> encuestas) {
+		this.encuestas = encuestas;
+	}
 	public void setOferta(Integer Oferta) {
 		this.Oferta = Oferta;
 	}

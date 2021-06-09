@@ -25,6 +25,21 @@ public class Centro implements Serializable{
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
+	public String getDireccion() {
+		return Direccion;
+	}
+	public void setDireccion(String direccion) {
+		Direccion = direccion;
+	}
+	public List<Titulacion> getTitulacion() {
+		return titulacion;
+	}
+	public void setTitulacion(List<Titulacion> titulacion) {
+		this.titulacion = titulacion;
+	}
+	public int getId() {
+		return Id;
+	}
 	public int getTLF_Conserjeria() {
 		return TLF_Conserjeria;
 	}
