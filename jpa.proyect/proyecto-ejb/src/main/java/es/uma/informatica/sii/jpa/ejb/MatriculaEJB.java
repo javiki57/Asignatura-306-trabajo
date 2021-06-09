@@ -85,7 +85,7 @@ public class MatriculaEJB implements GestionMatricula{
 			throw new MatriculaNoEncontradaException();
 		}
 		
-		return em.createQuery("select * from matricula where curso_academico=curso").setParameter("curso", curso).getResultList();		
+		return matri.get_matriculas();		
 	}
 	@Override
 	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaExistenteException {

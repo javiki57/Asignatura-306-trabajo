@@ -1,6 +1,5 @@
 package es.uma.informatica.sii.proyecto.backing;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -8,7 +7,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import es.uma.informatica.sii.jpa.ejb.AlumnoEJB;
-import es.uma.informatica.sii.jpa.ejb.GestionAlumno;
 import es.uma.informatica.sii.jpa.exceptions.AlumnoNoEncontradoException;
 import es.uma.informatica.sii.jpa.proyect.Alumno;
 
@@ -18,10 +16,10 @@ import es.uma.informatica.sii.jpa.proyect.Alumno;
 
 @Named(value="alumno")
 @RequestScoped
-public class AlumnoBB implements Serializable{
+public class AlumnoBB {
 	
 	@Inject
-	private GestionAlumno alEJB;
+	private AlumnoEJB alEJB;
 	private Alumno a;
 	
 	public Alumno getA() {

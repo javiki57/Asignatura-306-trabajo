@@ -1,12 +1,9 @@
 package es.uma.informatica.sii.proyecto.backing;
 
-import java.io.Serializable;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import es.uma.informatica.sii.jpa.ejb.GestionGrupo;
 import es.uma.informatica.sii.jpa.ejb.GrupoEJB;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaNoEncontradaException;
 import es.uma.informatica.sii.jpa.exceptions.GrupoExistenteException;
@@ -16,9 +13,9 @@ import es.uma.informatica.sii.jpa.proyect.Grupo;
 
 @Named(value="grupo")
 @RequestScoped
-public class GrupoBB implements Serializable{
+public class GrupoBB {
 	@Inject
-	private GestionGrupo grupoejb;
+	private GrupoEJB grupoejb;
 	private Grupo g;
 	private Asignatura a;
 

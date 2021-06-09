@@ -1,12 +1,9 @@
 package es.uma.informatica.sii.proyecto.backing;
 
-import java.io.Serializable;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import es.uma.informatica.sii.jpa.ejb.GestionMatricula;
 import es.uma.informatica.sii.jpa.ejb.MatriculaEJB;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaExistenteException;
 import es.uma.informatica.sii.jpa.exceptions.AsignaturaNoEncontradaException;
@@ -17,10 +14,10 @@ import es.uma.informatica.sii.jpa.proyect.Matricula;
 
 @Named(value="matricula")
 @RequestScoped
-public class MatriculaBB implements Serializable{
+public class MatriculaBB {
 
 	@Inject
-	private GestionMatricula mat;
+	private MatriculaEJB mat;
 	private Integer curso;
 	private Expediente exp;
 	private Asignatura a, a1, a2;
@@ -28,21 +25,27 @@ public class MatriculaBB implements Serializable{
 	public Integer getCurso() {
 		return curso;
 	}
+
 	public void setCurso(Integer curso) {
 		this.curso = curso;
 	}
+
 	public Expediente getExp() {
 		return exp;
 	}
+
 	public void setExp(Expediente exp) {
 		this.exp = exp;
 	}
+
 	public Asignatura getA() {
 		return a;
 	}
+
 	public void setA(Asignatura a) {
 		this.a = a;
 	}
+
 	public Asignatura getA1() {
 		return a1;
 	}
