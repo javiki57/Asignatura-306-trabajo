@@ -17,39 +17,39 @@
 			<h:inputText value="#{grupo.a}"/>
 			
 			<h:outputText value="Curso:"/>
-			<h:inputText value="#{grupo.g.Curso}"/>
+			<h:inputText value="#{grupo.g.curso}"/>
 			
 			<h:outputText value="Letra:"/>
-			<h:inputText value="#{grupo.g.Letra}"/>
+			<h:inputText value="#{grupo.g.letra}"/>
 		</h:panelGrid>
     	<br/>
-    	<h:commandButton value="Crear" action="#{grupo.nuevoGrupo()}"/>
+    	<h:commandButton value="Crear" action=#{GrupoBB.nuevoGrupo()}"/><!--#{grupo.nuevoGrupo()}"/>  -->"
     	<hr class="lineacolor"/>
     	<h:outputLabel>Actualiza un grupo existente:</h:outputLabel>
     	<h:panelGrid columns="2">
 			<h:outputText value="Curso:"/>
-			<h:inputText value="#{grupo.g.Curso}"/>
+			<h:inputText value="#{grupo.g.curso}"/>
 			
 			<h:outputText value="Letra:"/>
-			<h:inputText value="#{grupo.g.Letra}"/>
+			<h:inputText value="#{grupo.g.letra}"/>
 			
 			<h:outputText value="Turno:"/>
-			<h:inputText value="#{grupo.g.Turno_Mañana_Tarde}"/>
+			<h:inputText value="#{grupo.g.turno_Mañana_Tarde}"/>
 			
 			<h:outputText value="Ingles:"/>
-			<h:inputText value="#{grupo.g.Ingles}"/>
+			<h:inputText value="#{grupo.g.ingles}"/>
 			
 			<h:outputText value="Visible:"/>
-			<h:inputText value="#{grupo.g.Visible}"/>
+			<h:inputText value="#{grupo.g.visible}"/>
 			
 			<h:outputText value="Asignar:"/>
-			<h:inputText value="#{grupo.g.Asignar}"/>
+			<h:inputText value="#{grupo.g.asignar}"/>
 			
 			<h:outputText value="Plazas:"/>
-			<h:inputText value="#{grupo.g.Plazas}"/>
+			<h:inputText value="#{grupo.g.plazas}"/>
 		</h:panelGrid>
     	<br/>
-    	<h:commandButton value="Actualizar" action="#{grupo.actualizarGrupoBB()}"/>
+    	<h:commandButton value="Actualizar" action="#{GrupoBB.actualizarGrupoBB()}"/>
 	</h:form>
 </h:body>
 </html>
