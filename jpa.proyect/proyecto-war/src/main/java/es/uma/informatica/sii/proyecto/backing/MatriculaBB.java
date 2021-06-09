@@ -13,7 +13,7 @@ import es.uma.informatica.sii.jpa.proyect.Asignatura;
 import es.uma.informatica.sii.jpa.proyect.Expediente;
 import es.uma.informatica.sii.jpa.proyect.Matricula;
 
-@Named(value="matriculaBB")
+@Named(value="MatriculaBB")
 @RequestScoped
 public class MatriculaBB {
 
@@ -61,10 +61,6 @@ public class MatriculaBB {
 
 	public void setA2(Asignatura a2) {
 		this.a2 = a2;
-	}
-	
-	public void mostrarMatriuclas() throws MatriculaNoEncontradaException {
-		mat.mostrarMatriculas(curso);
 	}
 	
 	public void buscarMatricula() throws MatriculaNoEncontradaException {

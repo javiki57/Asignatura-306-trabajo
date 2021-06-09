@@ -4,7 +4,7 @@
 		xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta charset="UTF-8"/>
-	<title>Matriculas</title>
+	<title>Lista matriculas</title>
 	<link rel="stylesheet" href="secretaria.css" type="text/css"/>
 </h:head>
 <h:body>
@@ -12,40 +12,40 @@
 	<hr class="lineacolor"/>
 	<div class="matricula"><h1>Matriculas</h1></div>
 	<h:form id="matriculas">
-	    <h:dataTable value="#{matriculaBB.matriculas}" var="m">
+	    <h:dataTable value="#{MatriculaBB.matriculas}" var="m">
 			<h:column>
 				<f:facet name="header">Curso Academico</f:facet>
-				<h:outputText value="#{m.curso_academico}"/>
+				<h:outputText value="#{MatriculaBB.m.curso_academico}"/>
 			</h:column>
                         
 			<h:column>
 				<f:facet name="header">Estado</f:facet>
-				<h:outputText value="#{m.estado}"/>
+				<h:outputText value="#{MatriculaBB.m.estado}"/>
 			</h:column>
                         
 			<h:column>
 				<f:facet name="header">Fecha de Matricula</f:facet>
-				<h:outputText value="#{m.fecha_de_matricula}"/>
+				<h:outputText value="#{MatriculaBB.m.fecha_de_matricula}"/>
 			</h:column>
             
             <h:column>
 				<f:facet name="header">Nuevo Ingreso</f:facet>
-				<h:outputText value="#{m.nuevo_ingreso}"/>
+				<h:outputText value="#{MatriculaBB.m.nuevo_ingreso}"/>
 			</h:column>
 			
 			<h:column>
 				<f:facet name="header">Documento</f:facet>
-				<h:outputText value="#{m.num_archivo}"/>
+				<h:outputText value="#{MatriculaBB.m.num_archivo}"/>
 			</h:column>
 			
 			<h:column>
 				<f:facet name="header">Turno Preferente</f:facet>
-				<h:outputText value="#{m.turno_preferente}"/>
+				<h:outputText value="#{MatriculaBB.m.turno_preferente}"/>
 			</h:column>
             
             <h:column>
 				<f:facet name="header">Numero de Expediente</f:facet>
-				<h:outputText value="#{m.expediente_num_expediente}"/>
+				<h:outputText value="#{MatriculaBB.m.expediente_num_expediente}"/>
 			</h:column>
                         
 			<f:facet name="footer">
