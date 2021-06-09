@@ -4,6 +4,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.apache.commons.math3.util.MultidimensionalCounter.Iterator;
 
@@ -84,8 +85,9 @@ public class MatriculaEJB implements GestionMatricula{
 		if(matri == null) {
 			throw new MatriculaNoEncontradaException();
 		}
+		Query query = em.createQuery("SELECT m FROM Matricula m");
 		
-		return matri.get_matriculas();		
+		return (List<Matricula>) query.getResultList();
 	}
 	@Override
 	public void intercambiarAsignaturas(Asignatura actual, Asignatura nueva, Matricula m) throws AsignaturaExistenteException {
