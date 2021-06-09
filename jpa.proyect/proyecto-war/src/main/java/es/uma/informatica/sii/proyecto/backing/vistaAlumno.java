@@ -1,8 +1,11 @@
 package es.uma.informatica.sii.proyecto.backing;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
+import es.uma.informatica.sii.jpa.exceptions.MatriculaNoEncontradaException;
 import es.uma.informatica.sii.jpa.proyect.Alumno;
 import es.uma.informatica.sii.jpa.proyect.Expediente;
 import es.uma.informatica.sii.jpa.proyect.Grupo;
@@ -10,7 +13,7 @@ import es.uma.informatica.sii.jpa.proyect.Titulacion;
 
 @Named(value="vAlumno")
 @RequestScoped
-public class vistaAlumno {
+public class vistaAlumno implements Serializable{
 	
 	private Grupo grupoActual;
 	private Grupo grupoNuevo;
